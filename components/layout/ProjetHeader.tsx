@@ -44,16 +44,18 @@ export function ProjetHeader() {
         >
           sylve
         </Link>
-        <span
+        <Link
+          href="/projet"
           style={{
             fontSize: "0.72rem",
             letterSpacing: "0.14em",
             color: "#8A8279",
             textTransform: "uppercase",
+            textDecoration: "none",
           }}
         >
           projet
-        </span>
+        </Link>
       </div>
       <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
         {prenom && (
