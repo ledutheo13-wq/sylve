@@ -1,0 +1,622 @@
+/* ── TITLE BAR ── */
+.titleBar {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 2rem 0;
+}
+
+.titleBar h1 {
+  font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: var(--primary);
+  letter-spacing: 4px;
+  text-transform: lowercase;
+  margin-bottom: 0.4rem;
+}
+
+.titleBar p {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ── ZONE DE SAISIE ── */
+.inputZone {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1.5rem 2rem 2rem;
+}
+
+.sectionLabel {
+  font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-light);
+  font-weight: 400;
+  margin-bottom: 1rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ── ESSENCE COUNTER ── */
+.essenceCounter {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.essenceCount {
+  color: var(--primary);
+  font-weight: 400;
+}
+
+.essenceCountLimit {
+  color: var(--ocre);
+}
+
+/* ── MELANGE BLOCK ── */
+.melangeBlock {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.melangeHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.melangeNameInput {
+  flex: 1;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 6px 10px;
+  background: var(--fond);
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.melangeNameInput:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(94, 139, 143, 0.12);
+}
+
+.melangeNameInput::placeholder {
+  color: var(--text-light);
+}
+
+.btnDeleteMelange {
+  font-size: 1rem;
+  color: var(--text-light);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: all 0.15s;
+  line-height: 1;
+}
+
+.btnDeleteMelange:hover {
+  color: #C44040;
+  background: rgba(196, 64, 64, 0.08);
+}
+
+/* ── ESSENCE ROW ── */
+.essenceRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+
+.essenceSearchWrap {
+  flex: 1;
+  position: relative;
+}
+
+.essenceSearch {
+  width: 100%;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 7px 10px;
+  background: #fff;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.essenceSearch:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(94, 139, 143, 0.12);
+}
+
+.essenceSearchValidated {
+  border-color: rgba(94, 139, 143, 0.4);
+  background: rgba(94, 139, 143, 0.04);
+  font-style: italic;
+}
+
+.essenceMeta {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.badgePersistance {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.04em;
+  padding: 1px 6px;
+  border-radius: 10px;
+  text-transform: capitalize;
+}
+
+.persistant {
+  background: rgba(94, 139, 143, 0.12);
+  color: var(--sylve-dark);
+}
+
+.caduc {
+  background: rgba(140, 191, 140, 0.18);
+  color: #4a7a4a;
+}
+
+.semiPersistant {
+  background: rgba(94, 139, 143, 0.08);
+  color: var(--gres);
+}
+
+.btnDeleteEssence {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px 6px;
+  border-radius: 4px;
+  transition: all 0.15s;
+  line-height: 1;
+  margin-top: 1px;
+}
+
+.btnDeleteEssence:hover {
+  color: #C44040;
+  background: rgba(196, 64, 64, 0.08);
+}
+
+/* ── AUTOCOMPLETE ── */
+.autocompleteList {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0 0 6px 6px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  z-index: 50;
+  max-height: 280px;
+  overflow-y: auto;
+  display: none;
+}
+
+.autocompleteListOpen {
+  display: block;
+}
+
+.autocompleteItem {
+  padding: 8px 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #F0EFED;
+  transition: background 0.1s;
+}
+
+.autocompleteItem:last-child {
+  border-bottom: none;
+}
+
+.autocompleteItem:hover,
+.autocompleteItemActive {
+  background: var(--sylve-light);
+}
+
+.acLatin {
+  font-size: 0.82rem;
+  font-style: italic;
+  color: var(--text);
+}
+
+.acCommun {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.acStrate {
+  font-size: 0.65rem;
+  color: var(--text-light);
+}
+
+.autocompleteNoresult {
+  padding: 10px;
+  font-size: 0.78rem;
+  color: var(--text-light);
+  text-align: center;
+}
+
+/* ── BUTTONS ── */
+.btnAdd {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  color: var(--primary);
+  background: rgba(94, 139, 143, 0.06);
+  border: 1px dashed rgba(94, 139, 143, 0.3);
+  border-radius: 4px;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.btnAdd:hover {
+  background: rgba(94, 139, 143, 0.12);
+  border-color: var(--primary);
+}
+
+.btnAddMelange {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem;
+  color: var(--primary);
+  background: rgba(94, 139, 143, 0.06);
+  border: 1px dashed rgba(94, 139, 143, 0.3);
+  border-radius: var(--radius);
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: all 0.15s;
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.btnAddMelange:hover {
+  background: rgba(94, 139, 143, 0.12);
+  border-color: var(--primary);
+}
+
+.btnSort {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 4px 10px;
+  cursor: pointer;
+  transition: all 0.15s;
+  margin-top: 0.4rem;
+}
+
+.btnSort:hover {
+  border-color: var(--text-muted);
+  color: var(--text);
+}
+
+/* ── ACTIONS ── */
+.actionsBar {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.btnPrimary {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: #fff;
+  background: var(--primary);
+  border: none;
+  border-radius: var(--radius);
+  padding: 10px 24px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btnPrimary:hover {
+  background: var(--primary-hover);
+}
+
+.btnSecondary {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 400;
+  color: var(--primary);
+  background: none;
+  border: 1px solid var(--primary);
+  border-radius: var(--radius);
+  padding: 9px 20px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.btnSecondary:hover {
+  background: var(--sylve-light);
+}
+
+/* ── CALENDAR ZONE ── */
+.calendarZone {
+  padding: 2rem;
+  margin-top: 1rem;
+}
+
+.calendarContainer {
+  background: #FFFFFF;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 24px;
+  position: relative;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.calendarContainerVisible {
+  opacity: 1;
+}
+
+/* ── CALENDAR HEADER ── */
+.calTitle {
+  font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--text);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.calMonthsHeader {
+  display: flex;
+  margin-left: 180px;
+}
+
+.calMonthLabel {
+  flex: 1;
+  text-align: center;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  color: var(--text-muted);
+  user-select: none;
+}
+
+/* ── MELANGE GROUP ── */
+.calMelangeGroup {
+  margin-bottom: 20px;
+}
+
+.calMelangeGroup:last-child {
+  margin-bottom: 0;
+}
+
+.calMelangeTitle {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ── ESSENCE LINE ── */
+.calEssenceLine {
+  display: flex;
+  align-items: center;
+  height: 28px;
+  margin-bottom: 2px;
+  position: relative;
+  cursor: default;
+}
+
+.calEssenceName {
+  width: 180px;
+  min-width: 180px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-style: italic;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 8px;
+}
+
+.calBandContainer {
+  flex: 1;
+  height: 28px;
+  position: relative;
+  display: flex;
+}
+
+.calMonthCell {
+  flex: 1;
+  height: 100%;
+  border-left: 1px solid #F0EFED;
+}
+
+.calMonthCell:first-child {
+  border-left: none;
+}
+
+.calFeuillageBand {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  border-radius: 3px;
+  z-index: 1;
+}
+
+.calFloraisonBand {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  border-radius: 3px;
+  z-index: 2;
+}
+
+/* ── TOOLTIP ── */
+.calTooltip {
+  display: none;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--text);
+  color: #fff;
+  font-size: 0.72rem;
+  line-height: 1.5;
+  padding: 10px 14px;
+  border-radius: 6px;
+  white-space: nowrap;
+  z-index: 60;
+  pointer-events: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  margin-bottom: 4px;
+}
+
+.calTooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid rgba(0, 0, 0, 0);
+  border-top-color: var(--text);
+}
+
+.calEssenceLine:hover .calTooltip {
+  display: block;
+}
+
+/* ── LEGEND ── */
+.calLegend {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 20px;
+  padding-top: 12px;
+  border-top: 1px solid #F0EFED;
+}
+
+.calLegendItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.calLegendSwatch {
+  width: 16px;
+  height: 10px;
+  border-radius: 2px;
+}
+
+/* ── FOOTER ── */
+.calFooter {
+  text-align: right;
+  margin-top: 12px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  color: var(--border);
+}
+
+/* ── EMPTY STATE ── */
+.calendarEmpty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.calendarEmpty svg {
+  margin-bottom: 1.2rem;
+}
+
+.emptyTitle {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin-bottom: 0.4rem;
+}
+
+.emptySub {
+  font-size: 0.78rem;
+  color: var(--text-light);
+  max-width: 380px;
+  line-height: 1.5;
+}
+
+/* ── MELANGE FOOTER BUTTONS ── */
+.melangeFooter {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.6rem;
+  flex-wrap: wrap;
+}
+
+/* ── EXPORT CONTAINER (hidden off-screen for html2canvas) ── */
+.exportContainer {
+  position: absolute;
+  opacity: 1;
+  transform: translateY(-200vh);
+  pointer-events: none;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .inputZone,
+  .titleBar {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .calEssenceName {
+    width: 140px;
+    min-width: 140px;
+    font-size: 11px;
+  }
+
+  .calMonthsHeader {
+    margin-left: 140px;
+  }
+
+  .inputZone,
+  .titleBar {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .calendarZone {
+    padding: 1rem;
+  }
+
+  .calendarContainer {
+    padding: 16px;
+  }
+}
