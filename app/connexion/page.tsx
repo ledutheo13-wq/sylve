@@ -3,19 +3,43 @@
 import { useState } from "react";
 import { createClient } from "@/lib/supabase/client";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
+import styles from "./page.module.css";
 
-type View = "login" | "signup" | "forgot" | "recovery";
+type View = "signup" | "login" | "forgot" | "recovery" | "signup-success";
 
 export default function ConnexionPage() {
   const supabase = createClient();
   const router = useRouter();
-  const [view, setView] = useState<View>("login");
+  const [view, setView] = useState<View>("signup");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirm, setPasswordConfirm] = useState("");
   const [error, setError] = useState("");
-  const [success, setSuccess] = useState("");
   const [loading, setLoading] = useState(false);
+  const [sentEmail, setSentEmail] = useState("");
+
+  async function handleSignup(e: React.FormEvent) {
+    e.preventDefault();
+    setError("");
+    if (password.length < 8) {
+      setError("Le mot de passe doit contenir au moins 8 caractères.");
+      return;
+    }
+    if (password !== passwordConfirm) {
+      setError("Les mots de passe ne correspondent pas.");
+      return;
+    }
+    setLoading(true);
+    const { error } = await supabase.auth.signUp({ email, password });
+    setLoading(false);
+    if (error) {
+      setError(error.message);
+      return;
+    }
+    setSentEmail(email);
+    setView("signup-success");
+  }
 
   async function handleLogin(e: React.FormEvent) {
     e.preventDefault();
@@ -36,27 +60,6 @@ export default function ConnexionPage() {
     router.push("/dashboard");
   }
 
-  async function handleSignup(e: React.FormEvent) {
-    e.preventDefault();
-    setError("");
-    if (password.length < 8) {
-      setError("Le mot de passe doit contenir au moins 8 caractères.");
-      return;
-    }
-    if (password !== passwordConfirm) {
-      setError("Les mots de passe ne correspondent pas.");
-      return;
-    }
-    setLoading(true);
-    const { error } = await supabase.auth.signUp({ email, password });
-    setLoading(false);
-    if (error) {
-      setError(error.message);
-      return;
-    }
-    setSuccess(`Un email de vérification a été envoyé à ${email}`);
-  }
-
   async function handleForgot(e: React.FormEvent) {
     e.preventDefault();
     setError("");
@@ -65,150 +68,138 @@ export default function ConnexionPage() {
       redirectTo: `${window.location.origin}/connexion?type=recovery`,
     });
     setLoading(false);
-    setSuccess("Si un compte existe avec cet email, un lien de réinitialisation a été envoyé.");
+    setSentEmail(email);
+    setView("signup-success");
   }
 
-  if (success) {
-    return (
-      <Container>
-        <div style={{ textAlign: "center" }}>
-          <div style={{ fontSize: 40, marginBottom: 16 }}>✓</div>
-          <p style={{ fontSize: 15, color: "var(--text-secondary)", lineHeight: 1.6 }}>
-            {success}
-          </p>
-          <button
-            onClick={() => { setSuccess(""); setView("login"); }}
-            style={{ ...linkStyle, marginTop: 24 }}
-          >
-            Retour à la connexion
-          </button>
-        </div>
-      </Container>
-    );
+  function switchView(v: View) {
+    setError("");
+    setView(v);
   }
 
   return (
-    <Container>
-      <span
-        style={{
-          fontFamily: "Helvetica, 'Helvetica Neue', Arial, sans-serif",
-          fontWeight: 300,
-          fontSize: 24,
-          letterSpacing: 10,
-          color: "var(--primary)",
-          marginBottom: 32,
-        }}
-      >
-        sylve
-      </span>
+    <>
+      <div className={styles.page}>
+        <div className={styles.loginCard}>
+          <Link href="/" className={styles.logo}>sylve</Link>
 
-      {error && (
-        <p style={{ color: "var(--error)", fontSize: 13, marginBottom: 16 }}>{error}</p>
-      )}
+          <div className={styles.card}>
+            {/* SIGNUP SUCCESS */}
+            {view === "signup-success" && (
+              <div className={styles.successView}>
+                <div className={styles.successIcon}>
+                  <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                    <path d="M4 11L9 16L18 6" stroke="#5E8B8F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </div>
+                <p className={styles.successTitle}>Vérifiez votre boîte mail</p>
+                <p className={styles.successText}>
+                  Un email de vérification a été envoyé à<br />
+                  <span className={styles.successEmail}>{sentEmail}</span>
+                </p>
+                <p className={styles.successText}>Cliquez sur le lien pour activer votre compte.</p>
+                <p className={styles.successNote}>Vérifiez vos courriers indésirables si vous ne le trouvez pas.</p>
+              </div>
+            )}
 
-      {view === "login" && (
-        <form onSubmit={handleLogin} style={formStyle}>
-          <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required style={inputStyle} />
-          <input type="password" placeholder="Mot de passe" value={password} onChange={(e) => setPassword(e.target.value)} required style={inputStyle} />
-          <button type="submit" disabled={loading} style={btnStyle}>
-            {loading ? "..." : "Se connecter"}
-          </button>
-          <div style={{ display: "flex", justifyContent: "space-between", fontSize: 13 }}>
-            <button type="button" onClick={() => { setError(""); setView("signup"); }} style={linkStyle}>Créer un compte</button>
-            <button type="button" onClick={() => { setError(""); setView("forgot"); }} style={linkStyle}>Mot de passe oublié</button>
+            {/* SIGNUP */}
+            {view === "signup" && (
+              <form onSubmit={handleSignup}>
+                <h1 className={styles.cardTitle}>Créer un compte</h1>
+                <p className={styles.cardSubtitle}>Aucun engagement. Accédez à tous les outils SYLVE.</p>
+
+                {error && <div className={`${styles.message} ${styles.messageError}`}>{error}</div>}
+
+                <div className={styles.formGroup}>
+                  <label className={styles.label}>Adresse email</label>
+                  <input type="email" className={styles.input} placeholder="votre@email.com" value={email} onChange={(e) => setEmail(e.target.value)} required autoFocus />
+                </div>
+                <div className={styles.formGroup}>
+                  <label className={styles.label}>Mot de passe</label>
+                  <input type="password" className={styles.input} placeholder="Minimum 8 caractères" value={password} onChange={(e) => setPassword(e.target.value)} required minLength={8} />
+                </div>
+                <div className={styles.formGroup}>
+                  <label className={styles.label}>Confirmer le mot de passe</label>
+                  <input type="password" className={styles.input} placeholder="Confirmer le mot de passe" value={passwordConfirm} onChange={(e) => setPasswordConfirm(e.target.value)} required />
+                </div>
+
+                <button type="submit" className={styles.btnSubmit} disabled={loading}>
+                  {loading ? "..." : "Créer mon compte"}
+                </button>
+
+                <div className={styles.viewLinks}>
+                  <button type="button" className={styles.viewLink} onClick={() => switchView("login")}>
+                    Déjà un compte ? <span className={styles.viewLinkAccent}>Se connecter</span>
+                  </button>
+                </div>
+              </form>
+            )}
+
+            {/* LOGIN */}
+            {view === "login" && (
+              <form onSubmit={handleLogin}>
+                <h1 className={styles.cardTitle}>Se connecter</h1>
+                <p className={styles.cardSubtitle}>Accédez à vos outils.</p>
+
+                {error && <div className={`${styles.message} ${styles.messageError}`}>{error}</div>}
+
+                <div className={styles.formGroup}>
+                  <label className={styles.label}>Adresse email</label>
+                  <input type="email" className={styles.input} placeholder="votre@email.com" value={email} onChange={(e) => setEmail(e.target.value)} required autoFocus />
+                </div>
+                <div className={styles.formGroup}>
+                  <label className={styles.label}>Mot de passe</label>
+                  <input type="password" className={styles.input} placeholder="Mot de passe" value={password} onChange={(e) => setPassword(e.target.value)} required />
+                </div>
+
+                <button type="submit" className={styles.btnSubmit} disabled={loading}>
+                  {loading ? "..." : "Se connecter"}
+                </button>
+
+                <div className={styles.viewLinks}>
+                  <button type="button" className={styles.viewLink} onClick={() => switchView("signup")}>
+                    Pas encore de compte ? <span className={styles.viewLinkAccent}>Créer un compte</span>
+                  </button>
+                  <br />
+                  <button type="button" className={styles.viewLink} onClick={() => switchView("forgot")}>
+                    Mot de passe oublié ?
+                  </button>
+                </div>
+              </form>
+            )}
+
+            {/* FORGOT */}
+            {view === "forgot" && (
+              <form onSubmit={handleForgot}>
+                <h1 className={styles.cardTitle}>Mot de passe oublié</h1>
+                <p className={styles.cardSubtitle}>Entrez votre email pour recevoir un lien de réinitialisation.</p>
+
+                {error && <div className={`${styles.message} ${styles.messageError}`}>{error}</div>}
+
+                <div className={styles.formGroup}>
+                  <label className={styles.label}>Adresse email</label>
+                  <input type="email" className={styles.input} placeholder="votre@email.com" value={email} onChange={(e) => setEmail(e.target.value)} required autoFocus />
+                </div>
+
+                <button type="submit" className={styles.btnSubmit} disabled={loading}>
+                  {loading ? "..." : "Envoyer le lien"}
+                </button>
+
+                <div className={styles.viewLinks}>
+                  <button type="button" className={styles.viewLink} onClick={() => switchView("login")}>
+                    Retour à la <span className={styles.viewLinkAccent}>connexion</span>
+                  </button>
+                </div>
+              </form>
+            )}
           </div>
-        </form>
-      )}
-
-      {view === "signup" && (
-        <form onSubmit={handleSignup} style={formStyle}>
-          <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required style={inputStyle} />
-          <input type="password" placeholder="Mot de passe (8 caractères min.)" value={password} onChange={(e) => setPassword(e.target.value)} required style={inputStyle} />
-          <input type="password" placeholder="Confirmer le mot de passe" value={passwordConfirm} onChange={(e) => setPasswordConfirm(e.target.value)} required style={inputStyle} />
-          <button type="submit" disabled={loading} style={btnStyle}>
-            {loading ? "..." : "Créer mon compte"}
-          </button>
-          <button type="button" onClick={() => { setError(""); setView("login"); }} style={linkStyle}>
-            Déjà un compte ? Se connecter
-          </button>
-        </form>
-      )}
-
-      {view === "forgot" && (
-        <form onSubmit={handleForgot} style={formStyle}>
-          <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required style={inputStyle} />
-          <button type="submit" disabled={loading} style={btnStyle}>
-            {loading ? "..." : "Envoyer le lien"}
-          </button>
-          <button type="button" onClick={() => { setError(""); setView("login"); }} style={linkStyle}>
-            Retour à la connexion
-          </button>
-        </form>
-      )}
-    </Container>
-  );
-}
-
-function Container({ children }: { children: React.ReactNode }) {
-  return (
-    <div
-      style={{
-        minHeight: "100vh",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        padding: 24,
-      }}
-    >
-      <div
-        style={{
-          width: "100%",
-          maxWidth: 380,
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-        }}
-      >
-        {children}
+        </div>
       </div>
-    </div>
+
+      <footer className={styles.footer}>
+        <Link href="/" className={styles.footerBack}>← Retour à sylve.eco</Link>
+        <span className={styles.footerCopy}>© 2026 sylve.eco</span>
+      </footer>
+    </>
   );
 }
-
-const formStyle: React.CSSProperties = {
-  display: "flex",
-  flexDirection: "column",
-  gap: 12,
-  width: "100%",
-};
-
-const inputStyle: React.CSSProperties = {
-  padding: "12px 16px",
-  border: "1px solid var(--border)",
-  borderRadius: "var(--radius)",
-  fontSize: 14,
-  background: "var(--surface)",
-  color: "var(--text)",
-  outline: "none",
-};
-
-const btnStyle: React.CSSProperties = {
-  padding: "12px 24px",
-  background: "var(--primary)",
-  color: "var(--surface)",
-  border: "none",
-  borderRadius: "var(--radius)",
-  fontSize: 14,
-  fontWeight: 500,
-  cursor: "pointer",
-  marginTop: 4,
-};
-
-const linkStyle: React.CSSProperties = {
-  background: "none",
-  border: "none",
-  color: "var(--text-secondary)",
-  cursor: "pointer",
-  fontSize: 13,
-};

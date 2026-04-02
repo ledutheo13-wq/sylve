@@ -1,0 +1,227 @@
+.page {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px;
+  min-height: calc(100vh - 73px);
+}
+
+.loginCard {
+  width: 100%;
+  max-width: 400px;
+}
+
+.logo {
+  display: block;
+  font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  letter-spacing: 9px;
+  color: var(--primary);
+  text-decoration: none;
+  margin-bottom: 48px;
+  text-align: center;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 40px 36px;
+}
+
+.cardTitle {
+  font-size: 22px;
+  font-weight: 300;
+  color: var(--text);
+  letter-spacing: -0.2px;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.cardSubtitle {
+  font-size: 14px;
+  color: var(--text-muted);
+  font-weight: 300;
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+.formGroup {
+  margin-bottom: 16px;
+}
+
+.label {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.input {
+  width: 100%;
+  padding: 13px 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--text);
+  background: var(--fond);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(94,139,143,0.08);
+  background: var(--surface);
+}
+
+.input::placeholder {
+  color: var(--text-light);
+}
+
+.btnSubmit {
+  width: 100%;
+  padding: 14px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  margin-top: 8px;
+  letter-spacing: 0.2px;
+}
+
+.btnSubmit:hover:not(:disabled) {
+  background: var(--primary-hover);
+}
+
+.btnSubmit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.message {
+  margin-top: 20px;
+  padding: 14px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.messageError {
+  background: rgba(192,112,90,0.07);
+  border: 1px solid rgba(192,112,90,0.2);
+  color: var(--error);
+}
+
+.successView {
+  text-align: center;
+  padding: 8px 0;
+}
+
+.successIcon {
+  width: 48px;
+  height: 48px;
+  background: rgba(94,139,143,0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.successTitle {
+  font-size: 18px;
+  font-weight: 300;
+  color: var(--text);
+  margin-bottom: 10px;
+  letter-spacing: -0.1px;
+}
+
+.successText {
+  font-size: 14px;
+  color: var(--text-muted);
+  font-weight: 300;
+  line-height: 1.65;
+  margin-bottom: 20px;
+}
+
+.successEmail {
+  font-weight: 400;
+  color: var(--primary);
+}
+
+.successNote {
+  font-size: 12px;
+  color: var(--text-light);
+  margin-top: 16px;
+}
+
+.viewLinks {
+  margin-top: 24px;
+  text-align: center;
+}
+
+.viewLink {
+  display: inline-block;
+  font-size: 13px;
+  color: var(--text-muted);
+  font-weight: 300;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.2s;
+  background: none;
+  border: none;
+  margin-bottom: 8px;
+}
+
+.viewLink:hover {
+  color: var(--primary);
+}
+
+.viewLinkAccent {
+  color: var(--primary);
+  font-weight: 400;
+}
+
+.footer {
+  padding: 24px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--border);
+}
+
+.footerBack {
+  font-size: 12px;
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: 300;
+  transition: color 0.2s;
+}
+
+.footerBack:hover {
+  color: var(--primary);
+}
+
+.footerCopy {
+  font-size: 12px;
+  color: var(--text-light);
+  font-weight: 300;
+}
+
+@media (max-width: 480px) {
+  .card { padding: 32px 24px; }
+  .footer { padding: 20px 24px; }
+}
