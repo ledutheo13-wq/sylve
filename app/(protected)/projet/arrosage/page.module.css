@@ -1,0 +1,182 @@
+/* ── PAGE ── */
+.page { max-width: 960px; margin: 0 auto; padding: 2rem 2rem 4rem; }
+.pageTitleSection { margin-bottom: 2rem; }
+.pageTitleSection h1 {
+  font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 1.7rem; font-weight: 300; color: var(--primary);
+  line-height: 1.2; letter-spacing: 6px; text-transform: lowercase;
+}
+.pageTitleSection p { font-size: 0.82rem; color: var(--text-muted); margin-top: 0.4rem; }
+
+/* ── STEPS ── */
+.step { margin-bottom: 2rem; }
+.stepHeader {
+  font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--text-light); font-weight: 400;
+  margin-bottom: 1rem; padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ── CARD ── */
+.card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 1.2rem;
+}
+
+/* ── FORM ELEMENTS ── */
+.label { font-size: 0.78rem; color: var(--text-muted); display: block; margin-bottom: 0.3rem; }
+.select, .inputText, .inputNumber {
+  font-family: 'DM Sans', sans-serif; font-size: 0.85rem; font-weight: 300;
+  color: var(--text); background: var(--surface);
+  border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 8px 10px; width: 100%;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.select:focus, .inputText:focus, .inputNumber:focus {
+  outline: none; border-color: var(--primary); box-shadow: 0 0 0 2px var(--sylve-light);
+}
+.inputNumber { font-family: 'DM Mono', monospace; }
+
+/* ── ETP TABLE ── */
+.etpTable { width: 100%; border-collapse: collapse; margin-top: 0.8rem; }
+.etpTable th {
+  font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--text-light); font-weight: 400; padding: 6px 4px; text-align: center;
+}
+.etpTable td { padding: 3px 2px; text-align: center; }
+.etpInput {
+  width: 54px; text-align: center; padding: 5px 2px;
+  font-family: 'DM Mono', monospace; font-size: 0.78rem;
+  color: var(--text); background: var(--surface);
+  border: 1px solid var(--border); border-radius: var(--radius);
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.etpInput:focus {
+  outline: none; border-color: var(--primary); box-shadow: 0 0 0 2px var(--sylve-light);
+}
+.etpTotal {
+  font-family: 'DM Mono', monospace; font-size: 0.85rem;
+  color: var(--sylve-dark); font-weight: 500; margin-top: 0.6rem; text-align: right;
+}
+
+/* ── ZONES ── */
+.zoneCard {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 1rem 1.2rem; margin-bottom: 0.8rem;
+}
+.zoneCard:hover { border-color: var(--primary); }
+.zoneHeader { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.8rem; }
+.zoneColor {
+  width: 12px; height: 12px; border-radius: 3px; flex-shrink: 0;
+}
+.zoneHeader .inputText { flex: 1; font-weight: 400; }
+.zoneDelete {
+  width: 26px; height: 26px; display: flex; align-items: center; justify-content: center;
+  border: none; background: none; cursor: pointer; color: var(--text-light);
+  border-radius: 3px; transition: color 0.15s, background 0.15s; font-size: 1rem;
+}
+.zoneDelete:hover { color: var(--danger); background: #FDF0EC; }
+.zoneFields { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.8rem; }
+.fourCols { grid-template-columns: 1fr 1fr 1fr 1fr; }
+.fieldGroup { display: flex; flex-direction: column; gap: 0.2rem; }
+
+/* ── BUTTONS ── */
+.btnAdd {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  font-family: 'DM Sans', sans-serif; font-size: 0.78rem; font-weight: 400;
+  color: var(--primary); background: var(--sylve-light); border: none;
+  border-radius: var(--radius); padding: 7px 14px; cursor: pointer;
+  transition: background 0.15s;
+}
+.btnAdd:hover { background: #d0e3e5; }
+
+.btnPrimary {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  font-family: 'DM Sans', sans-serif; font-size: 0.85rem; font-weight: 400;
+  color: #fff; background: var(--primary); border: none;
+  border-radius: var(--radius); padding: 10px 20px; cursor: pointer;
+  transition: background 0.15s;
+}
+.btnPrimary:hover { background: var(--primary-hover); }
+
+/* ── TOGGLE ── */
+.toggleWrap { display: flex; gap: 0; margin-bottom: 1rem; }
+.toggleBtn {
+  font-family: 'DM Sans', sans-serif; font-size: 0.78rem; font-weight: 400;
+  padding: 7px 16px; border: 1px solid var(--border); background: var(--surface);
+  color: var(--text-muted); cursor: pointer; transition: all 0.15s;
+}
+.toggleBtnFirst { border-radius: var(--radius) 0 0 var(--radius); }
+.toggleBtnLast { border-radius: 0 var(--radius) var(--radius) 0; border-left: none; }
+.toggleBtnActive { background: var(--primary); color: #fff; border-color: var(--primary); }
+.toggleBtnActive + .toggleBtn { border-left-color: var(--primary); }
+
+.warningBox {
+  background: #FFF8F0; border: 1px solid #F0D8B8; border-radius: var(--radius);
+  padding: 0.8rem 1rem; font-size: 0.78rem; color: #8B6A3F; line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* ── SLIDERS ── */
+.sliderGroup { margin-bottom: 0.6rem; }
+.sliderLabel {
+  display: flex; justify-content: space-between; align-items: baseline;
+  font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0.2rem;
+}
+.sliderValue { font-family: 'DM Mono', monospace; font-weight: 400; color: var(--sylve-dark); }
+.rangeInput {
+  -webkit-appearance: none; appearance: none; width: 100%; height: 4px;
+  background: var(--border); border-radius: 2px; outline: none;
+}
+.rangeInput::-webkit-slider-thumb {
+  -webkit-appearance: none; appearance: none; width: 14px; height: 14px;
+  background: var(--primary); border-radius: 50%; cursor: pointer;
+}
+.rangeInput::-moz-range-thumb {
+  width: 14px; height: 14px; background: var(--primary);
+  border-radius: 50%; cursor: pointer; border: none;
+}
+
+/* ── RESULTS ── */
+.resultBig {
+  font-family: 'DM Mono', monospace; font-size: 2.8rem; font-weight: 500;
+  color: var(--sylve-dark); line-height: 1;
+}
+.resultUnit { font-size: 1rem; color: var(--text-muted); font-weight: 300; }
+.resultLabel { font-size: 0.78rem; color: var(--text-muted); margin-top: 0.3rem; }
+
+.chartContainer { margin: 1.5rem 0; }
+.chartContainer canvas { width: 100% !important; max-height: 320px; }
+
+.recapTable { width: 100%; border-collapse: collapse; margin-top: 1rem; font-size: 0.8rem; }
+.recapTable th {
+  font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--text-light); font-weight: 400; padding: 8px 6px;
+  text-align: left; border-bottom: 1px solid var(--border);
+}
+.recapTable td {
+  padding: 8px 6px; border-bottom: 1px solid var(--border); vertical-align: middle;
+}
+.mono { font-family: 'DM Mono', monospace; font-weight: 400; }
+.recapDot { display: inline-block; width: 8px; height: 8px; border-radius: 2px; margin-right: 6px; vertical-align: middle; }
+
+/* ── IRRIGATION ZONE HEADER ── */
+.irrigZoneHeader {
+  display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;
+}
+.irrigZoneName { font-size: 0.82rem; font-weight: 400; }
+.irrigMethodWrap { max-width: 300px; }
+.irrigSlidersWrap { max-width: 300px; margin-bottom: 0.8rem; }
+.irrigEmpty { font-size: 0.82rem; color: var(--text-light); }
+
+/* ── CALCULATE BUTTON ── */
+.calculateWrap { text-align: center; margin: 1.5rem 0; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 640px) {
+  .zoneFields, .fourCols { grid-template-columns: 1fr 1fr; }
+  .resultBig { font-size: 2rem; }
+}
