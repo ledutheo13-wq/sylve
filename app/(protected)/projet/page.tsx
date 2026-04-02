@@ -85,8 +85,7 @@ export default async function ProjetPage() {
           {prenom ? `Bonjour ${prenom}` : "Vos outils"}
         </h1>
         <p className={styles.pageSub}>
-          Outils techniques pour les professionnels du paysage. En accès libre pendant
-          la phase beta.
+          Outils techniques pour les professionnels du paysage.
         </p>
       </div>
 
