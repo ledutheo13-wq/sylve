@@ -1,6 +1,6 @@
 "use client";
 
-import { Logo } from "@/components/ui/Logo";
+import Link from "next/link";
 import { useAuth } from "@/components/auth/AuthProvider";
 import { useRouter } from "next/navigation";
 
@@ -18,32 +18,64 @@ export function ProjetHeader() {
   return (
     <header
       style={{
-        position: "sticky",
-        top: 0,
-        zIndex: 50,
+        background: "var(--surface)",
+        borderBottom: "1px solid var(--border)",
+        padding: "0 2rem",
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
-        padding: "14px 32px",
-        background: "var(--surface)",
-        borderBottom: "1px solid var(--border)",
+        height: 52,
+        position: "sticky",
+        top: 0,
+        zIndex: 10,
       }}
     >
-      <Logo href="/projet" sub="projet" />
-      <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+      <div style={{ display: "flex", alignItems: "baseline", gap: "0.6rem" }}>
+        <Link
+          href="https://sylve.eco"
+          style={{
+            fontFamily: "DM Sans, sans-serif",
+            fontWeight: 300,
+            fontSize: "1.1rem",
+            letterSpacing: "0.18em",
+            color: "var(--primary)",
+            textDecoration: "none",
+          }}
+        >
+          sylve
+        </Link>
+        <span
+          style={{
+            fontSize: "0.72rem",
+            letterSpacing: "0.14em",
+            color: "#8A8279",
+            textTransform: "uppercase",
+          }}
+        >
+          projet
+        </span>
+      </div>
+      <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
         {prenom && (
-          <span style={{ fontSize: 13, color: "var(--text-muted)" }}>
-            Bonjour, <strong style={{ color: "var(--text)" }}>{prenom}</strong>
+          <span style={{ fontSize: "0.78rem", color: "var(--text-muted)" }}>
+            Bonjour,{" "}
+            <strong style={{ color: "var(--text)", fontWeight: 400 }}>
+              {prenom}
+            </strong>
           </span>
         )}
         <button
           onClick={handleLogout}
           style={{
-            fontSize: 13,
+            fontFamily: "DM Sans, sans-serif",
+            fontSize: "0.72rem",
             color: "var(--text-light)",
             background: "none",
-            border: "none",
+            border: "1px solid var(--border)",
+            borderRadius: "var(--radius)",
+            padding: "4px 10px",
             cursor: "pointer",
+            transition: "all 0.15s",
           }}
         >
           Déconnexion

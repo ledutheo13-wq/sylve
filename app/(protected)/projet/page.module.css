@@ -1,0 +1,150 @@
+/* ── PAGE LAYOUT ── */
+.page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 3rem 2rem 4rem;
+}
+
+/* ── INTRO ── */
+.pageIntro {
+  margin-bottom: 2.5rem;
+}
+
+.pageEyebrow {
+  font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-light);
+  font-weight: 400;
+  margin-bottom: 0.7rem;
+}
+
+.pageTitle {
+  font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: #5E8B8F;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+  letter-spacing: 6px;
+  text-transform: lowercase;
+}
+
+.pageSub {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  max-width: 480px;
+}
+
+/* ── SECTION LABEL ── */
+.sectionLabel {
+  font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-light);
+  font-weight: 400;
+  margin-bottom: 1rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ── TOOLS GRID ── */
+.toolsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+/* ── TOOL CARD ── */
+.toolCard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.4rem;
+  text-decoration: none;
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  transition: border-color 0.15s, box-shadow 0.15s, transform 0.1s;
+  cursor: pointer;
+}
+
+.toolCard:hover {
+  border-color: var(--primary);
+  box-shadow: 0 4px 16px rgba(94, 139, 143, 0.1);
+  transform: translateY(-1px);
+}
+
+.toolCardLocked {
+  composes: toolCard;
+  opacity: 0.5;
+  cursor: default;
+  pointer-events: none;
+}
+
+/* ── CARD TOP ROW ── */
+.toolCardTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.toolIcon {
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+/* ── TAGS ── */
+.toolTag {
+  font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-weight: 400;
+  flex-shrink: 0;
+}
+
+.toolTagGratuit {
+  composes: toolTag;
+  background: var(--sylve-light);
+  color: var(--sylve-dark);
+}
+
+.toolTagBientot {
+  composes: toolTag;
+  background: #F0EDEA;
+  color: #8A8279;
+}
+
+/* ── CARD TEXT ── */
+.toolName {
+  font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: #2D2D2D;
+  line-height: 1.25;
+  letter-spacing: 0.3px;
+}
+
+.toolDesc {
+  font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  color: #7A7A7A;
+  line-height: 1.65;
+}
+
+.toolArrow {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  margin-top: auto;
+  padding-top: 0.4rem;
+}
