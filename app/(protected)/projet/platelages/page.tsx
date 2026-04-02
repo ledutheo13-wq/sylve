@@ -102,7 +102,7 @@ export default function PlatelagesPage() {
               <div className={styles.tooltipText}>
                 {conception === "courante"
                   ? "Standard, sans dispositifs anti-humidite specifiques."
-                  : "Double lambourdage, pente \u22654%, RLDC, cales polymeres, ventilation 1/50."}
+                  : "Double lambourdage, pente \≥4%, RLDC, cales polymeres, ventilation 1/50."}
               </div>
               <div className={styles.notice} style={{ marginTop: "0.4rem" }}>
                 Classe d&apos;emploi requise : <strong>{classeRequise}</strong>
@@ -334,7 +334,7 @@ function drawSVG(svg: SVGSVGElement, r: ComputeResult, conceptionMode: string) {
   html += `<line x1="${startX}" y1="${coteLambY}" x2="${startX + entraxeDraw}" y2="${coteLambY}" stroke="#2A2826" stroke-width="0.7"/>`;
   html += `<line x1="${startX}" y1="${coteLambY - 3}" x2="${startX}" y2="${coteLambY + 3}" stroke="#2A2826" stroke-width="0.7"/>`;
   html += `<line x1="${startX + entraxeDraw}" y1="${coteLambY - 3}" x2="${startX + entraxeDraw}" y2="${coteLambY + 3}" stroke="#2A2826" stroke-width="0.7"/>`;
-  const entraxeLabel = r.entraxeMaxLames !== null ? r.entraxeMaxLames + " mm max" : "\u2014 mm";
+  const entraxeLabel = r.entraxeMaxLames !== null ? r.entraxeMaxLames + " mm max" : "\— mm";
   html += `<text x="${startX + entraxeDraw / 2}" y="${coteLambY + 13}" ${coteFont} text-anchor="middle">entre lambourdes ${entraxeLabel}</text>`;
 
   // Epaisseur lame
@@ -355,7 +355,7 @@ function drawSVG(svg: SVGSVGElement, r: ComputeResult, conceptionMode: string) {
   const plenumBot = plotY + plotR;
   const plenumX = bandX2 + 15;
   html += `<line x1="${plenumX}" y1="${plenumTop}" x2="${plenumX}" y2="${plenumBot}" stroke="#7A7672" stroke-width="0.5" stroke-dasharray="3,2"/>`;
-  html += `<text x="${plenumX + 4}" y="${(plenumTop + plenumBot) / 2 + 3}" font-family="'DM Mono', monospace" font-size="8" fill="#7A7672">\u2265100mm</text>`;
+  html += `<text x="${plenumX + 4}" y="${(plenumTop + plenumBot) / 2 + 3}" font-family="'DM Mono', monospace" font-size="8" fill="#7A7672">\≥100mm</text>`;
 
   // Titre
   const subtitle = isDouble ? "Coupe transversale — double lambourdage" : "Coupe transversale du platelage";

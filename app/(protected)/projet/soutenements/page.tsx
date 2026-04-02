@@ -538,7 +538,7 @@ function drawSVG(svg: SVGSVGElement, r: ComputeResult) {
     for (const qx of [qX1, qMid, qX2]) {
       html += `<line x1="${qx}" y1="${wallTopY - 20}" x2="${qx}" y2="${wallTopY - 2}" stroke="#F59E0B" stroke-width="1.2" marker-end="url(#arrowOrg)"/>`;
     }
-    html += `<text x="${qMid}" y="${wallTopY - 25}" font-family="'DM Mono', monospace" font-size="9" fill="#F59E0B" text-anchor="middle">q = ${r.q} kN/m\u00B2</text>`;
+    html += `<text x="${qMid}" y="${wallTopY - 25}" font-family="'DM Mono', monospace" font-size="9" fill="#F59E0B" text-anchor="middle">q = ${r.q} kN/m\²</text>`;
   }
 
   // Cotes

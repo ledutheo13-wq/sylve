@@ -156,6 +156,6 @@ export function drawChart(
   ctx.fillStyle = "#A09C98";
   ctx.font = '10px "DM Sans", sans-serif';
   ctx.textAlign = "center";
-  ctx.fillText("m\u00B3", 0, 0);
+  ctx.fillText("m\³", 0, 0);
   ctx.restore();
 }

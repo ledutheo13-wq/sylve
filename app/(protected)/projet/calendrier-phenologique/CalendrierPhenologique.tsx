@@ -595,7 +595,7 @@ function EssenceRow({
           <div className={styles.essenceMeta}>
             <span>
               {STRATE_LABELS[p.strate] || p.strate || ""}
-              {p.famille ? ` \u2014 ${p.famille}` : ""}
+              {p.famille ? ` \— ${p.famille}` : ""}
             </span>
             <span
               className={`${styles.badgePersistance} ${
@@ -761,12 +761,12 @@ function EssenceLine({ plante: p }: { plante: Plante }) {
     floraisonInfo = `${MOIS_NOMS[p.floraison_debut - 1]} a ${
       MOIS_NOMS[p.floraison_fin - 1]
     }`;
-    if (couleurText) floraisonInfo += ` \u2014 ${couleurText}`;
+    if (couleurText) floraisonInfo += ` \— ${couleurText}`;
   }
 
   const rusticite =
     p.rusticite_celsius != null
-      ? `${p.rusticite_celsius}\u00B0C (${p.rusticite_usda || ""})`
+      ? `${p.rusticite_celsius}\°C (${p.rusticite_usda || ""})`
       : "";
 
   return (

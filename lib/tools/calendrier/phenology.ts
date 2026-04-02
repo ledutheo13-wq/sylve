@@ -74,21 +74,21 @@ export const MOIS_NOMS = [
 const BASE_COLORS: Record<string, string> = {
   blanc: "#F5F0EB",
   creme: "#FDF5E6",
-  "cr\u00e8me": "#FDF5E6",
+  "cr\ème": "#FDF5E6",
   ivoire: "#FFFFF0",
   jaune: "#F0D060",
   citron: "#F5E050",
   or: "#DAA520",
-  "dor\u00e9": "#C5A55A",
+  "dor\é": "#C5A55A",
   orange: "#E8863A",
   abricot: "#FBCEB1",
   apricot: "#FBCEB1",
-  "p\u00eache": "#FFDAB9",
+  "p\êche": "#FFDAB9",
   saumon: "#FA8072",
   rouge: "#C44040",
-  "\u00e9carlate": "#FF2400",
+  "\écarlate": "#FF2400",
   magenta: "#C71585",
-  "carmin\u00e9": "#960018",
+  "carmin\é": "#960018",
   rose: "#E8A0B0",
   mauve: "#B08CB0",
   violet: "#7B5EA7",
@@ -96,7 +96,7 @@ const BASE_COLORS: Record<string, string> = {
   pourpre: "#800080",
   lilas: "#C8A2C8",
   lavande: "#B57EDC",
-  "am\u00e9thyste": "#9966CC",
+  "am\éthyste": "#9966CC",
   bleu: "#6A8EB0",
   cobalt: "#0047AB",
   vert: "#6B8E6B",
@@ -106,20 +106,20 @@ const BASE_COLORS: Record<string, string> = {
   rouille: "#B7410E",
   beige: "#D4C5A9",
   gris: "#A0A0A0",
-  "argent\u00e9": "#C0C0C0",
+  "argent\é": "#C0C0C0",
   argent: "#C0C0C0",
   noir: "#3D3D3D",
   multiple: "#B08CB0",
 };
 
 const MODIFIERS: Record<string, number> = {
-  "p\u00e2le": 0.3,
+  "p\âle": 0.3,
   pale: 0.3,
   clair: 0.25,
   tendre: 0.2,
-  "ros\u00e9": 0.15,
+  "ros\é": 0.15,
   vif: 0.0,
-  "fonc\u00e9": -0.3,
+  "fonc\é": -0.3,
   fonce: -0.3,
   sombre: -0.25,
   profond: -0.2,
@@ -173,9 +173,9 @@ export function parseCouleurFloraison(
 
   let foundColor: string | null = null;
   for (const word of normalized.split(" ")) {
-    const clean = word.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    const clean = word.normalize("NFD").replace(/[\̀-\ͯ]/g, "");
     for (const [key, hex] of Object.entries(BASE_COLORS)) {
-      const keyClean = key.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+      const keyClean = key.normalize("NFD").replace(/[\̀-\ͯ]/g, "");
       if (clean === keyClean || word === key) {
         foundColor = hex;
         break;
@@ -208,7 +208,7 @@ export function normalize(str: string): string {
   return str
     .toLowerCase()
     .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "");
+    .replace(/[\̀-\ͯ]/g, "");
 }
 
 // ═══════════════════════════════════════════════════════════

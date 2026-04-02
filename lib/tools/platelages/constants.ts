@@ -1,9 +1,9 @@
 import type { Usage, EssenceBois, UsageKey, LambourdeRow, LameClasseValues } from "./types";
 
 export const USAGES: Record<UsageKey, Usage> = {
-  S1: { label: "Residentiel", qRep: 3.5, qConc: 2.0, desc: "Charge repartie 3,5 kN/m\u00B2 — concentree 2,0 kN" },
-  S2: { label: "ERP courant", qRep: 2.5, qConc: 3.0, desc: "Charge repartie 2,5 kN/m\u00B2 — concentree 3,0 kN" },
-  S3: { label: "ERP forte frequentation", qRep: 5.0, qConc: 5.0, desc: "Charge repartie 5,0 kN/m\u00B2 — concentree 5,0 kN" },
+  S1: { label: "Residentiel", qRep: 3.5, qConc: 2.0, desc: "Charge repartie 3,5 kN/m\² — concentree 2,0 kN" },
+  S2: { label: "ERP courant", qRep: 2.5, qConc: 3.0, desc: "Charge repartie 2,5 kN/m\² — concentree 3,0 kN" },
+  S3: { label: "ERP forte frequentation", qRep: 5.0, qConc: 5.0, desc: "Charge repartie 5,0 kN/m\² — concentree 5,0 kN" },
 };
 
 export const essencesLames: EssenceBois[] = [

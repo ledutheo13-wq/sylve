@@ -440,8 +440,8 @@ export default function SelecteurEssences({ plantes }: Props) {
 
     // Build export HTML
     let html =
-      '<div style="font-size:16px;color:#2A2826;font-weight:400;margin-bottom:20px;">S\u00c9LECTION D\'ESSENCES' +
-      (projectName ? " \u2014 " + projectName : "") +
+      '<div style="font-size:16px;color:#2A2826;font-weight:400;margin-bottom:20px;">S\ÉLECTION D\'ESSENCES' +
+      (projectName ? " \— " + projectName : "") +
       "</div>";
 
     groups.forEach((g) => {
@@ -466,7 +466,7 @@ export default function SelecteurEssences({ plantes }: Props) {
       g.ids.forEach((id) => {
         const p = plantes.find((pl) => pl.id === id);
         if (!p) return;
-        let floraCell = "\u2014";
+        let floraCell = "\—";
         if (p.floraison_debut && p.floraison_fin) {
           const color = parseCouleurFloraison(p.couleur_floraison);
           floraCell =
@@ -474,7 +474,7 @@ export default function SelecteurEssences({ plantes }: Props) {
             (color || "#5E8B8F") +
             '"></span>' +
             (MOIS[p.floraison_debut] || "?") +
-            " \u2014 " +
+            " \— " +
             (MOIS[p.floraison_fin] || "?");
           if (p.couleur_floraison)
             floraCell += " (" + p.couleur_floraison + ")";
@@ -508,7 +508,7 @@ export default function SelecteurEssences({ plantes }: Props) {
           "</td>" +
           '<td style="font-size:11px;color:#2A2826;padding:5px 10px;border-bottom:1px solid #F0EFED;' + bgStyle(rowIdx) + '">' +
           fmtHeight(p.hauteur_min_cm) +
-          " \u2014 " +
+          " \— " +
           fmtHeight(p.hauteur_max_cm) +
           "</td>" +
           '<td style="font-size:11px;color:#2A2826;padding:5px 10px;border-bottom:1px solid #F0EFED;' + bgStyle(rowIdx) + '">' +
@@ -526,7 +526,7 @@ export default function SelecteurEssences({ plantes }: Props) {
     });
 
     html +=
-      '<div style="text-align:right;font-size:10px;color:#E2DED9;margin-top:20px;padding-top:8px;border-top:1px solid #F0EFED;">sylve.eco \u2014 Sélecteur d\'essences</div>';
+      '<div style="text-align:right;font-size:10px;color:#E2DED9;margin-top:20px;padding-top:8px;border-top:1px solid #F0EFED;">sylve.eco \— Sélecteur d\'essences</div>';
 
     container.innerHTML = html;
     container.style.position = "fixed";
@@ -577,7 +577,7 @@ export default function SelecteurEssences({ plantes }: Props) {
   const heightLabel = useMemo(() => {
     const lo = Math.min(filters.heightMin, filters.heightMax);
     const hi = Math.max(filters.heightMin, filters.heightMax);
-    return fmtHeight(lo) + " \u2014 " + fmtHeight(hi);
+    return fmtHeight(lo) + " \— " + fmtHeight(hi);
   }, [filters.heightMin, filters.heightMax]);
 
   const rustLabel = useMemo(() => {
@@ -597,7 +597,7 @@ export default function SelecteurEssences({ plantes }: Props) {
         {/* ═══ LEFT: FILTERS ═══ */}
         <div className={styles.filtersPanel}>
           <div className={styles.dbStatusLoaded}>
-            {"\u2713"} Base végétale : {plantes.length} essences
+            {"\✓"} Base végétale : {plantes.length} essences
           </div>
 
           {/* Search */}
@@ -943,7 +943,7 @@ export default function SelecteurEssences({ plantes }: Props) {
       {selection.size > 0 && (
         <div className={styles.paletteBar}>
           <div className={styles.paletteBarSummary}>
-            <span className={styles.paletteDot}>{"\u25CF"}</span>
+            <span className={styles.paletteDot}>{"\●"}</span>
             <span>
               Ma palette ·{" "}
               <strong>{paletteCountText}</strong> essences
@@ -1380,7 +1380,7 @@ function EssenceRow({
   const p = plantes.find((pl) => pl.id === essenceId);
   if (!p) return null;
 
-  let floraStr: React.ReactNode = "\u2014";
+  let floraStr: React.ReactNode = "\—";
   if (p.floraison_debut && p.floraison_fin) {
     const color = parseCouleurFloraison(p.couleur_floraison);
     floraStr = (

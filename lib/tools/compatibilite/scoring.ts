@@ -53,7 +53,7 @@ export const DEPARTEMENTS_MIXTES: Record<string, string[]> = {
 export const BIOREGION_LABELS: Record<string, string> = {
   atlantique: "Atlantique",
   continental: "Continental",
-  mediterraneen: "Mediterran\u00e9en",
+  mediterraneen: "Mediterran\éen",
   alpin: "Alpin",
 };
 
@@ -128,7 +128,7 @@ export const CRITERIA_LABELS: Record<CriterionKey, string> = {
   besoins_hydriques: "Besoins hydriques",
   type_sol: "Type de sol",
   ph_sol: "pH du sol",
-  humidite_sol: "Humidit\u00e9 du sol",
+  humidite_sol: "Humidit\é du sol",
 };
 
 const CRITERIA_CONFIG: CriterionConfig[] = [
@@ -144,7 +144,7 @@ const CRITERIA_CONFIG: CriterionConfig[] = [
 // ═══════════════════════════════════════════════════════════
 
 function normalize(str: string): string {
-  return str.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  return str.toLowerCase().normalize("NFD").replace(/[\̀-\ͯ]/g, "");
 }
 
 function resolveGrad(val: string | null | undefined, gradient: Record<string, number>): number | undefined {
@@ -309,7 +309,7 @@ export function computeScoring(plants: Plante[]): CompatResult | null {
           plantName: plant.nom_latin,
           criterion: cfg.key,
           criterionLabel: CRITERIA_LABELS[cfg.key],
-          message: `${plant.nom_latin} \u2014 ${CRITERIA_LABELS[cfg.key].toLowerCase()} (${plantVals}) en d\u00e9calage avec le reste du m\u00e9lange (${uniqueOther})`,
+          message: `${plant.nom_latin} \— ${CRITERIA_LABELS[cfg.key].toLowerCase()} (${plantVals}) en d\écalage avec le reste du m\élange (${uniqueOther})`,
         });
       }
     }
@@ -336,10 +336,10 @@ export function scoreColor(score: number): string {
 }
 
 export function scoreVerdict(score: number): string {
-  if (score >= 80) return "M\u00e9lange coh\u00e9rent";
+  if (score >= 80) return "M\élange coh\érent";
   if (score >= 60) return "Points d'attention";
-  if (score >= 40) return "Incompatibilit\u00e9s \u00e0 corriger";
-  return "M\u00e9lange probl\u00e9matique";
+  if (score >= 40) return "Incompatibilit\és \à corriger";
+  return "M\élange probl\ématique";
 }
 
 export function formatStrate(s: string): string {
@@ -350,11 +350,11 @@ export function formatStrate(s: string): string {
     arbuste: "Arbuste",
     sous_arbuste: "Sous-arbuste",
     vivace: "Vivace",
-    graminee: "Gramin\u00e9e",
+    graminee: "Gramin\ée",
     couvre_sol: "Couvre-sol",
     grimpante: "Grimpante",
     bulbe: "Bulbe",
-    fougere: "Foug\u00e8re",
+    fougere: "Foug\ère",
     bambou: "Bambou",
     palmier: "Palmier",
     aquatique: "Aquatique",
@@ -363,7 +363,7 @@ export function formatStrate(s: string): string {
 }
 
 export function formatExposition(expo: string | string[] | undefined): string {
-  if (!expo) return "\u2014";
+  if (!expo) return "\—";
   const arr = Array.isArray(expo) ? expo : [expo];
   const labels: Record<string, string> = {
     ombre: "Ombre",
@@ -380,21 +380,21 @@ export function formatExposition(expo: string | string[] | undefined): string {
 // ═══════════════════════════════════════════════════════════
 
 const BASE_COLORS: Record<string, string> = {
-  "blanc":"#F5F0EB","cr\u00e8me":"#FDF5E6","creme":"#FDF5E6","ivoire":"#FFFFF0",
-  "jaune":"#F0D060","citron":"#F5E050","or":"#DAA520","dor\u00e9":"#C5A55A",
-  "orange":"#E8863A","abricot":"#FBCEB1","apricot":"#FBCEB1","p\u00eache":"#FFDAB9",
-  "saumon":"#FA8072","rouge":"#C44040","\u00e9carlate":"#FF2400","magenta":"#C71585","carmin\u00e9":"#960018",
+  "blanc":"#F5F0EB","cr\ème":"#FDF5E6","creme":"#FDF5E6","ivoire":"#FFFFF0",
+  "jaune":"#F0D060","citron":"#F5E050","or":"#DAA520","dor\é":"#C5A55A",
+  "orange":"#E8863A","abricot":"#FBCEB1","apricot":"#FBCEB1","p\êche":"#FFDAB9",
+  "saumon":"#FA8072","rouge":"#C44040","\écarlate":"#FF2400","magenta":"#C71585","carmin\é":"#960018",
   "rose":"#E8A0B0","mauve":"#B08CB0","violet":"#7B5EA7","indigo":"#4B0082","pourpre":"#800080",
-  "lilas":"#C8A2C8","lavande":"#B57EDC","am\u00e9thyste":"#9966CC",
+  "lilas":"#C8A2C8","lavande":"#B57EDC","am\éthyste":"#9966CC",
   "bleu":"#6A8EB0","cobalt":"#0047AB",
   "vert":"#6B8E6B","brun":"#8B6F47","marron":"#6B4226","bronze":"#CD7F32","rouille":"#B7410E",
-  "beige":"#D4C5A9","gris":"#A0A0A0","argent\u00e9":"#C0C0C0","argent":"#C0C0C0","noir":"#3D3D3D",
+  "beige":"#D4C5A9","gris":"#A0A0A0","argent\é":"#C0C0C0","argent":"#C0C0C0","noir":"#3D3D3D",
   "multiple":"#B08CB0",
 };
 
 const MODIFIERS: Record<string, number> = {
-  "p\u00e2le": 0.30, "pale": 0.30, "clair": 0.25, "tendre": 0.20, "ros\u00e9": 0.15,
-  "vif": 0.00, "fonc\u00e9": -0.30, "fonce": -0.30, "sombre": -0.25, "profond": -0.20,
+  "p\âle": 0.30, "pale": 0.30, "clair": 0.25, "tendre": 0.20, "ros\é": 0.15,
+  "vif": 0.00, "fonc\é": -0.30, "fonce": -0.30, "sombre": -0.25, "profond": -0.20,
 };
 
 function adjustBrightness(hex: string, factor: number): string {
@@ -426,9 +426,9 @@ export function parseCouleurFloraison(couleurTexte: string | string[] | null): s
 
   let foundColor: string | null = null;
   for (const word of norm.split(" ")) {
-    const clean = word.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    const clean = word.normalize("NFD").replace(/[\̀-\ͯ]/g, "");
     for (const [key, hex] of Object.entries(BASE_COLORS)) {
-      const keyClean = key.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+      const keyClean = key.normalize("NFD").replace(/[\̀-\ͯ]/g, "");
       if (clean === keyClean || word === key) { foundColor = hex; break; }
     }
     if (foundColor) break;
@@ -447,9 +447,9 @@ export function moisToNum(m: string | number | null): number | null {
   if (!m) return null;
   if (typeof m === "number") return m;
   const MOIS_MAP: Record<string, number> = {
-    janvier: 1, "f\u00e9vrier": 2, fevrier: 2, mars: 3, avril: 4, mai: 5, juin: 6,
-    juillet: 7, "ao\u00fbt": 8, aout: 8, septembre: 9, octobre: 10, novembre: 11,
-    "d\u00e9cembre": 12, decembre: 12,
+    janvier: 1, "f\évrier": 2, fevrier: 2, mars: 3, avril: 4, mai: 5, juin: 6,
+    juillet: 7, "ao\ût": 8, aout: 8, septembre: 9, octobre: 10, novembre: 11,
+    "d\écembre": 12, decembre: 12,
   };
   return MOIS_MAP[m.toLowerCase().trim()] || null;
 }

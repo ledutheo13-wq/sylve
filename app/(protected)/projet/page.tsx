@@ -4,59 +4,59 @@ import styles from "./page.module.css";
 
 const availableTools = [
   {
-    emoji: "\u2B1C",
+    emoji: "⬜",
     name: "Calculateur de charges sur dalle",
-    desc: "Calcul du poids d\u2019un complexe v\u00e9g\u00e9tatif en kg/m\u00b2, avec sch\u00e9ma en coupe interactif et synchronis\u00e9.",
+    desc: "Calcul du poids d\u2019un complexe végétatif en kg/m², avec schéma en coupe interactif et synchronisé.",
     href: "/projet/calculateur-charges",
   },
   {
-    emoji: "\uD83D\uDCA7",
+    emoji: "💧",
     name: "Calculateur d\u2019arrosage",
-    desc: "Estimez les besoins en eau de vos am\u00e9nagements paysagers par zone et par mois.",
+    desc: "Estimez les besoins en eau de vos aménagements paysagers par zone et par mois.",
     href: "/projet/arrosage",
   },
   {
-    emoji: "\uD83E\uDDF1",
-    name: "Calculateur de sout\u00e8nements",
-    desc: "V\u00e9rifiez la stabilit\u00e9 de vos petits sout\u00e8nements paysagers par calcul de pouss\u00e9e de terre (Rankine).",
+    emoji: "🧱",
+    name: "Calculateur de soutènements",
+    desc: "Vérifiez la stabilité de vos petits soutènements paysagers par calcul de poussée de terre (Rankine).",
     href: "/projet/soutenements",
   },
   {
-    emoji: "\uD83E\uDEB5",
+    emoji: "🪵",
     name: "Calculateur de platelages bois",
-    desc: "Dimensionnez vos platelages ext\u00e9rieurs en bois conform\u00e9ment au DTU 51.4.",
+    desc: "Dimensionnez vos platelages extérieurs en bois conformément au DTU 51.4.",
     href: "/projet/platelages",
   },
   {
-    emoji: "\uD83C\uDF3F",
-    name: "Compatibilit\u00e9 v\u00e9g\u00e9tale",
-    desc: "Analysez la compatibilit\u00e9 botanique et \u00e9cologique de vos m\u00e9langes v\u00e9g\u00e9taux.",
+    emoji: "🌿",
+    name: "Compatibilité végétale",
+    desc: "Analysez la compatibilité botanique et écologique de vos mélanges végétaux.",
     href: "/projet/compatibilite-vegetale",
   },
   {
-    emoji: "\uD83D\uDCC5",
-    name: "Calendrier ph\u00e9nologique",
-    desc: "G\u00e9n\u00e9rez un calendrier de floraison et de feuillage pour votre palette v\u00e9g\u00e9tale. Export PNG.",
+    emoji: "📅",
+    name: "Calendrier phénologique",
+    desc: "Générez un calendrier de floraison et de feuillage pour votre palette végétale. Export PNG.",
     href: "/projet/calendrier-phenologique",
   },
   {
-    emoji: "\uD83C\uDF33",
-    name: "S\u00e9lecteur d\u2019essences",
-    desc: "Trouvez les essences adapt\u00e9es \u00e0 votre site et composez votre palette v\u00e9g\u00e9tale par m\u00e9langes.",
+    emoji: "🌳",
+    name: "Sélecteur d\u2019essences",
+    desc: "Trouvez les essences adaptées à votre site et composez votre palette végétale par mélanges.",
     href: "/projet/selecteur-essences",
   },
 ];
 
 const upcomingTools = [
   {
-    emoji: "\uD83D\uDCD0",
-    name: "Calculateur conformit\u00e9 PLU",
-    desc: "V\u00e9rification CBS, IVB, pourcentage d\u2019indig\u00e8nes. Suggestions d\u2019optimisation par palier.",
+    emoji: "📐",
+    name: "Calculateur conformité PLU",
+    desc: "Vérification CBS, IVB, pourcentage d\u2019indigènes. Suggestions d\u2019optimisation par palier.",
   },
   {
-    emoji: "\uD83D\uDCC4",
-    name: "G\u00e9n\u00e9rateur CCTP + DPGF",
-    desc: "Document vivant, synchronisation temps r\u00e9el entre CCTP et DPGF. Codification unifi\u00e9e.",
+    emoji: "📄",
+    name: "Générateur CCTP + DPGF",
+    desc: "Document vivant, synchronisation temps réel entre CCTP et DPGF. Codification unifiée.",
   },
 ];
 

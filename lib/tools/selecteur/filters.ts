@@ -229,7 +229,7 @@ export function norm(s: string | null | undefined): string {
   return (s || "")
     .toLowerCase()
     .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "");
+    .replace(/[\̀-\ͯ]/g, "");
 }
 
 function normExpo(e: string): string {
@@ -296,9 +296,9 @@ export function parseCouleurFloraison(
   }
   let foundColor: string | null = null;
   for (const word of normalized.split(" ")) {
-    const clean = word.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    const clean = word.normalize("NFD").replace(/[\̀-\ͯ]/g, "");
     for (const [key, hex] of Object.entries(BASE_COLORS)) {
-      const keyClean = key.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+      const keyClean = key.normalize("NFD").replace(/[\̀-\ͯ]/g, "");
       if (clean === keyClean || word === key) {
         foundColor = hex;
         break;
@@ -320,12 +320,12 @@ export function getCategoriesCouleur(
   const normalized = text
     .toLowerCase()
     .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[\̀-\ͯ]/g, "")
     .replace(/[-_,]/g, " ");
   const categories: string[] = [];
   for (const [cat, mots] of Object.entries(CATEGORIES_COULEUR)) {
     for (const mot of mots) {
-      const motClean = mot.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+      const motClean = mot.normalize("NFD").replace(/[\̀-\ͯ]/g, "");
       if (normalized.includes(motClean)) {
         categories.push(cat);
         break;
@@ -529,9 +529,9 @@ export function sortPlantes(plantes: Plante[], mode: SortMode): Plante[] {
 
 export function expoEmoji(expo: string): string {
   const n = norm(expo);
-  if (n === "soleil" || n === "plein soleil") return "\u2600";
-  if (n === "mi-ombre") return "\u25D0";
-  if (n === "ombre") return "\u25CF";
+  if (n === "soleil" || n === "plein soleil") return "\☀";
+  if (n === "mi-ombre") return "\◐";
+  if (n === "ombre") return "\●";
   return "";
 }
 
@@ -572,7 +572,7 @@ export function buildIndicatorsText(
     floraTxt =
       "Floraison : " +
       (MOIS[sorted[0]] || "?") +
-      " \u2192 " +
+      " \→ " +
       (MOIS[sorted[sorted.length - 1]] || "?");
   }
 
@@ -584,5 +584,5 @@ export function buildIndicatorsText(
     parts.push(semiP + " semi-persistant" + (semiP > 1 ? "es" : "e"));
   parts.push(floraTxt);
 
-  return parts.join(" \u00B7 ");
+  return parts.join(" \· ");
 }

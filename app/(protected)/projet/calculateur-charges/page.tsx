@@ -144,7 +144,7 @@ export default function CalculateurChargesPage() {
 
       if (mat.type === "volumique") {
         html += `<text x="${LABEL_X}" y="${labelY - 6}" fill="#2D2D2D" font-family="Helvetica, Arial, sans-serif" font-size="11">${mat.name}</text>`;
-        html += `<text x="${LABEL_X}" y="${labelY + 7}" fill="#2D2D2D" font-family="Helvetica, Arial, sans-serif" font-size="11">${weight.toFixed(1)} kg/m\u00B2</text>`;
+        html += `<text x="${LABEL_X}" y="${labelY + 7}" fill="#2D2D2D" font-family="Helvetica, Arial, sans-serif" font-size="11">${weight.toFixed(1)} kg/m\²</text>`;
         html += `<text x="${LABEL_X}" y="${labelY + 19}" fill="#2D2D2D" opacity="0.6" font-family="Helvetica, Arial, sans-serif" font-size="11">${layer.thickness || 0} cm</text>`;
 
         // Drag handle line
@@ -153,7 +153,7 @@ export default function CalculateurChargesPage() {
         html += `<rect x="${SCHEMA_X}" y="${currentY - 5}" width="${SCHEMA_W}" height="10" fill="transparent" class="drag-handle" data-layer-id="${layer.id}" data-layer-y="${currentY}" data-complex-h="${complexH}"/>`;
       } else {
         html += `<text x="${LABEL_X}" y="${labelY - 1}" fill="#2D2D2D" font-family="Helvetica, Arial, sans-serif" font-size="11">${mat.name}</text>`;
-        html += `<text x="${LABEL_X}" y="${labelY + 12}" fill="#2D2D2D" font-family="Helvetica, Arial, sans-serif" font-size="11">${weight.toFixed(1)} kg/m\u00B2</text>`;
+        html += `<text x="${LABEL_X}" y="${labelY + 12}" fill="#2D2D2D" font-family="Helvetica, Arial, sans-serif" font-size="11">${weight.toFixed(1)} kg/m\²</text>`;
       }
 
       currentY += Math.max(h, 6);
@@ -194,17 +194,17 @@ export default function CalculateurChargesPage() {
       const vegLabelY = groundY - vegH / 2;
       html += `<line x1="${SCHEMA_X + SCHEMA_W}" y1="${vegLabelY}" x2="${LABEL_X - 2}" y2="${vegLabelY}" stroke="#D0CBC5" stroke-width="0.7"/>`;
       html += `<text x="${LABEL_X}" y="${vegLabelY - 2}" fill="#2D2D2D" font-family="Helvetica, Arial, sans-serif" font-size="11">${vegMat.name}</text>`;
-      html += `<text x="${LABEL_X}" y="${vegLabelY + 11}" fill="#2D2D2D" font-family="Helvetica, Arial, sans-serif" font-size="11">${getLayerWeight(vegLayer).toFixed(1)} kg/m\u00B2</text>`;
+      html += `<text x="${LABEL_X}" y="${vegLabelY + 11}" fill="#2D2D2D" font-family="Helvetica, Arial, sans-serif" font-size="11">${getLayerWeight(vegLayer).toFixed(1)} kg/m\²</text>`;
     }
 
     // ── DALLE BASE ──
     html += `<rect x="${SCHEMA_X}" y="${currentY}" width="${SCHEMA_W}" height="${DALLE_H}" fill="#FFFFFF" rx="2"/>`;
     html += `<rect x="${SCHEMA_X}" y="${currentY}" width="${SCHEMA_W}" height="${DALLE_H}" fill="url(#pattern-dalle)" rx="2" stroke="#2D2D2D" stroke-width="0.5"/>`;
-    html += `<text x="${SCHEMA_X + SCHEMA_W / 2}" y="${currentY + 19}" text-anchor="middle" fill="#2D2D2D" font-family="Helvetica, Arial, sans-serif" font-size="10" letter-spacing="0.08em">DALLE / \u00C9TANCH\u00C9IT\u00C9</text>`;
+    html += `<text x="${SCHEMA_X + SCHEMA_W / 2}" y="${currentY + 19}" text-anchor="middle" fill="#2D2D2D" font-family="Helvetica, Arial, sans-serif" font-size="10" letter-spacing="0.08em">DALLE / \ÉTANCH\ÉIT\É</text>`;
 
     // ── TOTAL TEXT ──
-    html += `<text x="${SVG_W / 2 - 10}" y="${currentY + DALLE_H + 24}" text-anchor="middle" fill="#2D2D2D" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="500">Total : ${getTotalWeight(layers).toFixed(1)} kg/m\u00B2</text>`;
-    html += `<text x="${SVG_W / 2 - 10}" y="${currentY + DALLE_H + 38}" text-anchor="middle" fill="#A09C98" font-family="Helvetica, Arial, sans-serif" font-size="9">\u00E9tat satur\u00E9 \u2014 pire cas</text>`;
+    html += `<text x="${SVG_W / 2 - 10}" y="${currentY + DALLE_H + 24}" text-anchor="middle" fill="#2D2D2D" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="500">Total : ${getTotalWeight(layers).toFixed(1)} kg/m\²</text>`;
+    html += `<text x="${SVG_W / 2 - 10}" y="${currentY + DALLE_H + 38}" text-anchor="middle" fill="#A09C98" font-family="Helvetica, Arial, sans-serif" font-size="9">\état satur\é \— pire cas</text>`;
 
     svg.innerHTML = html;
 
