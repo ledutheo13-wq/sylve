@@ -52,6 +52,90 @@ export default function Home() {
         </div>
       </section>
 
+      {/* OUTILS DISPONIBLES */}
+      <section className={`${styles.section} ${styles.outilsSection}`}>
+        <div className={styles.sectionInner}>
+          <div className={styles.sectionLabel}>Les outils</div>
+          <h2 className={styles.sectionTitle}>
+            7 outils de conception en accès libre
+          </h2>
+          <p className={styles.sectionText}>
+            Calculateurs, outils végétaux, générateurs — testez directement.
+          </p>
+
+          <div className={styles.outilsGrid}>
+            {/* Compatibilité végétale — VITRINE */}
+            <Link
+              href="/projet/compatibilite-vegetale"
+              className={`${styles.outilCard} ${styles.outilCardVitrine}`}
+            >
+              <div className={styles.outilCardTop}>
+                <span className={styles.outilIcon}>🌿</span>
+                <span className={styles.outilBadgeEssayer}>Essayer</span>
+              </div>
+              <div className={styles.outilName}>Compatibilité végétale</div>
+              <div className={styles.outilDesc}>
+                Analysez la compatibilité botanique et écologique de vos
+                mélanges végétaux.
+              </div>
+              <div className={styles.outilArrow}>Ouvrir l&apos;outil →</div>
+            </Link>
+
+            {[
+              {
+                emoji: "⬜",
+                name: "Calculateur de charges sur dalle",
+                desc: "Calcul du poids d\u2019un complexe végétatif en kg/m².",
+              },
+              {
+                emoji: "💧",
+                name: "Calculateur d\u2019arrosage",
+                desc: "Estimez les besoins en eau par zone et par mois.",
+              },
+              {
+                emoji: "🧱",
+                name: "Calculateur de soutènements",
+                desc: "Stabilité des petits soutènements (Rankine).",
+              },
+              {
+                emoji: "🪵",
+                name: "Calculateur de platelages bois",
+                desc: "Dimensionnement DTU 51.4.",
+              },
+              {
+                emoji: "📅",
+                name: "Calendrier phénologique",
+                desc: "Calendrier floraison et feuillage. Export PNG.",
+              },
+              {
+                emoji: "🌳",
+                name: "Sélecteur d\u2019essences",
+                desc: "Trouvez les essences adaptées à votre site.",
+              },
+            ].map((tool) => (
+              <Link
+                key={tool.name}
+                href="/connexion"
+                className={`${styles.outilCard} ${styles.outilCardLocked}`}
+              >
+                <div className={styles.outilCardTop}>
+                  <span className={styles.outilIcon}>{tool.emoji}</span>
+                  <span className={styles.outilBadgeLibre}>Accès libre</span>
+                </div>
+                <div className={styles.outilName}>{tool.name}</div>
+                <div className={styles.outilDesc}>{tool.desc}</div>
+              </Link>
+            ))}
+          </div>
+
+          <p className={styles.outilsCta}>
+            <Link href="/connexion">
+              Créez un compte pour accéder à tous les outils →
+            </Link>
+          </p>
+        </div>
+      </section>
+
       {/* MARQUES */}
       <section className={`${styles.section} ${styles.marques}`}>
         <div className={styles.sectionInner}>
@@ -99,13 +183,6 @@ export default function Home() {
               <span className={`${styles.marqueBadge} ${styles.badgeActif}`}>
                 Accès beta
               </span>
-              <br />
-              <Link
-                href="/projet/compatibilite-vegetale"
-                className={styles.vitrineLink}
-              >
-                Essayer la compatibilité végétale →
-              </Link>
             </div>
 
             {/* PILOTE */}
@@ -188,7 +265,7 @@ export default function Home() {
             &ldquo;En 10 minutes, pas en 2 jours.&rdquo;
           </p>
           <p className={styles.promesseAuthor}>
-            Conçu par quelqu&apos;un qui a vécu le métier —
+            Conçu par un paysagiste qui a vécu le métier —
             <br />
             du terrain à la conception, du chantier à la MOE.
           </p>

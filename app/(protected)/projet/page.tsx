@@ -85,7 +85,7 @@ export default async function ProjetPage() {
           {prenom ? `Bonjour ${prenom}` : "Vos outils"}
         </h1>
         <p className={styles.pageSub}>
-          Outils techniques pour les professionnels du paysage. Gratuits pendant
+          Outils techniques pour les professionnels du paysage. En accès libre pendant
           la phase beta.
         </p>
       </div>
@@ -101,7 +101,7 @@ export default async function ProjetPage() {
           >
             <div className={styles.toolCardTop}>
               <span className={styles.toolIcon}>{tool.emoji}</span>
-              <span className={styles.toolTagGratuit}>Gratuit</span>
+              <span className={styles.toolTagGratuit}>Accès libre</span>
             </div>
             <div className={styles.toolName}>{tool.name}</div>
             <div className={styles.toolDesc}>{tool.desc}</div>

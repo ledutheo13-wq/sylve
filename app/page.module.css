@@ -266,6 +266,140 @@
   font-weight: 300;
 }
 
+/* ===== OUTILS VITRINE ===== */
+.outilsSection {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.outilsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.outilCard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.4rem;
+  text-decoration: none;
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  transition: border-color 0.15s, box-shadow 0.15s, transform 0.1s;
+}
+
+.outilCardVitrine {
+  opacity: 1;
+  border-color: var(--primary);
+  background: rgba(94, 139, 143, 0.03);
+}
+
+.outilCardVitrine:hover {
+  box-shadow: 0 4px 16px rgba(94, 139, 143, 0.12);
+  transform: translateY(-1px);
+}
+
+.outilCardLocked {
+  opacity: 0.6;
+}
+
+.outilCardLocked:hover {
+  opacity: 1;
+  border-color: var(--border);
+}
+
+.outilCardTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.outilIcon {
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.outilBadgeEssayer {
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 2px 10px;
+  border-radius: 20px;
+  font-weight: 400;
+  background: var(--sylve-light);
+  color: var(--primary);
+}
+
+.outilBadgeLibre {
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-weight: 400;
+  background: var(--sylve-light);
+  color: var(--sylve-dark);
+  opacity: 0.7;
+}
+
+.outilName {
+  font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: #2D2D2D;
+  line-height: 1.25;
+  letter-spacing: 0.3px;
+}
+
+.outilDesc {
+  font-size: 14px;
+  font-weight: 300;
+  color: #7A7A7A;
+  line-height: 1.65;
+}
+
+.outilArrow {
+  font-size: 0.8rem;
+  color: var(--primary);
+  margin-top: auto;
+  padding-top: 0.4rem;
+}
+
+.outilsCta {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.outilsCta a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.outilsCta a:hover {
+  opacity: 0.7;
+}
+
+@media (max-width: 900px) {
+  .outilsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .outilsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ===== MARQUES ===== */
 .marques {
   background: var(--surface);
