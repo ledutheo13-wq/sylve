@@ -32,7 +32,7 @@ interface Props {
 // ═══════════════════════════════════════════════════════════
 
 function normalize(str: string): string {
-  return str.toLowerCase().normalize("NFD").replace(/[\̀-\ͯ]/g, "");
+  return str.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
 }
 
 function searchPlantes(
@@ -88,10 +88,10 @@ export default function CompatibiliteVegetale({ plantes, vitrine = false }: Prop
       const bios = getBioregionFromDept(dept);
       if (bios.length === 1) {
         setBioregion(bios[0] as Bioregion);
-        setBioregionAuto("Bior\égion : " + BIOREGION_LABELS[bios[0]]);
+        setBioregionAuto("Biorégion : " + BIOREGION_LABELS[bios[0]]);
         setBioregionChoices([]);
       } else if (bios.length > 1) {
-        setBioregionAuto("D\épartement \à cheval sur 2 bior\égions :");
+        setBioregionAuto("Département à cheval sur 2 biorégions :");
         setBioregionChoices(bios);
         setBioregion("");
       } else {
@@ -162,7 +162,7 @@ export default function CompatibiliteVegetale({ plantes, vitrine = false }: Prop
     if (!bioregion || !rusticiteData) return null;
     const threshold = BIOREGION_RUSTICITE[bioregion];
     if (rusticiteData.min > threshold) {
-      return `Rusticit\é insuffisante pour la bior\égion ${BIOREGION_LABELS[bioregion]} (seuil recommand\é : ${threshold}\°C)`;
+      return `Rusticité insuffisante pour la biorégion ${BIOREGION_LABELS[bioregion]} (seuil recommandé : ${threshold}°C)`;
     }
     return null;
   }, [bioregion, rusticiteData]);
@@ -177,10 +177,10 @@ export default function CompatibiliteVegetale({ plantes, vitrine = false }: Prop
   const alertStyle = useMemo(() => {
     if (!result) return { color: "", bg: "", icon: "", title: "" };
     const s = result.globalScore;
-    if (s >= 80) return { color: "#5E8B8F", bg: "rgba(94,139,143,0.05)", icon: "\•", title: "M\élange coh\érent" };
-    if (s >= 60) return { color: "#C4973B", bg: "rgba(196,151,59,0.05)", icon: "\⚠", title: "Points d'attention" };
-    if (s >= 40) return { color: "#C4973B", bg: "rgba(196,151,59,0.08)", icon: "\⚠", title: "Risque identifi\é" };
-    return { color: "#A67C5B", bg: "rgba(166,124,91,0.08)", icon: "\⚠", title: "Risque \élev\é d'incompatibilit\é" };
+    if (s >= 80) return { color: "#5E8B8F", bg: "rgba(94,139,143,0.05)", icon: "•", title: "Mélange cohérent" };
+    if (s >= 60) return { color: "#C4973B", bg: "rgba(196,151,59,0.05)", icon: "⚠", title: "Points d'attention" };
+    if (s >= 40) return { color: "#C4973B", bg: "rgba(196,151,59,0.08)", icon: "⚠", title: "Risque identifié" };
+    return { color: "#A67C5B", bg: "rgba(166,124,91,0.08)", icon: "⚠", title: "Risque élevé d'incompatibilité" };
   }, [result]);
 
   const showDashboard = selectedPlants.length >= 2 && result !== null;
@@ -205,13 +205,13 @@ export default function CompatibiliteVegetale({ plantes, vitrine = false }: Prop
         <div className={styles.panelLeft}>
           {/* Section 1 - Mix info */}
           <div className={styles.sectionCard}>
-            <div className={styles.sectionTitle}>Informations du m\élange</div>
+            <div className={styles.sectionTitle}>Informations du mélange</div>
             <div className={styles.fieldGroup}>
-              <label className={styles.fieldLabel}>Nom du m\élange</label>
+              <label className={styles.fieldLabel}>Nom du mélange</label>
               <input
                 type="text"
                 className={styles.input}
-                placeholder="ex : Massif ombre \— R\ésidence Alma"
+                placeholder="ex : Massif ombre — Résidence Alma"
                 value={mixName}
                 onChange={(e) => setMixName(e.target.value)}
               />
@@ -236,7 +236,7 @@ export default function CompatibiliteVegetale({ plantes, vitrine = false }: Prop
                   value={bioregion}
                   onChange={(e) => setBioregion(e.target.value as Bioregion)}
                 >
-                  <option value="">Choisissez\…</option>
+                  <option value="">Choisissez…</option>
                   {bioregionChoices.map((b) => (
                     <option key={b} value={b}>{BIOREGION_LABELS[b]}</option>
                   ))}
@@ -244,7 +244,7 @@ export default function CompatibiliteVegetale({ plantes, vitrine = false }: Prop
               )}
             </div>
             <div className={styles.fieldGroup}>
-              <label className={styles.fieldLabel}>Ou choisir directement la bior\égion</label>
+              <label className={styles.fieldLabel}>Ou choisir directement la biorégion</label>
               <select
                 className={styles.select}
                 value={bioregionChoices.length > 0 ? "" : bioregion}
@@ -255,10 +255,10 @@ export default function CompatibiliteVegetale({ plantes, vitrine = false }: Prop
                   setPostalCode("");
                 }}
               >
-                <option value="">\— Aucune \—</option>
+                <option value="">— Aucune —</option>
                 <option value="atlantique">Atlantique</option>
                 <option value="continental">Continental</option>
-                <option value="mediterraneen">M\éditerran\éen</option>
+                <option value="mediterraneen">Méditerranéen</option>
                 <option value="alpin">Alpin</option>
               </select>
             </div>
@@ -266,9 +266,9 @@ export default function CompatibiliteVegetale({ plantes, vitrine = false }: Prop
 
           {/* Section 2 - Essences */}
           <div className={styles.sectionCard}>
-            <div className={styles.sectionTitle}>Essences du m\élange</div>
+            <div className={styles.sectionTitle}>Essences du mélange</div>
             <div className={styles.dbStatus}>
-              \✓ Base v\ég\étale : {plantes.length} essences
+              ✓ Base végétale : {plantes.length} essences
             </div>
             <div>
               {essences.map((plant, index) => (
@@ -323,7 +323,7 @@ export default function CompatibiliteVegetale({ plantes, vitrine = false }: Prop
                 ))}
                 <PctTotalIndicator total={pctTotal} />
                 <div className={styles.fieldGroup} style={{ marginTop: "0.8rem" }}>
-                  <label className={styles.fieldLabel}>Densit\é globale (plants/m\²)</label>
+                  <label className={styles.fieldLabel}>Densité globale (plants/m²)</label>
                   <input
                     type="number"
                     className={styles.input}
@@ -335,7 +335,7 @@ export default function CompatibiliteVegetale({ plantes, vitrine = false }: Prop
                   />
                 </div>
                 <div className={styles.fieldGroup}>
-                  <label className={styles.fieldLabel}>Surface totale (m\²)</label>
+                  <label className={styles.fieldLabel}>Surface totale (m²)</label>
                   <input
                     type="number"
                     className={styles.input}
@@ -347,8 +347,8 @@ export default function CompatibiliteVegetale({ plantes, vitrine = false }: Prop
                   />
                 </div>
                 <p className={styles.advancedHint}>
-                  Le mode avanc\é calcule les quantit\és, la densit\é globale et les pourcentages
-                  pond\ér\és d&apos;indig\énat et de mellif\ère.
+                  Le mode avancé calcule les quantités, la densité globale et les pourcentages
+                  pondérés d&apos;indigénat et de mellifère.
                 </p>
               </div>
             )}
@@ -366,10 +366,10 @@ export default function CompatibiliteVegetale({ plantes, vitrine = false }: Prop
                   <path d="M24 28 C28 24 32 28 32 28 C32 28 36 24 40 28" />
                 </svg>
                 <div className={styles.emptyTitle}>
-                  Ajoutez au moins 2 essences pour analyser la compatibilit\é
+                  Ajoutez au moins 2 essences pour analyser la compatibilité
                 </div>
                 <div className={styles.emptySub}>
-                  L&apos;analyse se met \à jour en temps r\éel
+                  L&apos;analyse se met à jour en temps réel
                 </div>
               </div>
             </div>
@@ -379,10 +379,10 @@ export default function CompatibiliteVegetale({ plantes, vitrine = false }: Prop
             <>
               {/* Header */}
               <div className={styles.resultCard} style={{ padding: "16px 20px" }}>
-                <div className={styles.dashTitle}>{mixName || "M\élange sans nom"}</div>
+                <div className={styles.dashTitle}>{mixName || "Mélange sans nom"}</div>
                 {bioregion && (
                   <div className={styles.dashBioregion}>
-                    Bior\égion : {BIOREGION_LABELS[bioregion]}
+                    Biorégion : {BIOREGION_LABELS[bioregion]}
                   </div>
                 )}
               </div>
@@ -394,7 +394,7 @@ export default function CompatibiliteVegetale({ plantes, vitrine = false }: Prop
 
               {/* Detail par critere */}
               <div className={styles.resultCard}>
-                <div className={styles.resultCardTitle}>D\étail par crit\ère</div>
+                <div className={styles.resultCardTitle}>Détail par critère</div>
                 <div className={styles.criteriaList}>
                   {(Object.entries(CRITERIA_LABELS) as [CriterionKey, string][]).map(([key, label]) => {
                     const score = result.criteriaScores[key];
@@ -442,7 +442,7 @@ export default function CompatibiliteVegetale({ plantes, vitrine = false }: Prop
                       style={{ background: alertStyle.bg, borderLeftColor: alertStyle.color }}
                     >
                       <span className={styles.alertIcon}>{alertStyle.icon}</span>
-                      <span>Aucune incompatibilit\é d\étect\ée dans ce m\élange</span>
+                      <span>Aucune incompatibilité détectée dans ce mélange</span>
                     </div>
                   ) : (
                     <div
@@ -450,7 +450,7 @@ export default function CompatibiliteVegetale({ plantes, vitrine = false }: Prop
                       style={{ background: alertStyle.bg, borderLeftColor: alertStyle.color }}
                     >
                       <span className={styles.alertIcon}>{alertStyle.icon}</span>
-                      <span>Des \écarts sont d\étect\és entre les essences \— consultez le d\étail par crit\ère ci-dessus</span>
+                      <span>Des écarts sont détectés entre les essences — consultez le détail par critère ci-dessus</span>
                     </div>
                   )}
                 </div>
@@ -458,23 +458,23 @@ export default function CompatibiliteVegetale({ plantes, vitrine = false }: Prop
 
               {/* Rusticite */}
               <div className={styles.resultCard}>
-                <div className={styles.resultCardTitle}>Limite de rusticit\é du m\élange</div>
+                <div className={styles.resultCardTitle}>Limite de rusticité du mélange</div>
                 <div className={styles.rusticiteValue}>
-                  {rusticiteData ? `${rusticiteData.min}\°C` : "\—"}
+                  {rusticiteData ? `${rusticiteData.min}°C` : "—"}
                 </div>
                 {rusticiteData && (
                   <div className={styles.rusticiteDetail}>
-                    ({rusticiteData.plantName} \— l&apos;essence la moins rustique)
+                    ({rusticiteData.plantName} — l&apos;essence la moins rustique)
                   </div>
                 )}
                 {rusticiteAlert && (
-                  <div className={styles.rusticiteAlert}>\⚠ {rusticiteAlert}</div>
+                  <div className={styles.rusticiteAlert}>⚠ {rusticiteAlert}</div>
                 )}
               </div>
 
               {/* Recap table */}
               <div className={styles.resultCard}>
-                <div className={styles.resultCardTitle}>R\écapitulatif des essences</div>
+                <div className={styles.resultCardTitle}>Récapitulatif des essences</div>
                 <div className={styles.tableWrap}>
                   <table className={styles.recapTable}>
                     <thead>
@@ -484,8 +484,8 @@ export default function CompatibiliteVegetale({ plantes, vitrine = false }: Prop
                         <th>Strate</th>
                         <th>Persistance</th>
                         <th>Exposition</th>
-                        <th>Mellif\ère</th>
-                        <th>Indig\énat</th>
+                        <th>Mellifère</th>
+                        <th>Indigénat</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -493,7 +493,7 @@ export default function CompatibiliteVegetale({ plantes, vitrine = false }: Prop
                         let indigenatCell: string;
                         if (bioregion) {
                           const isIndig = p.indigenat && p.indigenat[bioregion as keyof typeof p.indigenat];
-                          indigenatCell = isIndig ? "\✓ Indig\ène" : "\✗ Exotique";
+                          indigenatCell = isIndig ? "✓ Indigène" : "✗ Exotique";
                         } else {
                           const parts: string[] = [];
                           for (const [bio, label] of Object.entries(BIOREGION_LABELS)) {
@@ -501,7 +501,7 @@ export default function CompatibiliteVegetale({ plantes, vitrine = false }: Prop
                               parts.push(label.substring(0, 3) + ".");
                             }
                           }
-                          indigenatCell = parts.length > 0 ? parts.join(" ") : "\✗";
+                          indigenatCell = parts.length > 0 ? parts.join(" ") : "✗";
                         }
                         return (
                           <tr
@@ -513,7 +513,7 @@ export default function CompatibiliteVegetale({ plantes, vitrine = false }: Prop
                             <td>{formatStrate(p.strate)}</td>
                             <td>{p.persistance === "persistant" ? "Persistant" : "Caduc"}</td>
                             <td>{formatExposition(p.exposition)}</td>
-                            <td>{p.mellifere ? "\✓" : "\✗"}</td>
+                            <td>{p.mellifere ? "✓" : "✗"}</td>
                             <td>{indigenatCell}</td>
                           </tr>
                         );
@@ -524,9 +524,9 @@ export default function CompatibiliteVegetale({ plantes, vitrine = false }: Prop
                 {recapStats && (
                   <div className={styles.recapStats}>
                     <span>% persistantes : <strong>{recapStats.pctPersist}%</strong></span>
-                    <span>% mellif\ères : <strong>{recapStats.pctMelli}%</strong></span>
+                    <span>% mellifères : <strong>{recapStats.pctMelli}%</strong></span>
                     {recapStats.pctIndig !== null && bioregion && (
-                      <span>% indig\ènes : <strong>{recapStats.pctIndig}%</strong> ({BIOREGION_LABELS[bioregion]})</span>
+                      <span>% indigènes : <strong>{recapStats.pctIndig}%</strong> ({BIOREGION_LABELS[bioregion]})</span>
                     )}
                   </div>
                 )}
@@ -534,14 +534,14 @@ export default function CompatibiliteVegetale({ plantes, vitrine = false }: Prop
 
               {/* Pheno calendar */}
               <div className={styles.resultCard}>
-                <div className={styles.resultCardTitle}>Calendrier ph\énologique</div>
+                <div className={styles.resultCardTitle}>Calendrier phénologique</div>
                 <PhenoCalendar plants={selectedPlants} />
               </div>
 
               {/* Advanced results */}
               {advancedMode && (
                 <div className={styles.resultCard}>
-                  <div className={styles.resultCardTitle}>Mode avanc\é \— Quantitatif</div>
+                  <div className={styles.resultCardTitle}>Mode avancé — Quantitatif</div>
                   <AdvancedResults
                     plants={selectedPlants}
                     percentages={percentages}
@@ -683,7 +683,7 @@ function EssenceRow({
         <input
           type="text"
           className={styles.essenceInput}
-          placeholder="Rechercher une essence\…"
+          placeholder="Rechercher une essence…"
           value={query}
           onChange={(e) => handleInput(e.target.value)}
           onFocus={handleFocus}
@@ -691,12 +691,12 @@ function EssenceRow({
         />
         {plant && (
           <div className={styles.essenceMeta}>
-            {formatStrate(plant.strate)} \· {plant.famille}
+            {formatStrate(plant.strate)} · {plant.famille}
           </div>
         )}
         {showNotFound && !plant && (
           <div className={styles.essenceNotFound}>
-            Essence non trouv\ée dans la base ({allPlantes.length.toLocaleString("fr-FR")} essences)
+            Essence non trouvée dans la base ({allPlantes.length.toLocaleString("fr-FR")} essences)
           </div>
         )}
         {acOpen && acResults.length > 0 && (
@@ -709,16 +709,16 @@ function EssenceRow({
                 onMouseEnter={() => setActiveIdx(i)}
               >
                 <span className={styles.acLatin}>{p.nom_latin}</span>
-                <span className={styles.acCommun}>\— {p.nom_commun}</span>
+                <span className={styles.acCommun}>— {p.nom_commun}</span>
                 <span className={styles.acStrate}>{formatStrate(p.strate)}</span>
               </div>
             ))}
           </div>
         )}
       </div>
-      {plant && <span className={styles.essenceBadge}>\✓</span>}
+      {plant && <span className={styles.essenceBadge}>✓</span>}
       <button className={styles.btnDeleteEssence} onClick={() => onRemove(index)}>
-        \×
+        ×
       </button>
     </div>
   );
@@ -765,21 +765,21 @@ function PctTotalIndicator({ total }: { total: number }) {
   if (total === 0) {
     return (
       <div className={styles.pctTotal} style={{ color: "var(--text-light)" }}>
-        Saisissez les % de chaque essence (parts \égales par d\éfaut)
+        Saisissez les % de chaque essence (parts égales par défaut)
       </div>
     );
   }
   if (total === 100) {
     return (
       <div className={styles.pctTotal} style={{ color: "var(--primary)" }}>
-        \✓ Total : <strong>100%</strong>
+        ✓ Total : <strong>100%</strong>
       </div>
     );
   }
   if (total > 100) {
     return (
       <div className={styles.pctTotal} style={{ color: "var(--ocre)" }}>
-        \⚠ Total : <strong>{total}%</strong> / 100% \— sup\érieur \à 100%
+        ⚠ Total : <strong>{total}%</strong> / 100% — supérieur à 100%
       </div>
     );
   }
@@ -902,18 +902,18 @@ function AdvancedResults({
           <thead>
             <tr>
               <th>Essence</th>
-              <th>% du m\élange</th>
-              <th>Quantit\é totale</th>
-              <th>Densit\é effective</th>
+              <th>% du mélange</th>
+              <th>Quantité totale</th>
+              <th>Densité effective</th>
             </tr>
           </thead>
           <tbody>
             {rows.map((r) => (
               <tr key={r.plant.id}>
                 <td>{r.plant.nom_latin}</td>
-                <td>{r.pct > 0 ? `${r.pct.toFixed(0)}%` : "\—"}</td>
-                <td>{r.qty || "\—"}</td>
-                <td>{r.effDensity !== null ? `${r.effDensity.toFixed(1)} pl/m\²` : "\—"}</td>
+                <td>{r.pct > 0 ? `${r.pct.toFixed(0)}%` : "—"}</td>
+                <td>{r.qty || "—"}</td>
+                <td>{r.effDensity !== null ? `${r.effDensity.toFixed(1)} pl/m²` : "—"}</td>
               </tr>
             ))}
           </tbody>
@@ -921,16 +921,16 @@ function AdvancedResults({
       </div>
       <div className={styles.quantSummary}>
         <div className={styles.quantStat}>
-          Densit\é globale : <strong>{globalDensity || "\—"} plants/m\²</strong>
+          Densité globale : <strong>{globalDensity || "—"} plants/m²</strong>
         </div>
         <div className={styles.quantStat}>
-          Nombre total : <strong>{totalPlants || "\—"} plants</strong>
+          Nombre total : <strong>{totalPlants || "—"} plants</strong>
         </div>
         <div className={styles.quantStat}>
-          % mellif\ères (pond\ér\é) : <strong>{pctMelli}%</strong>
+          % mellifères (pondéré) : <strong>{pctMelli}%</strong>
         </div>
         <div className={styles.quantStat}>
-          % indig\ènes (pond\ér\é) : <strong>{pctIndig}%</strong>
+          % indigènes (pondéré) : <strong>{pctIndig}%</strong>
           {bioregion ? ` (${BIOREGION_LABELS[bioregion]})` : ""}
         </div>
       </div>
