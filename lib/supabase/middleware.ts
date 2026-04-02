@@ -31,13 +31,16 @@ export async function updateSession(request: NextRequest) {
 
   // Protected routes: redirect to /connexion if not authenticated
   const path = request.nextUrl.pathname;
+  // Vitrine: compatibilité végétale accessible sans compte
+  const isVitrine = path === "/projet/compatibilite-vegetale";
+
   const isProtected =
     path.startsWith("/dashboard") ||
     path.startsWith("/projet") ||
     path.startsWith("/pilote") ||
     path.startsWith("/source");
 
-  if (isProtected && !user) {
+  if (isProtected && !isVitrine && !user) {
     const url = request.nextUrl.clone();
     url.pathname = "/connexion";
     return NextResponse.redirect(url);

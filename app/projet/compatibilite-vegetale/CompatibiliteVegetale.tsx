@@ -24,6 +24,7 @@ import styles from "./page.module.css";
 
 interface Props {
   plantes: Plante[];
+  vitrine?: boolean;
 }
 
 // ═══════════════════════════════════════════════════════════
@@ -53,7 +54,7 @@ function searchPlantes(
 //  MAIN COMPONENT
 // ═══════════════════════════════════════════════════════════
 
-export default function CompatibiliteVegetale({ plantes }: Props) {
+export default function CompatibiliteVegetale({ plantes, vitrine = false }: Props) {
   // Mix info
   const [mixName, setMixName] = useState("");
   const [postalCode, setPostalCode] = useState("");
@@ -186,9 +187,17 @@ export default function CompatibiliteVegetale({ plantes }: Props) {
 
   return (
     <>
+      {vitrine && (
+        <div style={{ background: "var(--sylve-light)", borderBottom: "1px solid var(--border)", padding: "10px 2rem", display: "flex", alignItems: "center", justifyContent: "center", gap: "1rem", fontSize: "0.82rem", color: "var(--sylve-dark)" }}>
+          <span>Mode découverte — fonctionnalités limitées</span>
+          <a href="/connexion" style={{ color: "var(--primary)", fontWeight: 400, textDecoration: "none", padding: "4px 12px", border: "1px solid var(--primary)", borderRadius: "var(--radius)", fontSize: "0.75rem" }}>
+            Créer un compte pour accéder à tout
+          </a>
+        </div>
+      )}
       <div className={styles.pageTitleBar}>
-        <h1>compatibilit\é v\ég\étale</h1>
-        <p>Analysez la compatibilit\é botanique et \écologique de vos m\élanges v\ég\étaux.</p>
+        <h1>compatibilité végétale</h1>
+        <p>Analysez la compatibilité botanique et écologique de vos mélanges végétaux.</p>
       </div>
 
       <div className={styles.app}>
@@ -288,9 +297,9 @@ export default function CompatibiliteVegetale({ plantes }: Props) {
           </div>
 
           {/* Section 3 - Advanced mode */}
-          <div className={styles.sectionCard}>
-            <button className={styles.advancedToggle} onClick={toggleAdvanced}>
-              Mode avanc\é \— Quantitatif {advancedMode ? "\▴" : "\▾"}
+          <div className={styles.sectionCard} style={vitrine ? { opacity: 0.5, pointerEvents: "none" } : undefined}>
+            <button className={styles.advancedToggle} onClick={vitrine ? undefined : toggleAdvanced}>
+              Mode avancé — Quantitatif {advancedMode ? "▴" : "▾"}
             </button>
             {advancedMode && (
               <div className={styles.advancedContent}>
