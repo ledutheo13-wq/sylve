@@ -105,9 +105,10 @@ export default function CompatibiliteVegetale({ plantes, vitrine = false }: Prop
   }, []);
 
   // ── Essences management ──
+  const maxEssences = vitrine ? 6 : 12;
   const addEssence = useCallback(() => {
-    setEssences((prev) => (prev.length >= 12 ? prev : [...prev, null]));
-  }, []);
+    setEssences((prev) => (prev.length >= maxEssences ? prev : [...prev, null]));
+  }, [maxEssences]);
 
   const removeEssence = useCallback((index: number) => {
     setEssences((prev) => prev.filter((_, i) => i !== index));
@@ -284,15 +285,21 @@ export default function CompatibiliteVegetale({ plantes, vitrine = false }: Prop
                 />
               ))}
             </div>
-            <button
-              className={styles.btnAddEssence}
-              onClick={addEssence}
-              disabled={essences.length >= 12}
-            >
-              + Ajouter une essence
-            </button>
+            {essences.length < maxEssences && (
+              <button
+                className={styles.btnAddEssence}
+                onClick={addEssence}
+              >
+                + Ajouter une essence
+              </button>
+            )}
             <div className={styles.essenceCounter}>
-              {selectedPlants.length} / 12 essences
+              {selectedPlants.length} / {maxEssences} essences
+              {vitrine && essences.length >= maxEssences && (
+                <span style={{ display: "block", marginTop: "0.3rem", fontSize: "0.72rem", color: "var(--text-muted)" }}>
+                  Créez un compte pour ajouter jusqu&apos;à 12 essences
+                </span>
+              )}
             </div>
           </div>
 
@@ -650,6 +657,7 @@ function EssenceRow({
   const handleKeyDown = useCallback(
     (e: React.KeyboardEvent) => {
       if (e.key === "Escape") setAcOpen(false);
+      if (e.key === "Tab" && acOpen) setAcOpen(false);
       if (e.key === "ArrowDown" || e.key === "ArrowUp") {
         e.preventDefault();
         setActiveIdx((prev) => {
@@ -717,7 +725,7 @@ function EssenceRow({
         )}
       </div>
       {plant && <span className={styles.essenceBadge}>✓</span>}
-      <button className={styles.btnDeleteEssence} onClick={() => onRemove(index)}>
+      <button className={styles.btnDeleteEssence} onClick={() => onRemove(index)} tabIndex={-1}>
         ×
       </button>
     </div>

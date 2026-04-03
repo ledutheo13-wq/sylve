@@ -233,6 +233,14 @@ export default function SelecteurEssences({ plantes }: Props) {
 
   const handleSearchKeyDown = useCallback(
     (e: KeyboardEvent<HTMLInputElement>) => {
+      if (e.key === "Escape") {
+        setAcVisible(false);
+        return;
+      }
+      if (e.key === "Tab" && acVisible) {
+        setAcVisible(false);
+        return;
+      }
       if (!acVisible || acResults.length === 0) return;
       if (e.key === "ArrowDown") {
         e.preventDefault();

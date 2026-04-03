@@ -47,6 +47,7 @@ export default function CalculateurChargesPage() {
   const [dragOverId, setDragOverId] = useState<number | null>(null);
 
   const svgRef = useRef<SVGSVGElement>(null);
+  const modalRef = useRef<HTMLDivElement>(null);
   const dragStateRef = useRef<{
     layerId: number;
     startSvgY: number;
@@ -383,6 +384,8 @@ export default function CalculateurChargesPage() {
     setModalCatKey(null);
     setModalMatId("");
     setModalOpen(true);
+    // Focus la modale au prochain rendu pour capter Échap
+    requestAnimationFrame(() => modalRef.current?.focus());
   }
 
   function selectModalType(key: CategoryKey) {
@@ -622,8 +625,11 @@ export default function CalculateurChargesPage() {
         onClick={(e) => {
           if (e.target === e.currentTarget) setModalOpen(false);
         }}
+        onKeyDown={(e) => {
+          if (e.key === "Escape") setModalOpen(false);
+        }}
       >
-        <div className={styles.modal}>
+        <div className={styles.modal} ref={modalRef} tabIndex={-1}>
           <h3 className={styles.modalTitle}>Ajouter une couche</h3>
           <div className={styles.modalGrid}>
             {CATEGORY_KEYS.map((key) => (

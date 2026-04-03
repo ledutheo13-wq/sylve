@@ -383,6 +383,7 @@ function MixBlock({
           className={styles.btnDeleteMelange}
           onClick={() => onRemoveMix(mix.id)}
           title="Supprimer le melange"
+          tabIndex={-1}
         >
           &times;
         </button>
@@ -513,6 +514,10 @@ function EssenceRow({
   }
 
   function handleKeyDown(e: React.KeyboardEvent) {
+    if (e.key === "Tab" && showAC) {
+      // Fermer la liste déroulante quand on Tab
+      setShowAC(false);
+    }
     if (!showAC || results.length === 0) return;
     if (e.key === "ArrowDown") {
       e.preventDefault();
@@ -611,6 +616,7 @@ function EssenceRow({
         className={styles.btnDeleteEssence}
         onClick={() => onRemove(mixId, essence.id)}
         title="Supprimer"
+        tabIndex={-1}
       >
         &times;
       </button>

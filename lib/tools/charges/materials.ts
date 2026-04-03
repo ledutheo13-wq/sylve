@@ -2,17 +2,17 @@ import type { Categories, CategoryKey, Material, Layer } from "./types";
 
 export const CATEGORIES: Categories = {
   protection: {
-    label: "Protection mecanique",
+    label: "Protection mécanique",
     color: "#C4B8A8",
     pattern: "dots",
     materials: [
-      { id: "feutre-ap", name: "Feutre anti-poinconnement", type: "forfait", value: 0.5 },
+      { id: "feutre-ap", name: "Feutre anti-poinçonnement", type: "forfait", value: 0.5 },
       { id: "film-pe", name: "Film PE de protection", type: "forfait", value: 0.15 },
       { id: "natte-abs", name: "Natte absorbante", type: "forfait", value: 0.3 },
     ],
   },
   retention: {
-    label: "Retention / stockage eau",
+    label: "Rétention / stockage eau",
     color: "#6CA0B8",
     pattern: "waves",
     materials: [
@@ -28,7 +28,7 @@ export const CATEGORIES: Categories = {
     pattern: "honeycomb",
     materials: [
       { id: "nid-abeille", name: "Nid d'abeille HDPE (gravier)", type: "volumique", value: 100, min_ep: 4, max_ep: 20, default_ep: 6 },
-      { id: "billes-argile", name: "Billes d'argile expansee", type: "volumique", value: 420, min_ep: 5, max_ep: 30, default_ep: 8 },
+      { id: "billes-argile", name: "Billes d'argile expansée", type: "volumique", value: 420, min_ep: 5, max_ep: 30, default_ep: 8 },
       { id: "gravier", name: "Gravier 20/40", type: "volumique", value: 1700, min_ep: 5, max_ep: 30, default_ep: 8 },
       { id: "panneau-drainant", name: "Panneau drainant composite", type: "forfait", value: 8 },
       { id: "pouzzolane", name: "Pouzzolane", type: "volumique", value: 900, min_ep: 5, max_ep: 30, default_ep: 8 },
@@ -39,8 +39,8 @@ export const CATEGORIES: Categories = {
     color: "#B8C9A3",
     pattern: "lines",
     materials: [
-      { id: "geotextile", name: "Geotextile filtrant", type: "forfait", value: 0.35 },
-      { id: "nappe-sep", name: "Nappe de separation", type: "forfait", value: 0.2 },
+      { id: "geotextile", name: "Géotextile filtrant", type: "forfait", value: 0.35 },
+      { id: "nappe-sep", name: "Nappe de séparation", type: "forfait", value: 0.2 },
     ],
   },
   substrat: {
@@ -51,8 +51,8 @@ export const CATEGORIES: Categories = {
       { id: "substrat-ext", name: "Substrat extensif", type: "volumique", value: 1050, min_ep: 5, max_ep: 30, default_ep: 8 },
       { id: "substrat-semi", name: "Substrat semi-intensif", type: "volumique", value: 1250, min_ep: 10, max_ep: 50, default_ep: 20 },
       { id: "substrat-int", name: "Substrat intensif", type: "volumique", value: 1450, min_ep: 15, max_ep: 80, default_ep: 30 },
-      { id: "terre-veg", name: "Terre vegetale amendee", type: "volumique", value: 1750, min_ep: 15, max_ep: 100, default_ep: 40 },
-      { id: "terre-alleg", name: "Terre vegetale allegee", type: "volumique", value: 1350, min_ep: 15, max_ep: 80, default_ep: 30 },
+      { id: "terre-veg", name: "Terre végétale amendée", type: "volumique", value: 1750, min_ep: 15, max_ep: 100, default_ep: 40 },
+      { id: "terre-alleg", name: "Terre végétale allégée", type: "volumique", value: 1350, min_ep: 15, max_ep: 80, default_ep: 30 },
     ],
   },
   paillage: {
@@ -60,18 +60,18 @@ export const CATEGORIES: Categories = {
     color: "#C4A882",
     pattern: "organic",
     materials: [
-      { id: "paillage-org", name: "Paillage organique (ecorce)", type: "volumique", value: 450, min_ep: 3, max_ep: 15, default_ep: 7 },
-      { id: "paillage-min", name: "Paillage mineral (gravier)", type: "volumique", value: 1500, min_ep: 3, max_ep: 10, default_ep: 5 },
+      { id: "paillage-org", name: "Paillage organique (écorce)", type: "volumique", value: 450, min_ep: 3, max_ep: 15, default_ep: 7 },
+      { id: "paillage-min", name: "Paillage minéral (gravier)", type: "volumique", value: 1500, min_ep: 3, max_ep: 10, default_ep: 5 },
       { id: "paillage-bois", name: "Plaquettes de bois", type: "volumique", value: 300, min_ep: 5, max_ep: 15, default_ep: 7 },
     ],
   },
   vegetation: {
-    label: "Vegetation",
+    label: "Végétation",
     color: "#6B9E6B",
     pattern: "organic2",
     materials: [
       { id: "sedum", name: "Sedum / extensif", type: "forfait", value: 3.5 },
-      { id: "vivaces", name: "Vivaces et graminees", type: "forfait", value: 5.5 },
+      { id: "vivaces", name: "Vivaces et graminées", type: "forfait", value: 5.5 },
       { id: "arbustes", name: "Arbustes", type: "forfait", value: 10 },
       { id: "gazon", name: "Gazon", type: "forfait", value: 4 },
     ],

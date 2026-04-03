@@ -28,6 +28,8 @@ export default function ArrosagePage() {
 
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const deptKeys = useRef(getSortedDeptKeys());
+  const newZoneRef = useRef<HTMLInputElement>(null);
+  const shouldFocusNewZone = useRef(false);
 
   // Init with one zone on mount
   useEffect(() => {
@@ -53,7 +55,8 @@ export default function ArrosagePage() {
     return () => window.removeEventListener("resize", handleResize);
   }, [results]);
 
-  function addZone() {
+  function addZone(focus = false) {
+    if (focus) shouldFocusNewZone.current = true;
     setZoneIdCounter((prev) => {
       const newId = prev + 1;
       setZones((prevZones) => [
@@ -72,6 +75,15 @@ export default function ArrosagePage() {
       return newId;
     });
   }
+
+  // Focus le champ "nom" de la nouvelle zone après ajout
+  useEffect(() => {
+    if (shouldFocusNewZone.current && newZoneRef.current) {
+      newZoneRef.current.focus();
+      newZoneRef.current.select();
+      shouldFocusNewZone.current = false;
+    }
+  }, [zones.length]);
 
   function removeZone(id: number) {
     setZones((prev) => prev.filter((z) => z.id !== id));
@@ -202,6 +214,7 @@ export default function ArrosagePage() {
                   className={styles.inputText}
                   value={z.name}
                   onChange={(e) => updateZone(z.id, { name: e.target.value })}
+                  ref={idx === zones.length - 1 ? newZoneRef : undefined}
                 />
                 <button
                   className={styles.zoneDelete}
@@ -261,7 +274,7 @@ export default function ArrosagePage() {
             </div>
           );
         })}
-        <button className={styles.btnAdd} onClick={addZone}>
+        <button className={styles.btnAdd} onClick={() => addZone(true)}>
           + Ajouter une zone
         </button>
       </div>
