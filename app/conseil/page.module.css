@@ -75,9 +75,9 @@
 }
 
 .heroLogoDash {
-  font-size: clamp(38px, 7.5vw, 66px);
-  font-weight: 200;
-  color: var(--text-light);
+  font-size: clamp(30px, 6vw, 52px);
+  font-weight: 300;
+  color: #c2c2c2;
 }
 
 .heroLogoSub {
@@ -226,6 +226,16 @@
   color: var(--text-secondary);
   line-height: 1.65;
   padding-left: 14px;
+}
+
+.missionsNote {
+  margin-top: 24px;
+  font-size: 13px;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--text-light);
+  line-height: 1.6;
+  max-width: 720px;
 }
 
 /* ===== PARCOURS ===== */
@@ -447,6 +457,14 @@
 
 .contactBtn svg {
   transition: transform 0.2s ease;
+}
+
+.contactNote {
+  margin-top: 18px;
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--text-light);
+  letter-spacing: 0.2px;
 }
 
 /* ===== RETOUR ===== */

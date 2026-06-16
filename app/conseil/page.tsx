@@ -17,7 +17,7 @@ const MISSIONS = [
   },
   {
     titre: "Appui AMO",
-    desc: "Faisabilité, cahiers des charges, accès aux subventions, arbitrages.",
+    desc: "Faisabilité, cahiers des charges, arbitrages. Orientation vers la labellisation (BiodiverCity, ÉcoJardin) et les financements (agences de l'eau, ADEME, aides régionales).",
   },
   {
     titre: "Support MOE / MOEX",
@@ -25,7 +25,7 @@ const MISSIONS = [
   },
   {
     titre: "Études et notes techniques",
-    desc: "Calcul, cadrage, méthodologie, pièces de PC, CCTP.",
+    desc: "Calcul et dimensionnement d'ouvrages (complexes végétatifs, soutènements…), études économiques, cadrage méthodologique, pièces de PC, CCTP.",
   },
 ];
 
@@ -124,7 +124,7 @@ export default function ConseilPage() {
           </div>
           <div className={styles.heroLogo}>
             <span className={styles.heroLogoName}>sylve</span>
-            <span className={styles.heroLogoDash}>-</span>
+            <span className={styles.heroLogoDash}>·</span>
             <span className={styles.heroLogoSub}>conseil</span>
           </div>
           <div className={styles.heroDivider} />
@@ -168,6 +168,11 @@ export default function ConseilPage() {
               </div>
             ))}
           </div>
+          <p className={styles.missionsNote}>
+            Production graphique strictement technique — plans, coupes, détails
+            d&apos;exécution, notes de calcul. La conception et l&apos;intention
+            restent à la maîtrise d&apos;œuvre.
+          </p>
         </div>
       </section>
 
@@ -227,6 +232,7 @@ export default function ConseilPage() {
               />
             </svg>
           </a>
+          <p className={styles.contactNote}>Tarifs &amp; modalités sur demande</p>
         </div>
       </section>
 

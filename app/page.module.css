@@ -482,6 +482,11 @@
   letter-spacing: 2px;
 }
 
+.marqueLogoDot {
+  font-size: 18px;
+  color: #c2c2c2;
+}
+
 .subGres { color: var(--gres); }
 .subTerre { color: var(--terre); }
 .subOcre { color: var(--ocre); }
@@ -685,6 +690,14 @@
   font-weight: 300;
   letter-spacing: 1.5px;
   color: var(--gres);
+}
+
+.conseilTeaserSylve {
+  color: var(--primary);
+}
+
+.conseilTeaserDot {
+  color: #c2c2c2;
 }
 
 .conseilTeaserLink {

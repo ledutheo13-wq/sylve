@@ -259,6 +259,7 @@ export default function Home() {
               <div className={`${styles.marqueAccent} ${styles.accentGres}`} />
               <div className={styles.marqueLogo}>
                 <span className={styles.marqueLogoName}>sylve</span>
+                <span className={styles.marqueLogoDot}>·</span>
                 <span className={`${styles.marqueLogoSub} ${styles.subGres}`}>
                   conseil
                 </span>
@@ -299,7 +300,10 @@ export default function Home() {
       <section className={styles.conseilTeaser}>
         <div className={styles.conseilTeaserInner}>
           <span className={styles.conseilTeaserText}>
-            <span className={styles.conseilTeaserMark}>sylve conseil</span>
+            <span className={styles.conseilTeaserMark}>
+              <span className={styles.conseilTeaserSylve}>sylve</span>
+              <span className={styles.conseilTeaserDot}>·</span> conseil
+            </span>
             {" — "}l&apos;expertise humaine derrière les outils
           </span>
           <Link href="/conseil" className={styles.conseilTeaserLink}>
