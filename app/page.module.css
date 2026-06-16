@@ -69,6 +69,25 @@
   color: var(--primary);
 }
 
+.navRight {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.navLink {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--text-secondary);
+  text-decoration: none;
+  letter-spacing: 0.3px;
+  transition: color 0.2s ease;
+}
+
+.navLink:hover {
+  color: var(--gres);
+}
+
 /* ===== HERO ===== */
 .hero {
   min-height: 100vh;
@@ -511,8 +530,42 @@
 }
 
 .marqueCard:nth-child(1) .marqueToolItem::before { background: var(--gres); }
-.marqueCard:nth-child(2) .marqueToolItem::before { background: var(--terre); }
-.marqueCard:nth-child(3) .marqueToolItem::before { background: var(--ocre); }
+.marqueCard:nth-child(2) .marqueToolItem::before { background: var(--ocre); }
+
+/* Carte conseil — service humain, différenciée des cartes produit */
+.marqueCardConseil {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  background: rgba(138, 130, 121, 0.035);
+}
+
+.marqueCardConseil:hover {
+  background: rgba(138, 130, 121, 0.07);
+}
+
+.marqueConseilLine {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  font-weight: 300;
+  margin-bottom: 28px;
+}
+
+.marqueConseilCta {
+  display: inline-block;
+  margin-top: auto;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  color: var(--gres);
+  transition: opacity 0.2s ease;
+}
+
+.marqueCardConseil:hover .marqueConseilCta {
+  opacity: 0.7;
+}
 
 .marqueBadge {
   display: inline-block;
@@ -603,6 +656,51 @@
   font-weight: 300;
 }
 
+/* ===== TEASER CONSEIL ===== */
+.conseilTeaser {
+  background: var(--fond);
+  border-top: 1px solid var(--border);
+  padding: 28px 32px;
+}
+
+.conseilTeaserInner {
+  max-width: 980px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.conseilTeaserText {
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--text-secondary);
+  letter-spacing: 0.2px;
+}
+
+.conseilTeaserMark {
+  font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 300;
+  letter-spacing: 1.5px;
+  color: var(--gres);
+}
+
+.conseilTeaserLink {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--gres);
+  text-decoration: none;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+  transition: opacity 0.2s ease;
+}
+
+.conseilTeaserLink:hover {
+  opacity: 0.7;
+}
+
 /* ===== FOOTER ===== */
 .footer {
   padding: 36px 48px;
@@ -610,6 +708,24 @@
   align-items: center;
   justify-content: space-between;
   border-top: 1px solid var(--border);
+}
+
+.footerNav {
+  display: flex;
+  gap: 20px;
+}
+
+.footerLink {
+  font-size: 12px;
+  color: var(--text-light);
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footerLink:hover {
+  color: var(--gres);
 }
 
 .footerLogo {

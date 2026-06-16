@@ -13,6 +13,7 @@ npm run build     # Build production (vérification types incluse)
 |---------|------|
 | `app/` | Pages Next.js App Router |
 | `app/(protected)/` | Routes authentifiées (middleware + layout auth) |
+| `app/conseil/` | Route **publique** « sylve conseil » (vitrine expertise, hors auth, CTA `mailto:`) |
 | `components/` | React : ui/, layout/, auth/, landing/, dashboard/ |
 | `lib/supabase/` | Clients Supabase SSR (client.ts, server.ts, middleware.ts) |
 | `lib/tools/` | Logique métier extraite des outils (constantes, calculs) |

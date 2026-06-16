@@ -20,9 +20,14 @@ export function Nav() {
       <Link href="/" className={styles.navLogo}>
         sylve
       </Link>
-      <Link href="/connexion" className={styles.navCta}>
-        Accéder aux outils
-      </Link>
+      <div className={styles.navRight}>
+        <Link href="/conseil" className={styles.navLink}>
+          conseil
+        </Link>
+        <Link href="/connexion" className={styles.navCta}>
+          Accéder aux outils
+        </Link>
+      </div>
     </nav>
   );
 }

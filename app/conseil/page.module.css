@@ -1,0 +1,522 @@
+/* ===== KEYFRAMES (doivent être dans le module pour être correctement scopés) ===== */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes expandLine {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+/* ===== HERO ===== */
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  padding: 128px 32px 72px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 60% at 50% -10%, rgba(138,130,121,0.06) 0%, transparent 65%),
+    radial-gradient(ellipse 50% 40% at 85% 90%, rgba(94,139,143,0.04) 0%, transparent 55%);
+  pointer-events: none;
+}
+
+.heroInner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.heroEyebrow {
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  color: var(--text-light);
+  margin-bottom: 36px;
+  font-style: italic;
+  opacity: 0;
+  animation: fadeUp 0.7s ease-out 0.2s forwards;
+}
+
+.heroLogo {
+  font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 300;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0 0.34em;
+  opacity: 0;
+  animation: fadeUp 0.8s ease-out 0.1s forwards;
+  line-height: 1.1;
+}
+
+.heroLogoName {
+  font-size: clamp(46px, 9vw, 82px);
+  letter-spacing: clamp(5px, 1.4vw, 11px);
+  color: var(--primary);
+}
+
+.heroLogoDash {
+  font-size: clamp(38px, 7.5vw, 66px);
+  font-weight: 200;
+  color: var(--text-light);
+}
+
+.heroLogoSub {
+  font-size: clamp(46px, 9vw, 82px);
+  letter-spacing: clamp(5px, 1.4vw, 11px);
+  color: var(--gres);
+}
+
+.heroDivider {
+  width: 48px;
+  height: 1px;
+  background: var(--gres);
+  margin: 34px auto;
+  transform-origin: left;
+  transform: scaleX(0);
+  animation: expandLine 0.8s ease-out 0.7s forwards;
+  opacity: 0.6;
+}
+
+.heroAccroche {
+  font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif;
+  font-size: clamp(22px, 3.6vw, 34px);
+  font-weight: 300;
+  color: var(--text);
+  letter-spacing: -0.3px;
+  line-height: 1.4;
+  max-width: 540px;
+  margin-bottom: 28px;
+  opacity: 0;
+  animation: fadeUp 0.7s ease-out 0.5s forwards;
+}
+
+.heroIdentite {
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.4px;
+  color: var(--text-secondary);
+  opacity: 0;
+  animation: fadeUp 0.7s ease-out 0.7s forwards;
+}
+
+/* ===== SECTIONS ===== */
+.section {
+  padding: 80px 32px;
+}
+
+.sectionInner {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.sectionLabel {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--text-light);
+  margin-bottom: 18px;
+}
+
+.sectionTitle {
+  font-size: clamp(22px, 3.5vw, 32px);
+  font-weight: 300;
+  line-height: 1.35;
+  color: var(--text);
+  letter-spacing: -0.2px;
+}
+
+/* ===== INTRO ===== */
+.intro {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.introText {
+  font-size: clamp(17px, 2.2vw, 21px);
+  font-weight: 300;
+  color: var(--text);
+  line-height: 1.7;
+  max-width: 720px;
+  letter-spacing: -0.1px;
+}
+
+.expertiseLine {
+  margin-top: 32px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.9;
+  letter-spacing: 0.3px;
+  color: var(--primary);
+  max-width: 720px;
+}
+
+.expertiseAccent {
+  color: var(--gres);
+}
+
+/* ===== MISSIONS ===== */
+.missionsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-top: 28px;
+}
+
+.missionCard {
+  background: var(--surface);
+  padding: 32px 30px;
+  transition: background 0.2s ease;
+}
+
+.missionCard:hover {
+  background: var(--fond);
+}
+
+.missionTitre {
+  font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 17px;
+  font-weight: 300;
+  color: var(--text);
+  letter-spacing: 0.2px;
+  margin-bottom: 12px;
+  padding-left: 14px;
+  position: relative;
+}
+
+.missionTitre::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 6px;
+  height: 1px;
+  background: var(--gres);
+  border-radius: 1px;
+}
+
+.missionDesc {
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  padding-left: 14px;
+}
+
+/* ===== PARCOURS ===== */
+.parcours {
+  background: var(--fond);
+  text-align: center;
+}
+
+.parcoursInner {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.parcoursInner .sectionLabel {
+  text-align: center;
+}
+
+.parcoursText {
+  font-size: clamp(16px, 2vw, 19px);
+  font-weight: 300;
+  color: var(--text-secondary);
+  line-height: 1.75;
+}
+
+.parcoursStrong {
+  display: block;
+  margin-top: 18px;
+  font-weight: 400;
+  color: var(--primary);
+}
+
+/* ===== RÉFÉRENCES ===== */
+.references {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+}
+
+/* Carousel */
+.carousel {
+  margin-top: 32px;
+}
+
+.carouselTrack {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 4px 32px 8px;
+  margin: 0 -32px;
+}
+
+.carouselTrack::-webkit-scrollbar {
+  display: none;
+}
+
+.casCard {
+  flex: 0 0 auto;
+  width: min(520px, 82vw);
+  scroll-snap-align: start;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 32px 32px 34px;
+  display: flex;
+  flex-direction: column;
+}
+
+.casDomaine {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gres);
+  margin-bottom: 14px;
+}
+
+.casTitre {
+  font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 19px;
+  font-weight: 300;
+  color: var(--text);
+  line-height: 1.35;
+  letter-spacing: -0.1px;
+  margin-bottom: 24px;
+}
+
+.casBlocs {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.casBloc {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.casBlocLabel {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-light);
+}
+
+.casBlocText {
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.carouselNav {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.carouselArrow {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.carouselArrow:hover {
+  border-color: var(--gres);
+  color: var(--gres);
+}
+
+/* Autres interventions */
+.autresTitre {
+  font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 19px;
+  font-weight: 300;
+  color: var(--text);
+  letter-spacing: 0.2px;
+  margin: 64px 0 24px;
+}
+
+.autresGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.autreCard {
+  background: var(--fond);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 22px 24px;
+}
+
+.autreTitre {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+
+.autreDesc {
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ===== CONTACT ===== */
+.contact {
+  background: var(--fond);
+  text-align: center;
+}
+
+.contact .sectionLabel {
+  text-align: center;
+}
+
+.contact .sectionTitle {
+  margin-bottom: 36px;
+}
+
+.contactBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 36px;
+  background: var(--gres);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  transition: all 0.2s ease;
+}
+
+.contactBtn:hover {
+  background: #756E66;
+  transform: translateY(-1px);
+}
+
+.contactBtn:hover svg {
+  transform: translateX(3px);
+}
+
+.contactBtn svg {
+  transition: transform 0.2s ease;
+}
+
+/* ===== RETOUR ===== */
+.retour {
+  padding: 48px 32px;
+  text-align: center;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+}
+
+.retourLink {
+  font-size: 14px;
+  color: var(--primary);
+  text-decoration: none;
+  letter-spacing: 0.2px;
+  transition: opacity 0.2s;
+}
+
+.retourLink:hover {
+  opacity: 0.7;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  padding: 36px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--border);
+}
+
+.footerLogo {
+  font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  letter-spacing: 6px;
+  color: var(--primary);
+}
+
+.footerCopy {
+  font-size: 12px;
+  color: var(--text-light);
+  font-weight: 300;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 720px) {
+  .missionsGrid {
+    grid-template-columns: 1fr;
+  }
+  .autresGrid {
+    grid-template-columns: 1fr;
+  }
+  .footer {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+    padding: 28px 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .section {
+    padding: 64px 20px;
+  }
+  .hero {
+    padding: 120px 20px 64px;
+  }
+  .carouselTrack {
+    padding: 4px 20px 8px;
+    margin: 0 -20px;
+  }
+}

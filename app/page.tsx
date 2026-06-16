@@ -185,7 +185,8 @@ export default function Home() {
               </span>
             </div>
 
-            {/* PILOTE */}
+            {/* PILOTE — retiré de la vitrine publique pour l'instant
+                (produit non abandonné, carte réactivable)
             <div className={styles.marqueCard}>
               <div className={`${styles.marqueAccent} ${styles.accentTerre}`} />
               <div className={styles.marqueLogo}>
@@ -216,6 +217,7 @@ export default function Home() {
                 Bientôt
               </span>
             </div>
+            */}
 
             {/* SOURCE */}
             <div className={styles.marqueCard}>
@@ -248,6 +250,27 @@ export default function Home() {
                 Bientôt
               </span>
             </div>
+
+            {/* CONSEIL — service humain (pas un logiciel) */}
+            <Link
+              href="/conseil"
+              className={`${styles.marqueCard} ${styles.marqueCardConseil}`}
+            >
+              <div className={`${styles.marqueAccent} ${styles.accentGres}`} />
+              <div className={styles.marqueLogo}>
+                <span className={styles.marqueLogoName}>sylve</span>
+                <span className={`${styles.marqueLogoSub} ${styles.subGres}`}>
+                  conseil
+                </span>
+              </div>
+              <div className={styles.marqueTarget}>Concepteurs · MOA · MOE</div>
+              <p className={styles.marqueConseilLine}>
+                L&apos;expertise humaine derrière les outils — le référent
+                technique qu&apos;on sollicite pour sécuriser un projet de
+                paysage.
+              </p>
+              <span className={styles.marqueConseilCta}>Découvrir →</span>
+            </Link>
           </div>
         </div>
       </section>
@@ -269,6 +292,19 @@ export default function Home() {
             <br />
             du terrain à la conception, du chantier à la MOE.
           </p>
+        </div>
+      </section>
+
+      {/* TEASER CONSEIL */}
+      <section className={styles.conseilTeaser}>
+        <div className={styles.conseilTeaserInner}>
+          <span className={styles.conseilTeaserText}>
+            <span className={styles.conseilTeaserMark}>sylve conseil</span>
+            {" — "}l&apos;expertise humaine derrière les outils
+          </span>
+          <Link href="/conseil" className={styles.conseilTeaserLink}>
+            En savoir plus →
+          </Link>
         </div>
       </section>
 
@@ -305,6 +341,11 @@ export default function Home() {
       {/* FOOTER */}
       <footer className={styles.footer}>
         <div className={styles.footerLogo}>sylve</div>
+        <nav className={styles.footerNav}>
+          <Link href="/conseil" className={styles.footerLink}>
+            conseil
+          </Link>
+        </nav>
         <p className={styles.footerCopy}>
           © 2026 sylve.eco — L&apos;intelligence numérique au service du
           paysage

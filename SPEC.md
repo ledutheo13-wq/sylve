@@ -48,6 +48,11 @@ sylve/
 │   │   ├── page.tsx                    # Auth — Client component (4 vues: signup/login/forgot/recovery)
 │   │   └── page.module.css
 │   │
+│   ├── conseil/                        # Route PUBLIQUE (hors auth) — vitrine "sylve conseil"
+│   │   ├── page.tsx                    # One-pager conseil — Server component
+│   │   ├── CasCarousel.tsx             # Carousel études de cas — Client component
+│   │   └── page.module.css
+│   │
 │   ├── (protected)/                    # Route group: layout avec auth server-side
 │   │   ├── layout.tsx                  # Valide session + fetch profile → AuthProvider
 │   │   │
@@ -235,8 +240,8 @@ sylve/
 
 ```
 middleware.ts
-  → Matche: /dashboard, /projet/*, /pilote/*, /source/*
-  → Ne matche PAS: /, /connexion, /api/*, /_next/*, fichiers statiques
+  → Protège: /dashboard, /projet/*, /pilote/*, /source/* (sauf vitrine /projet/compatibilite-vegetale)
+  → Routes publiques: /, /connexion, /conseil, /api/*, /_next/*, fichiers statiques
   → supabase.auth.getUser() (server-side, sécurisé)
   → Pas de user → redirect('/connexion')
   → User OK → NextResponse.next()
