@@ -275,9 +275,44 @@
   overflow: hidden;
 }
 
-/* Carousel */
+/* Filtres (chips) */
+.filtres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 28px;
+  margin-bottom: 32px;
+}
+
+.chip {
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  color: var(--text-secondary);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 7px 16px;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.chip:hover {
+  border-color: var(--gres);
+  color: var(--gres);
+}
+
+.chipActive,
+.chipActive:hover {
+  background: var(--gres);
+  border-color: var(--gres);
+  color: #fff;
+}
+
+/* Carrousel horizontal */
 .carousel {
-  margin-top: 32px;
+  position: relative;
 }
 
 .carouselTrack {
@@ -287,7 +322,7 @@
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
-  padding: 4px 32px 8px;
+  padding: 4px 32px 10px;
   margin: 0 -32px;
 }
 
@@ -295,69 +330,30 @@
   display: none;
 }
 
-.casCard {
+.carouselTrack:focus-visible {
+  outline: 2px solid var(--gres);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.refCard {
   flex: 0 0 auto;
-  width: min(520px, 82vw);
+  /* Une carte pleine + un aperçu (peek) de la suivante */
+  width: min(360px, 80vw);
   scroll-snap-align: start;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 12px;
-  padding: 32px 32px 34px;
+  padding: 28px 26px 26px;
   display: flex;
   flex-direction: column;
-}
-
-.casDomaine {
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: var(--gres);
-  margin-bottom: 14px;
-}
-
-.casTitre {
-  font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif;
-  font-size: 19px;
-  font-weight: 300;
-  color: var(--text);
-  line-height: 1.35;
-  letter-spacing: -0.1px;
-  margin-bottom: 24px;
-}
-
-.casBlocs {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.casBloc {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-
-.casBlocLabel {
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: var(--text-light);
-}
-
-.casBlocText {
-  font-size: 14px;
-  font-weight: 300;
-  color: var(--text-secondary);
-  line-height: 1.6;
 }
 
 .carouselNav {
   display: flex;
   justify-content: center;
   gap: 10px;
-  margin-top: 28px;
+  margin-top: 24px;
 }
 
 .carouselArrow {
@@ -379,6 +375,102 @@
   color: var(--gres);
 }
 
+.refDomaine {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gres);
+  margin-bottom: 12px;
+}
+
+.refTitre {
+  font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  color: var(--text);
+  line-height: 1.35;
+  letter-spacing: -0.1px;
+  margin-bottom: 20px;
+}
+
+.refBlocs {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.refBloc {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.refBlocLabel {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-light);
+}
+
+.refBlocText {
+  font-size: 13.5px;
+  font-weight: 300;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Marqueurs techniques (toujours visibles) */
+.marqueurs {
+  list-style: none;
+  margin: 18px 0 0;
+  padding: 16px 0 0;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 0;
+}
+
+.marqueur {
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.marqueur:not(:last-child)::after {
+  content: '·';
+  color: var(--gres);
+  margin: 0 7px;
+}
+
+/* Affordance "voir la référence" */
+.voirRef {
+  margin-top: 18px;
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  color: var(--gres);
+  background: none;
+  border: none;
+  padding: 4px 0;
+  cursor: pointer;
+  transition: gap 0.18s ease, opacity 0.18s ease;
+}
+
+.voirRef:hover {
+  gap: 9px;
+  opacity: 0.78;
+}
+
 /* Autres interventions */
 .autresTitre {
   font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif;
@@ -391,7 +483,7 @@
 
 .autresGrid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
 }
 
@@ -400,6 +492,8 @@
   border: 1px solid var(--border);
   border-radius: 8px;
   padding: 22px 24px;
+  display: flex;
+  flex-direction: column;
 }
 
 .autreTitre {
@@ -510,6 +604,98 @@
   font-weight: 300;
 }
 
+/* ===== LIGHTBOX ===== */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(28, 26, 24, 0.86);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.lightboxStage {
+  flex: 1;
+  width: 100%;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  touch-action: none;
+}
+
+.lightboxImg {
+  max-width: 90vw;
+  max-height: 78vh;
+  object-fit: contain;
+  user-select: none;
+  -webkit-user-drag: none;
+  background: #fff;
+  border-radius: 2px;
+  transform-origin: center center;
+  will-change: transform;
+}
+
+.lightboxClose {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.lightboxClose:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.lightboxCaption {
+  flex: 0 0 auto;
+  margin-top: 18px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  max-width: 720px;
+}
+
+.lightboxCaptionTitre {
+  font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  letter-spacing: 0.2px;
+  color: #fff;
+}
+
+.lightboxCaptionLine {
+  font-size: 13px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.5;
+}
+
+.lightboxHint {
+  margin-top: 4px;
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: 0.3px;
+  color: rgba(255, 255, 255, 0.45);
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 720px) {
   .missionsGrid {
@@ -534,7 +720,10 @@
     padding: 120px 20px 64px;
   }
   .carouselTrack {
-    padding: 4px 20px 8px;
+    padding: 4px 20px 10px;
     margin: 0 -20px;
+  }
+  .lightboxImg {
+    max-width: 94vw;
   }
 }
