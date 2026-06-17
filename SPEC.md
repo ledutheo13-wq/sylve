@@ -143,7 +143,7 @@ sylve/
 │   │   ├── server.ts                   # createServerClient (server components)
 │   │   └── middleware.ts               # createServerClient (middleware)
 │   │
-│   ├── plantes-v1.json                 # 1,301 espèces (source: MOE-Paysage/04_SYLVE-PROJET/base-vegetale)
+│   ├── plantes-v1.json                 # 1,301 espèces (source: Projet-pro/02_SYLVE/03_Produit/01_Projet/base-vegetale)
 │   ├── plantes.ts                      # Import typé + export
 │   │
 │   ├── tools/
@@ -398,7 +398,7 @@ Chaque outil HTML vanilla suit le même process de migration :
 ## Références
 
 - **Projet existant** : `C:\Users\Tledu\OneDrive\sylve-landing`
-- **Docs métier** : `C:\Users\Tledu\OneDrive\MOE-Paysage`
-- **Base végétale source** : `C:\Users\Tledu\OneDrive\MOE-Paysage\04_SYLVE-PROJET\base-vegetale\plantes-v1.json`
+- **Docs métier** : `C:\Users\Tledu\OneDrive\Projet-pro\02_SYLVE`
+- **Base végétale source** : `C:\Users\Tledu\OneDrive\Projet-pro\02_SYLVE\03_Produit\01_Projet\base-vegetale\plantes-v1.json`
 - **Supabase** : `https://jbqgyfbjyulezaclvmwc.supabase.co`
 - **Domaine** : `sylve.eco` (Vercel)

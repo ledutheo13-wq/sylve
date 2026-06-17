@@ -1,6 +1,6 @@
 # Bibliothèque Réglementaire & Technique SYLVE
 
-> **Source :** `C:\Users\Tledu\OneDrive\MOE-Paysage` (bible complète)
+> **Source :** `C:\Users\Tledu\OneDrive\Projet-pro\02_SYLVE\04_Bibliotheque-reglementaire` (ex-MOE-Paysage\08_BIBLIOTHEQUE)
 > **Audit :** 01/04/2026 — 591 fichiers techniques + 79 fichiers .md de documentation projet
 
 ---
@@ -201,7 +201,7 @@
 
 ## Documentation projet (.md) — 79 fichiers
 
-Au-delà de la bibliothèque technique, `MOE-Paysage` contient 79 fichiers markdown qui documentent toute la réflexion, les specs produit, et l'historique de développement.
+Au-delà de la bibliothèque technique, `Projet-pro\02_SYLVE` contient les fichiers markdown qui documentent toute la réflexion, les specs produit, et l'historique de développement.
 
 ### Documents stratégiques (racine)
 

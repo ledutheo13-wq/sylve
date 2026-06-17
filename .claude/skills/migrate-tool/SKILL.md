@@ -8,7 +8,7 @@ Migre l'outil `$ARGUMENTS` depuis le site vanilla vers Next.js.
 
 ## Source
 Fichier HTML complet : `C:\Users\Tledu\OneDrive\sylve-landing\projet\$ARGUMENTS\index.html`
-Fiche produit (si existe) : `C:\Users\Tledu\OneDrive\MOE-Paysage\04_SYLVE-PROJET\*\ETAT-DEV-*.md`
+Fiche produit (si existe) : `C:\Users\Tledu\OneDrive\Projet-pro\02_SYLVE\03_Produit\01_Projet\*\ETAT-DEV-*.md`
 
 ## Étapes
 

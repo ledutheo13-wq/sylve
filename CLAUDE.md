@@ -29,7 +29,7 @@ npm run build     # Build production (vérification types incluse)
 - **Fetch JSON** : toujours chemins absolus (jamais relatifs — bug trailing slash)
 
 ## Références externes (hors repo)
-- **Bible métier** : `C:\Users\Tledu\OneDrive\MOE-Paysage` — source de vérité produit/stratégie/roadmap
+- **Bible métier** : `C:\Users\Tledu\OneDrive\Projet-pro\02_SYLVE` — source de vérité produit/stratégie/roadmap (dossier projet global unifié, ex-MOE-Paysage absorbé)
 - **Site vanilla** : `C:\Users\Tledu\OneDrive\sylve-landing` — référence design pixel-perfect + code 7 outils
 
 Détails architecture : @SPEC.md
