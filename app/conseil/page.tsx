@@ -17,7 +17,7 @@ const MISSIONS = [
   },
   {
     titre: "Appui AMO",
-    desc: "Faisabilité, cahiers des charges, arbitrages. Orientation vers la labellisation (BiodiverCity, ÉcoJardin) et les financements (agences de l'eau, ADEME, aides régionales).",
+    desc: "Pour les maîtres d'ouvrage : sécuriser le projet paysager face aux aléas techniques, réglementaires et budgétaires. Faisabilité, cahiers des charges, arbitrages dans votre intérêt, orientation vers la labellisation (BiodiverCity, ÉcoJardin) et les financements (agences de l'eau, ADEME, aides régionales).",
   },
   {
     titre: "Support MOE / MOEX",
@@ -374,12 +374,13 @@ export default function ConseilPage() {
             Du terrain à la maîtrise d&apos;œuvre
           </div>
           <p className={styles.parcoursText}>
-            J&apos;ai exercé toute la chaîne du paysage — du jardinier au chef de
-            projet en maîtrise d&apos;œuvre, en passant par les études
-            techniques. Le terrain, la science et la réglementation réunis dans
-            un même profil.{" "}
+            {"J'ai exercé toute la chaîne du paysage — du geste de chantier à la décision en maîtrise d'œuvre. "}
+            <strong className={styles.parcoursEmphase}>
+              {"Douze ans d'expérience : cinq ans sur le terrain, un an de conduite de travaux, un an comme responsable de bureau d'études d'exécution, et cinq ans en maîtrise d'œuvre."}
+            </strong>
+            {" Ingénieur paysagiste, concepteur au niveau européen, formé à l'Institut Agro Rennes-Angers. Le terrain, la science et la réglementation réunis dans un même profil. "}
             <strong className={styles.parcoursStrong}>
-              La rigueur de l&apos;ingénieur, au service du vivant.
+              {"La rigueur de l'ingénieur, au service du vivant."}
             </strong>
           </p>
         </div>
@@ -390,7 +391,38 @@ export default function ConseilPage() {
         <div className={styles.sectionInner}>
           <div className={styles.sectionLabel}>Références</div>
           <h2 className={styles.sectionTitle}>Études de cas</h2>
+          <p className={styles.referencesSub}>
+            {"Des décisions qui sécurisent le "}
+            <strong className={styles.referencesSubStrong}>budget</strong>
+            {", le "}
+            <strong className={styles.referencesSubStrong}>permis</strong>
+            {" et les "}
+            <strong className={styles.referencesSubStrong}>délais</strong>
+            {" — côté maîtrise d'ouvrage comme côté conception."}
+          </p>
           <ReferencesCarousel cas={CAS} autres={AUTRES} />
+        </div>
+      </section>
+
+      {/* PONT VERS LES OUTILS */}
+      <section className={`${styles.section} ${styles.pont}`}>
+        <div className={styles.sectionInner}>
+          <div className={styles.sectionLabel}>L&apos;expertise, outillée</div>
+          <p className={styles.pontText}>
+            {"Les méthodes que j'applique en mission, je les outille dans "}
+            <strong className={styles.pontMark}>sylve</strong>
+            {" : calculateurs (charges sur dalle, arrosage, soutènements…), bases botanique et réglementaire, et bientôt l'assistant technique "}
+            <strong className={styles.pontMark}>sylve source</strong>
+            {". Les mêmes exigences, en accès libre."}
+          </p>
+          <div className={styles.pontCtas}>
+            <Link href="/projet/compatibilite-vegetale" className={styles.pontCtaPrimary}>
+              Essayer un outil →
+            </Link>
+            <Link href="/#outils" className={styles.pontCtaSecondary}>
+              Voir tous les outils →
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -399,8 +431,11 @@ export default function ConseilPage() {
         <div className={styles.sectionInner}>
           <div className={styles.sectionLabel}>Contact</div>
           <h2 className={styles.sectionTitle}>Discutons de votre projet</h2>
-          <a href="mailto:tledu@sylve.eco" className={styles.contactBtn}>
-            tledu@sylve.eco
+          <a
+            href="mailto:tledu@sylve.eco?subject=sylve%20conseil%20%E2%80%94%20votre%20projet"
+            className={styles.contactBtn}
+          >
+            Envoyez votre dossier ou posez votre question — réponse sous 48 h
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
               <path
                 d="M2 7H12M12 7L7.5 2.5M12 7L7.5 11.5"

@@ -130,11 +130,11 @@
 }
 
 .sectionLabel {
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 3px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 2px;
   text-transform: uppercase;
-  color: var(--text-light);
+  color: var(--text-secondary);
   margin-bottom: 18px;
 }
 
@@ -151,6 +151,7 @@
   background: var(--surface);
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
+  text-align: center;
 }
 
 .introText {
@@ -159,11 +160,12 @@
   color: var(--text);
   line-height: 1.7;
   max-width: 720px;
+  margin: 0 auto;
   letter-spacing: -0.1px;
 }
 
 .expertiseLine {
-  margin-top: 32px;
+  margin: 32px auto 0;
   font-size: 14px;
   font-weight: 400;
   line-height: 1.9;
@@ -260,6 +262,11 @@
   line-height: 1.75;
 }
 
+.parcoursEmphase {
+  font-weight: 400;
+  color: var(--text);
+}
+
 .parcoursStrong {
   display: block;
   margin-top: 18px;
@@ -273,6 +280,20 @@
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
   overflow: hidden;
+}
+
+.referencesSub {
+  margin-top: 14px;
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  max-width: 640px;
+}
+
+.referencesSubStrong {
+  font-weight: 500;
+  color: var(--gres);
 }
 
 /* Filtres (chips) */
@@ -511,9 +532,77 @@
   line-height: 1.6;
 }
 
+/* ===== PONT VERS LES OUTILS ===== */
+.pont {
+  background: var(--fond);
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+.pont .sectionLabel {
+  text-align: center;
+  color: var(--gres);
+}
+
+.pontText {
+  max-width: 640px;
+  margin: 0 auto;
+  font-size: clamp(15px, 1.9vw, 18px);
+  font-weight: 300;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.pontMark {
+  font-weight: 400;
+  color: var(--gres);
+}
+
+.pontCtas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px 28px;
+  margin-top: 28px;
+}
+
+.pontCtaPrimary {
+  display: inline-flex;
+  align-items: center;
+  padding: 13px 28px;
+  background: var(--gres);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  transition: all 0.2s ease;
+}
+
+.pontCtaPrimary:hover {
+  background: #756e66;
+  transform: translateY(-1px);
+}
+
+.pontCtaSecondary {
+  display: inline-flex;
+  align-items: center;
+  font-size: 14px;
+  color: var(--primary);
+  text-decoration: none;
+  letter-spacing: 0.2px;
+  transition: opacity 0.2s ease;
+}
+
+.pontCtaSecondary:hover {
+  opacity: 0.7;
+}
+
 /* ===== CONTACT ===== */
 .contact {
   background: var(--fond);
+  border-top: 1px solid var(--border);
   text-align: center;
 }
 
@@ -528,8 +617,10 @@
 .contactBtn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
-  padding: 15px 36px;
+  max-width: 100%;
+  padding: 15px 32px;
   background: var(--gres);
   color: white;
   text-decoration: none;
@@ -537,7 +628,13 @@
   font-size: 14px;
   font-weight: 400;
   letter-spacing: 0.3px;
+  line-height: 1.4;
+  text-align: center;
   transition: all 0.2s ease;
+}
+
+.contactBtn svg {
+  flex-shrink: 0;
 }
 
 .contactBtn:hover {

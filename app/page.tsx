@@ -53,14 +53,16 @@ export default function Home() {
       </section>
 
       {/* OUTILS DISPONIBLES */}
-      <section className={`${styles.section} ${styles.outilsSection}`}>
+      <section
+        id="outils"
+        className={`${styles.section} ${styles.outilsSection}`}
+      >
         <div className={styles.sectionInner}>
           <div className={styles.sectionLabel}>Les outils</div>
-          <h2 className={styles.sectionTitle}>
-            7 outils de conception en accès libre
-          </h2>
+          <h2 className={styles.sectionTitle}>7 outils de conception</h2>
           <p className={styles.sectionText}>
-            Calculateurs, outils végétaux, générateurs — testez directement.
+            Calculateurs, outils végétaux, générateurs. La compatibilité
+            végétale est en accès libre ; créez un compte pour les autres.
           </p>
 
           <div className={styles.outilsGrid}>
@@ -120,7 +122,7 @@ export default function Home() {
               >
                 <div className={styles.outilCardTop}>
                   <span className={styles.outilIcon}>{tool.emoji}</span>
-                  <span className={styles.outilBadgeLibre}>Accès libre</span>
+                  <span className={styles.outilBadgeLibre}>Créer un compte</span>
                 </div>
                 <div className={styles.outilName}>{tool.name}</div>
                 <div className={styles.outilDesc}>{tool.desc}</div>
