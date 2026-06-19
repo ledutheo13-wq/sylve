@@ -156,24 +156,6 @@ export function DashboardContent({ prenom }: { prenom: string | null }) {
                 </div>
               </Link>
 
-              {/* SYLVE Pilote */}
-              <div className={styles.toolCardDisabled}>
-                <span className={styles.badgeSoon}>bientot</span>
-                <div className={styles.toolIcon} style={{ background: "#A67C5B" }}>
-                  <svg viewBox="0 0 24 24">
-                    <path d="M12 20V10" />
-                    <path d="M18 20V4" />
-                    <path d="M6 20v-4" />
-                  </svg>
-                </div>
-                <div className={styles.toolName} style={{ color: "#A67C5B" }}>
-                  SYLVE Pilote
-                </div>
-                <div className={styles.toolLabel}>
-                  Gestion de missions et honoraires
-                </div>
-              </div>
-
               {/* SYLVE Source */}
               <div className={styles.toolCardDisabled}>
                 <span className={styles.badgeSoon}>bientot</span>

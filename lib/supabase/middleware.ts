@@ -47,7 +47,10 @@ export async function updateSession(request: NextRequest) {
   }
 
   // If authenticated user visits /connexion, redirect to dashboard
-  if (path === "/connexion" && user) {
+  // Exception : un utilisateur authentifié via le lien de récupération doit
+  // pouvoir définir son nouveau mot de passe sur /connexion?type=recovery.
+  const isRecovery = request.nextUrl.searchParams.get("type") === "recovery";
+  if (path === "/connexion" && user && !isRecovery) {
     const url = request.nextUrl.clone();
     url.pathname = "/dashboard";
     return NextResponse.redirect(url);

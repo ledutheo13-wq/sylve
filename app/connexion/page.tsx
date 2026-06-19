@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { createClient } from "@/lib/supabase/client";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
@@ -18,6 +18,51 @@ export default function ConnexionPage() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [sentEmail, setSentEmail] = useState("");
+  const [resent, setResent] = useState(false);
+
+  // Détecte les retours des liens email (récupération de mot de passe, lien invalide).
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("type") === "recovery") {
+      setView("recovery");
+    } else if (params.get("error") === "lien_invalide") {
+      setView("login");
+      setError(
+        "Le lien a expiré ou a déjà été utilisé. Connectez-vous, ou recréez un compte si besoin."
+      );
+    }
+  }, []);
+
+  async function handleResend() {
+    setError("");
+    const { error } = await supabase.auth.resend({
+      type: "signup",
+      email: sentEmail,
+    });
+    if (error) setError(error.message);
+    else setResent(true);
+  }
+
+  async function handleRecovery(e: React.FormEvent) {
+    e.preventDefault();
+    setError("");
+    if (password.length < 8) {
+      setError("Le mot de passe doit contenir au moins 8 caractères.");
+      return;
+    }
+    if (password !== passwordConfirm) {
+      setError("Les mots de passe ne correspondent pas.");
+      return;
+    }
+    setLoading(true);
+    const { error } = await supabase.auth.updateUser({ password });
+    setLoading(false);
+    if (error) {
+      setError(error.message);
+      return;
+    }
+    router.push("/dashboard");
+  }
 
   async function handleSignup(e: React.FormEvent) {
     e.preventDefault();
@@ -99,7 +144,41 @@ export default function ConnexionPage() {
                 </p>
                 <p className={styles.successText}>Cliquez sur le lien pour activer votre compte.</p>
                 <p className={styles.successNote}>Vérifiez vos courriers indésirables si vous ne le trouvez pas.</p>
+                {sentEmail && (
+                  <div className={styles.viewLinks}>
+                    {resent ? (
+                      <span className={styles.successNote}>Nouvel email envoyé.</span>
+                    ) : (
+                      <button type="button" className={styles.viewLink} onClick={handleResend}>
+                        Pas reçu ? <span className={styles.viewLinkAccent}>Renvoyer l&apos;email</span>
+                      </button>
+                    )}
+                  </div>
+                )}
               </div>
+            )}
+
+            {/* RECOVERY — définir un nouveau mot de passe */}
+            {view === "recovery" && (
+              <form onSubmit={handleRecovery}>
+                <h1 className={styles.cardTitle}>Nouveau mot de passe</h1>
+                <p className={styles.cardSubtitle}>Choisissez un nouveau mot de passe pour votre compte.</p>
+
+                {error && <div className={`${styles.message} ${styles.messageError}`}>{error}</div>}
+
+                <div className={styles.formGroup}>
+                  <label className={styles.label}>Nouveau mot de passe</label>
+                  <input type="password" className={styles.input} placeholder="Minimum 8 caractères" value={password} onChange={(e) => setPassword(e.target.value)} required minLength={8} autoFocus />
+                </div>
+                <div className={styles.formGroup}>
+                  <label className={styles.label}>Confirmer le mot de passe</label>
+                  <input type="password" className={styles.input} placeholder="Confirmer le mot de passe" value={passwordConfirm} onChange={(e) => setPasswordConfirm(e.target.value)} required />
+                </div>
+
+                <button type="submit" className={styles.btnSubmit} disabled={loading}>
+                  {loading ? "..." : "Définir le mot de passe"}
+                </button>
+              </form>
             )}
 
             {/* SIGNUP */}
