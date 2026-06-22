@@ -1,0 +1,215 @@
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 24px 64px;
+}
+
+.head {
+  margin-bottom: 24px;
+}
+
+.title {
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  letter-spacing: 6px;
+  font-size: 22px;
+  color: var(--ocre);
+  margin: 0 0 6px;
+}
+
+.subtitle {
+  color: var(--text-muted);
+  font-size: 14px;
+  max-width: 60ch;
+  margin: 0;
+}
+
+/* --- Saisie --- */
+.form {
+  display: flex;
+  gap: 12px;
+  align-items: flex-end;
+  margin-bottom: 16px;
+}
+
+.input {
+  flex: 1;
+  resize: vertical;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--ocre);
+}
+
+.submit {
+  padding: 12px 22px;
+  border: none;
+  border-radius: var(--radius);
+  background: var(--ocre);
+  color: #fff;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.submit:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.error {
+  color: var(--error);
+  font-size: 14px;
+  margin: 8px 0;
+}
+
+/* --- Réponse + panneau --- */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 8px;
+  align-items: start;
+}
+
+.answer {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px 22px;
+}
+
+.answerBody {
+  white-space: pre-wrap;
+  line-height: 1.65;
+  font-size: 15px;
+  color: var(--text);
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  margin: 0 2px;
+  border: none;
+  border-radius: 9px;
+  background: var(--ocre);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  vertical-align: baseline;
+  line-height: 18px;
+}
+
+.pill:hover {
+  background: var(--terre);
+}
+
+/* --- Panneau de sources (NotebookLM) --- */
+.panel {
+  position: sticky;
+  top: 24px;
+  max-height: calc(100vh - 48px);
+  overflow-y: auto;
+  background: var(--fond-warm);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 18px 18px 24px;
+}
+
+.panelTitle {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--text-muted);
+  margin: 0 0 14px;
+}
+
+.empty {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.source {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+  margin-bottom: 12px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sourceActive {
+  border-color: var(--ocre);
+  box-shadow: 0 0 0 2px rgba(196, 151, 59, 0.18);
+}
+
+.sourceHead {
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+  margin-bottom: 8px;
+}
+
+.sourceN {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 9px;
+  background: var(--ocre);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.sourceCite {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.sourceText {
+  white-space: pre-wrap;
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--text);
+  margin: 0;
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.mark {
+  background: rgba(196, 151, 59, 0.28);
+  color: var(--text);
+  border-radius: 2px;
+  padding: 1px 0;
+}
+
+@media (max-width: 860px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+  .panel {
+    position: static;
+    max-height: none;
+  }
+}

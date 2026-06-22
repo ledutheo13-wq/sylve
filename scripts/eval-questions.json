@@ -1,0 +1,21 @@
+[
+  { "id": "Q1", "theme": "Terres végétales", "question": "Quelle épaisseur de terre végétale prévoir pour la plantation d'arbres de moyen développement ?", "type": "multi-sources", "sources_attendues": "UNEP pc1 + pc2 + Fascicule 35" },
+  { "id": "Q2", "theme": "Terres végétales", "question": "Que prescrit le Fascicule 35 sur la fourniture et la réception des terres végétales ?", "type": "factuelle", "sources_attendues": "Fascicule 35" },
+  { "id": "Q3", "theme": "Terres végétales", "question": "Quel CBS impose le PLU de Paris en zone UG ?", "type": "hors-base", "sources_attendues": "aucune (local/PLU)" },
+  { "id": "Q4", "theme": "Plantations / réseaux", "question": "Quelle distance minimale respecter entre un arbre et un réseau enterré ?", "type": "factuelle", "sources_attendues": "NF P98-332" },
+  { "id": "Q5", "theme": "Plantations", "question": "Comment dimensionner une fosse de plantation pour un arbre tige en milieu urbain ?", "type": "multi-sources", "sources_attendues": "UNEP pc2 + CSTB arbre en milieu urbain + Fascicule 35" },
+  { "id": "Q6", "theme": "Arrosage", "question": "Quels principes pour concevoir et sectoriser un réseau d'arrosage automatique ?", "type": "factuelle", "sources_attendues": "UNEP pc6" },
+  { "id": "Q7", "theme": "Eaux pluviales", "question": "Quelles solutions de gestion des EP à la parcelle, et comment dimensionner une noue ?", "type": "multi-sources", "sources_attendues": "UNEP cc7 + Fascicule 70-II" },
+  { "id": "Q8", "theme": "Eaux pluviales", "question": "Quel volume d'abattement des EP exige le zonage pluvial de ma commune ?", "type": "hors-base", "sources_attendues": "aucune (local)" },
+  { "id": "Q9", "theme": "Tranchées", "question": "Quelles règles de remblayage et de réfection d'une tranchée sous espace vert ?", "type": "factuelle", "sources_attendues": "NF P98-331" },
+  { "id": "Q10", "theme": "Terrassements", "question": "Quelles précautions de terrassement pour éviter le compactage d'un sol destiné à être planté ?", "type": "multi-sources", "sources_attendues": "UNEP cc1 + pc1" },
+  { "id": "Q11", "theme": "Végétalisation bâti", "question": "Quelles contraintes de charge et de drainage pour une toiture-terrasse végétalisée ?", "type": "multi-sources", "sources_attendues": "UNEP bc4 + NF DTU 43.1" },
+  { "id": "Q12", "theme": "Voirie perméable", "question": "Quelles règles de mise en œuvre de pavés sur lit de sable (revêtement perméable) ?", "type": "multi-sources", "sources_attendues": "NF P98-335 + Fascicule 29" },
+  { "id": "Q13", "theme": "Accessibilité", "question": "Quelle pente maximale et quelle largeur minimale pour un cheminement extérieur accessible PMR ?", "type": "factuelle", "sources_attendues": "Arrêté 15 janv. 2007 + NF P98-351" },
+  { "id": "Q14", "theme": "Accessibilité", "question": "Comment traiter un ressaut sur un cheminement accessible ?", "type": "factuelle", "sources_attendues": "Arrêté 15 janv. 2007" },
+  { "id": "Q15", "theme": "Missions MOE", "question": "Quelles sont les missions de base de maîtrise d'œuvre et leur décomposition par phase ?", "type": "factuelle", "sources_attendues": "CCP maîtrise d'œuvre privée / CCAG-MOE" },
+  { "id": "Q16", "theme": "Arbres existants / chantier", "question": "Dans quels cas une protection racinaire des arbres existants est-elle requise sur un chantier, et comment la dimensionner ?", "type": "multi-sources", "sources_attendues": "CSTB arbre en milieu urbain + Fascicule 35" },
+  { "id": "Q17", "theme": "Végétalisation bâti / EP", "question": "Pour une toiture-terrasse végétalisée, quel nombre minimum d'évacuations d'eaux pluviales prévoir ?", "type": "factuelle", "sources_attendues": "NF DTU 43.1 (+ NF DTU 40.5)" },
+  { "id": "Q18", "theme": "Végétalisation bâti / arrosage", "question": "Pour une toiture-terrasse végétalisée de 240 m², quel nombre minimum de points d'eau prévoir ?", "type": "factuelle", "sources_attendues": "UNEP bc4" },
+  { "id": "Q19", "theme": "Plantations / responsabilité MOE", "question": "L'entreprise veut planter des arbres hors période (15 oct.–15 avril) pour tenir le planning : possible à quelles conditions, et quels risques pour le maître d'œuvre ?", "type": "multi-sources", "sources_attendues": "UNEP pc2 + Fascicule 35 + garantie de reprise (CCAG-Travaux)" }
+]
