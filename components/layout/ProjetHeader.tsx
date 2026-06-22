@@ -2,15 +2,15 @@
 
 import Link from "next/link";
 import { useAuth } from "@/components/auth/AuthProvider";
-import { useRouter } from "next/navigation";
 
 export function ProjetHeader() {
   const { profile, supabase } = useAuth();
-  const router = useRouter();
 
   async function handleLogout() {
     await supabase.auth.signOut();
-    router.push("/connexion");
+    // Navigation complète : force le serveur à relire les cookies vidés
+    // (sinon le middleware voit encore la session et renvoie au dashboard).
+    window.location.href = "/connexion";
   }
 
   const prenom = profile?.prenom;

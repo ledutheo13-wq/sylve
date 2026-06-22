@@ -3,14 +3,12 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useAuth } from "@/components/auth/AuthProvider";
-import { useRouter } from "next/navigation";
 import styles from "./page.module.css";
 
 export function DashboardContent({ prenom }: { prenom: string | null }) {
   const [showWelcome, setShowWelcome] = useState(false);
   const [ready, setReady] = useState(false);
   const { profile, supabase } = useAuth();
-  const router = useRouter();
 
   useEffect(() => {
     if (!localStorage.getItem("sylve_welcome_seen")) {
@@ -21,7 +19,8 @@ export function DashboardContent({ prenom }: { prenom: string | null }) {
 
   async function handleLogout() {
     await supabase.auth.signOut();
-    router.push("/connexion");
+    // Navigation complète : force le serveur à relire les cookies vidés.
+    window.location.href = "/connexion";
   }
 
   function dismissWelcome() {
