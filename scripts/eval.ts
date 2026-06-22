@@ -105,8 +105,11 @@ async function main() {
     `Modèle : \`${CLAUDE_MODEL}\` · top-K : ${TOP_K} · seuil similarité : ${SIMILARITY_THRESHOLD}`
   );
   lines.push("");
+  const { count: dbDocs } = await supabase
+    .from("source_chunks")
+    .select("document", { count: "exact", head: true });
   lines.push(
-    "> Base ACTUELLE = 2 docs (Fascicule 35 + UNEP pc1). Attendu Phase 2 : tout ce qui n'est pas couvert par ces 2 docs doit ressortir « hors base », **zéro fabrication**."
+    `> Base = ${dbDocs ?? "?"} chunks. Critère : sources correctes sur les questions couvertes, et « hors base » SANS fabrication pour le local (PLU/zonage) et les docs non ingérés.`
   );
   lines.push("");
   lines.push(
