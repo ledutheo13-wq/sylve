@@ -59,10 +59,11 @@ export default function Home() {
       >
         <div className={styles.sectionInner}>
           <div className={styles.sectionLabel}>Les outils</div>
-          <h2 className={styles.sectionTitle}>7 outils de conception</h2>
+          <h2 className={styles.sectionTitle}>8 outils de conception</h2>
           <p className={styles.sectionText}>
             Calculateurs, outils végétaux, générateurs. La compatibilité
-            végétale est en accès libre ; créez un compte pour les autres.
+            végétale et le comparateur d&apos;ouvrages GEP sont en accès libre ;
+            créez un compte pour les autres.
           </p>
 
           <div className={styles.outilsGrid}>
@@ -79,6 +80,25 @@ export default function Home() {
               <div className={styles.outilDesc}>
                 Analysez la compatibilité botanique et écologique de vos
                 mélanges végétaux.
+              </div>
+              <div className={styles.outilArrow}>Ouvrir l&apos;outil →</div>
+            </Link>
+
+            {/* Comparateur d'ouvrages GEP — VITRINE */}
+            <Link
+              href="/projet/comparateur-ouvrages-gep"
+              className={`${styles.outilCard} ${styles.outilCardVitrine}`}
+            >
+              <div className={styles.outilCardTop}>
+                <span className={styles.outilIcon}>🌧️</span>
+                <span className={styles.outilBadgeEssayer}>Essayer</span>
+              </div>
+              <div className={styles.outilName}>
+                Comparateur d&apos;ouvrages GEP
+              </div>
+              <div className={styles.outilDesc}>
+                Comparez les 16 techniques de gestion des eaux pluviales sur 15
+                critères, en radars superposables.
               </div>
               <div className={styles.outilArrow}>Ouvrir l&apos;outil →</div>
             </Link>

@@ -1,0 +1,48 @@
+{
+  "meta": {
+    "titre": "Comparateur d'ouvrages de gestion des eaux pluviales",
+    "source": "Méthode SYLVE dérivée d'ASTEE 2017 — d'après le mémoire d'ingénieur de T. Le Du (2022)",
+    "sourceUrl": "https://dumas.ccsd.cnrs.fr/dumas-03946466",
+    "echelle": "0 = sans objet / non applicable · 4 = point fort"
+  },
+  "familles": [
+    { "id": "hydro",   "nom": "Performance hydrologique",   "couleur": "#5E8B8F", "criteres": ["EPC","FCA","FCB","ETP","INF","SIN"] },
+    { "id": "concept", "nom": "Conception & exploitation",  "couleur": "#8A8279", "criteres": ["SEC","CON","ADA","ENT","COU"] },
+    { "id": "paysage", "nom": "Paysage & écologie",         "couleur": "#A67C5B", "criteres": ["VIS","MUL","ENV","VEG"] }
+  ],
+  "criteres": [
+    { "code": "EPC", "nom": "Efficacité face aux pollutions chroniques", "def": "Capacité à traiter/retenir les pollutions chroniques (voiries, exutoires, eaux grises)." },
+    { "code": "FCA", "nom": "Facteur de charge (surfacique)", "def": "Surface active gérée par m² d'emprise de l'ouvrage." },
+    { "code": "FCB", "nom": "Facteur de charge (volumique)", "def": "Volume stocké par m² d'emprise (L/m²)." },
+    { "code": "ETP", "nom": "Évapotranspiration", "def": "Part des eaux évacuée par évapotranspiration." },
+    { "code": "INF", "nom": "Capacité d'infiltration", "def": "Aptitude à infiltrer dans le sol support." },
+    { "code": "SIN", "nom": "Utilisation sans possibilité d'infiltration", "def": "Pertinence quand le sol n'est pas infiltrant." },
+    { "code": "SEC", "nom": "Aspect sécuritaire", "def": "Sécurité vis-à-vis du public (mise en charge, chute, noyade)." },
+    { "code": "CON", "nom": "Simplicité de conception", "def": "Facilité de conception et de mise en œuvre." },
+    { "code": "ADA", "nom": "Facilité d'adaptation au contexte", "def": "Capacité à s'adapter aux contraintes du site." },
+    { "code": "ENT", "nom": "Entretien", "def": "Caractère peu contraignant de l'entretien (note haute = maîtrisé)." },
+    { "code": "COU", "nom": "Rapport coût/bénéfices", "def": "Rapport entre coûts (invest + exploitation) et bénéfices (note haute = favorable)." },
+    { "code": "VIS", "nom": "Visibilité", "def": "Caractère visible/démonstratif de la gestion de l'eau (pédagogie, acceptabilité)." },
+    { "code": "MUL", "nom": "Aspect multifonctionnel", "def": "Usages multiples au-delà de l'hydraulique (loisir, fraîcheur…)." },
+    { "code": "ENV", "nom": "Bénéfices environnementaux", "def": "Services écosystémiques (biodiversité, îlot de fraîcheur, qualité de l'eau)." },
+    { "code": "VEG", "nom": "Possibilités de végétalisation", "def": "Potentiel de végétalisation de l'ouvrage." }
+  ],
+  "ouvrages": [
+    { "code": "TVI", "nom": "Toiture végétalisée intensive", "principe": "Toit étanché + complexe végétatif toutes strates, substrat jusqu'à ~1 m, drainant/hydro-rétenteur possible.", "fonctions": "Stockage, évapotranspiration, esthétique, écologie", "notes": {"EPC":3,"FCA":1,"FCB":1,"ETP":4,"INF":0,"SIN":4,"SEC":2,"CON":1,"ADA":2,"VIS":3,"MUL":4,"ENV":4,"VEG":4,"ENT":3,"COU":3} },
+    { "code": "TVE", "nom": "Toiture végétalisée extensive", "principe": "Toit étanché + complexe végétatif extensif, substrat faible (8-12 cm).", "fonctions": "Stockage, évapotranspiration, esthétique, écologie", "notes": {"EPC":3,"FCA":1,"FCB":1,"ETP":3,"INF":0,"SIN":4,"SEC":2,"CON":2,"ADA":3,"VIS":3,"MUL":1,"ENV":3,"VEG":3,"ENT":4,"COU":3} },
+    { "code": "RVP", "nom": "Revêtement perméable", "principe": "Procédé extensif injectant l'eau dans le sol, ou admission vers un stockage.", "fonctions": "Recueil, infiltration, admission", "notes": {"EPC":3,"FCA":1,"FCB":1,"ETP":0,"INF":4,"SIN":1,"SEC":2,"CON":2,"ADA":4,"VIS":3,"MUL":4,"ENV":2,"VEG":1,"ENT":2,"COU":3} },
+    { "code": "JDP", "nom": "Jardin de pluie (pleine terre)", "principe": "Structure de rétention plantée, de préférence en pleine terre, vers laquelle les flux sont orientés.", "fonctions": "Rétention, évapotranspiration, infiltration/réseau", "notes": {"EPC":4,"FCA":3,"FCB":3,"ETP":4,"INF":4,"SIN":0,"SEC":3,"CON":3,"ADA":2,"VIS":4,"MUL":4,"ENV":4,"VEG":4,"ENT":3,"COU":4} },
+    { "code": "FNO", "nom": "Fossé / noue", "principe": "Ouvrages végétalisés collectant et ralentissant l'écoulement, stockage puis évacuation.", "fonctions": "Recueil, ralentissement, stockage, infiltration, restitution", "notes": {"EPC":4,"FCA":2,"FCB":2,"ETP":3,"INF":3,"SIN":2,"SEC":3,"CON":4,"ADA":2,"VIS":4,"MUL":2,"ENV":4,"VEG":3,"ENT":2,"COU":3} },
+    { "code": "TRI", "nom": "Tranchée (d'infiltration)", "principe": "Ouvrage linéaire superficiel de matériaux poreux ; rétention + infiltration ou exutoire.", "fonctions": "Recueil, restitution, infiltration", "notes": {"EPC":3,"FCA":4,"FCB":2,"ETP":0,"INF":4,"SIN":0,"SEC":3,"CON":2,"ADA":3,"VIS":1,"MUL":1,"ENV":3,"VEG":0,"ENT":2,"COU":2} },
+    { "code": "CAF", "nom": "Caniveau filtrant", "principe": "Ouvrage linéaire de collecte + traitement par filtration (matériau poreux).", "fonctions": "Recueil, traitement, stockage temporaire, restitution", "notes": {"EPC":4,"FCA":3,"FCB":2,"ETP":0,"INF":4,"SIN":2,"SEC":3,"CON":2,"ADA":3,"VIS":1,"MUL":1,"ENV":3,"VEG":0,"ENT":1,"COU":2} },
+    { "code": "PUI", "nom": "Puits d'infiltration", "principe": "Stockage temporaire + évacuation par infiltration ; chambre de décantation.", "fonctions": "Infiltration", "notes": {"EPC":1,"FCA":4,"FCB":4,"ETP":0,"INF":4,"SIN":0,"SEC":3,"CON":2,"ADA":3,"VIS":1,"MUL":1,"ENV":2,"VEG":0,"ENT":2,"COU":2} },
+    { "code": "TTS", "nom": "Toiture terrasse stockante", "principe": "Toit étanché non végétalisé, stockage temporaire par exutoires à débit limité.", "fonctions": "Stockage temporaire, régulation du débit", "notes": {"EPC":2,"FCA":1,"FCB":1,"ETP":2,"INF":0,"SIN":4,"SEC":2,"CON":3,"ADA":3,"VIS":3,"MUL":1,"ENV":1,"VEG":0,"ENT":4,"COU":3} },
+    { "code": "CSR", "nom": "Chaussée à structure réservoir", "principe": "Stockage temporaire dans la structure de chaussée, restitution par infiltration/exutoire.", "fonctions": "Recueil, stockage, restitution", "notes": {"EPC":3,"FCA":2,"FCB":2,"ETP":1,"INF":3,"SIN":3,"SEC":3,"CON":2,"ADA":3,"VIS":1,"MUL":3,"ENV":2,"VEG":0,"ENT":3,"COU":2} },
+    { "code": "CRE", "nom": "Cuve de récupération EP", "principe": "Ouvrage de stockage pour réutilisation de la ressource (souvent si infiltration impossible).", "fonctions": "Stockage, restitution pour usage", "notes": {"EPC":2,"FCA":4,"FCB":4,"ETP":2,"INF":1,"SIN":4,"SEC":2,"CON":3,"ADA":2,"VIS":3,"MUL":1,"ENV":2,"VEG":0,"ENT":1,"COU":1} },
+    { "code": "BAI", "nom": "Bassin d'infiltration", "principe": "Bassin à ciel ouvert, stockage + infiltration ; sec ou en eau.", "fonctions": "Stocker, infiltrer", "notes": {"EPC":3,"FCA":4,"FCB":4,"ETP":0,"INF":4,"SIN":0,"SEC":2,"CON":2,"ADA":2,"VIS":2,"MUL":2,"ENV":3,"VEG":1,"ENT":2,"COU":2} },
+    { "code": "BAS", "nom": "Bassin sec paysager", "principe": "Bassin de régulation à ciel ouvert, sec la majeure partie du temps, multi-usages.", "fonctions": "Stocker, réguler, dépolluer, filtrer", "notes": {"EPC":3,"FCA":3,"FCB":3,"ETP":2,"INF":2,"SIN":2,"SEC":2,"CON":2,"ADA":2,"VIS":3,"MUL":4,"ENV":3,"VEG":2,"ENT":2,"COU":3} },
+    { "code": "BAE", "nom": "Bassin en eau", "principe": "Bassin à ciel ouvert, recueil + restitution à débit limité / évapotranspiration ; décantation.", "fonctions": "Stockage, restitution, services écosystémiques", "notes": {"EPC":3,"FCA":3,"FCB":4,"ETP":3,"INF":2,"SIN":3,"SEC":1,"CON":1,"ADA":1,"VIS":4,"MUL":4,"ENV":4,"VEG":3,"ENT":2,"COU":3} },
+    { "code": "ESI", "nom": "Espace inondable", "principe": "Espace conçu pour rétention temporaire par inondabilité (niveau de service ≥ 3).", "fonctions": "Stocker, réguler, infiltrer", "notes": {"EPC":0,"FCA":2,"FCB":2,"ETP":1,"INF":2,"SIN":2,"SEC":3,"CON":2,"ADA":3,"VIS":4,"MUL":4,"ENV":2,"VEG":0,"ENT":3,"COU":4} },
+    { "code": "BAT", "nom": "Bassin enterré (SAUL)", "principe": "Volumes de stockage enterrés au plus près du point de chute, formes diverses.", "fonctions": "Régulation, stockage, restitution", "notes": {"EPC":3,"FCA":4,"FCB":4,"ETP":0,"INF":3,"SIN":3,"SEC":3,"CON":3,"ADA":3,"VIS":1,"MUL":2,"ENV":1,"VEG":0,"ENT":2,"COU":2} }
+  ]
+}

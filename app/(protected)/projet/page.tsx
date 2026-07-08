@@ -45,6 +45,12 @@ const availableTools = [
     desc: "Trouvez les essences adaptées à votre site et composez votre palette végétale par mélanges.",
     href: "/projet/selecteur-essences",
   },
+  {
+    emoji: "🌧️",
+    name: "Comparateur d’ouvrages GEP",
+    desc: "Comparez les 16 techniques de gestion des eaux pluviales sur 15 critères. Radars superposables.",
+    href: "/projet/comparateur-ouvrages-gep",
+  },
 ];
 
 const upcomingTools = [

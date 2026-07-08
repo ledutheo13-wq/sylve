@@ -31,8 +31,12 @@ export async function updateSession(request: NextRequest) {
 
   // Protected routes: redirect to /connexion if not authenticated
   const path = request.nextUrl.pathname;
-  // Vitrine: compatibilité végétale accessible sans compte
-  const isVitrine = path === "/projet/compatibilite-vegetale";
+  // Vitrines : outils en accès libre sans compte
+  const VITRINE_ROUTES = [
+    "/projet/compatibilite-vegetale",
+    "/projet/comparateur-ouvrages-gep",
+  ];
+  const isVitrine = VITRINE_ROUTES.includes(path);
 
   const isProtected =
     path.startsWith("/dashboard") ||
