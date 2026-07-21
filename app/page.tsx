@@ -59,7 +59,7 @@ export default function Home() {
       >
         <div className={styles.sectionInner}>
           <div className={styles.sectionLabel}>Les outils</div>
-          <h2 className={styles.sectionTitle}>8 outils de conception</h2>
+          <h2 className={styles.sectionTitle}>9 outils de conception</h2>
           <p className={styles.sectionText}>
             Calculateurs, outils végétaux, générateurs. La compatibilité
             végétale et le comparateur d&apos;ouvrages GEP sont en accès libre ;
@@ -104,6 +104,11 @@ export default function Home() {
             </Link>
 
             {[
+              {
+                emoji: "🌊",
+                name: "Atelier de gestion des eaux pluviales",
+                desc: "Volume à gérer (méthode des pluies) + synergie d’ouvrages.",
+              },
               {
                 emoji: "⬜",
                 name: "Calculateur de charges sur dalle",

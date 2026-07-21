@@ -51,6 +51,12 @@ const availableTools = [
     desc: "Comparez les 16 techniques de gestion des eaux pluviales sur 15 critères. Radars superposables.",
     href: "/projet/comparateur-ouvrages-gep",
   },
+  {
+    emoji: "🌊",
+    name: "Atelier de gestion des eaux pluviales",
+    desc: "Calculez le volume d’eau à gérer (méthode des pluies) et arbitrez une synergie d’ouvrages.",
+    href: "/projet/atelier-gep",
+  },
 ];
 
 const upcomingTools = [

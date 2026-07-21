@@ -1,0 +1,179 @@
+/* ═══════════════════════════════════════════════════════════
+   ATELIER GEP — styles (charte SYLVE : sobriété, pas d'ombre/dégradé)
+   ═══════════════════════════════════════════════════════════ */
+
+.page { max-width: 1200px; margin: 0 auto; padding: 1.5rem 2rem 4rem; }
+
+.titleBar h1 {
+  font-family: Helvetica, "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.6rem; font-weight: 300; color: var(--primary);
+  letter-spacing: 5px; text-transform: lowercase; line-height: 1.2;
+}
+.titleBar p { font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem; max-width: 70ch; line-height: 1.5; }
+.disclaimer { font-size: 0.72rem !important; color: var(--text-light) !important; font-style: italic; border-left: 2px solid var(--border); padding-left: 0.7rem; }
+
+/* ── Blocs ── */
+.bloc { margin-top: 2rem; }
+.blocHead { display: flex; align-items: center; gap: 0.7rem; margin-bottom: 1rem; }
+.blocNum {
+  width: 26px; height: 26px; border-radius: 50%; background: var(--primary); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.8rem; font-weight: 600; flex-shrink: 0;
+}
+.blocHead h2 {
+  font-family: Helvetica, "Helvetica Neue", Arial, sans-serif;
+  font-size: 1rem; font-weight: 400; color: var(--text); letter-spacing: 0.5px;
+}
+
+/* ── Cartes ── */
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 16px 18px; margin-bottom: 1rem; }
+.cardTitle {
+  font-family: Helvetica, "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.66rem; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--text-muted); font-weight: 500; margin-bottom: 0.9rem;
+}
+.grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+
+/* ── Table surfaces ── */
+.table { width: 100%; border-collapse: collapse; font-size: 0.8rem; }
+.table th { text-align: left; font-weight: 500; color: var(--text-muted); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.06em; padding: 4px 6px; border-bottom: 1px solid var(--border); }
+.table td { padding: 5px 6px; border-bottom: 1px solid var(--fond-warm); vertical-align: middle; }
+.mono { font-family: "DM Mono", monospace; }
+
+/* ── Inputs ── */
+.inputNum, .select {
+  font-family: "DM Sans", sans-serif; font-size: 0.8rem; border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 6px 8px; background: #fff; color: var(--text);
+  width: 100%; outline: none; transition: border-color 0.15s;
+}
+.inputNum { max-width: 100px; }
+.inputNum:focus, .select:focus { border-color: var(--primary); box-shadow: 0 0 0 2px var(--sylve-light); }
+
+.field { display: flex; flex-direction: column; gap: 0.25rem; margin-bottom: 0.7rem; }
+.field > span { font-size: 0.72rem; color: var(--text-muted); }
+.field2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+.fieldCheck { display: flex; align-items: center; gap: 0.4rem; font-size: 0.78rem; color: var(--text); margin-top: 0.4rem; cursor: pointer; }
+.fieldCheck input { accent-color: var(--primary); }
+
+.addRow { display: flex; gap: 0.6rem; align-items: center; margin: 0.8rem 0; flex-wrap: wrap; }
+.addRow .select { max-width: 340px; }
+
+.btnPrim, .btnSec, .btnSuppr {
+  font-family: "DM Sans", sans-serif; border-radius: var(--radius); cursor: pointer;
+  border: 1px solid var(--border); transition: all 0.15s;
+}
+.btnPrim { background: var(--primary); color: #fff; border-color: var(--primary); padding: 7px 14px; font-size: 0.8rem; }
+.btnPrim:hover { background: var(--primary-hover); }
+.btnSec { background: #fff; color: var(--text); padding: 7px 12px; font-size: 0.8rem; }
+.btnSec:hover { background: var(--fond-warm); }
+.btnSuppr { background: transparent; color: var(--text-light); width: 24px; height: 24px; font-size: 1rem; line-height: 1; border-color: transparent; }
+.btnSuppr:hover { color: var(--danger); background: var(--fond-warm); }
+
+.resumeLine { display: flex; gap: 2rem; margin-top: 0.8rem; padding-top: 0.8rem; border-top: 1px solid var(--border); font-size: 0.82rem; color: var(--text-muted); }
+.resumeLine strong { color: var(--primary); margin-left: 0.3rem; }
+
+.hint { font-size: 0.72rem; color: var(--text-light); line-height: 1.45; margin-top: 0.4rem; }
+.warn { font-size: 0.75rem; color: var(--terre); line-height: 1.45; margin-top: 0.5rem; }
+.methodeNote { font-size: 0.72rem; color: var(--text-light); font-style: italic; margin-top: 0.7rem; line-height: 1.45; }
+
+/* ── Info (infobulle-source) — CLIQUABLE ── */
+.info { display: inline-block; margin-left: 0.25rem; color: var(--primary); cursor: help; font-size: 0.72rem; }
+
+.infoWrap { position: relative; display: inline-block; }
+.infoBtn {
+  background: transparent; border: none; cursor: pointer; padding: 0 0 0 0.25rem;
+  color: var(--primary); font-size: 0.78rem; line-height: 1;
+}
+.infoBtn:hover { color: var(--primary-hover); }
+.infoPop {
+  position: absolute; left: 0; top: 1.4rem; z-index: 30;
+  width: 230px; max-width: 60vw;
+  background: #2D2D2D; color: #fff; font-size: 0.72rem; line-height: 1.4;
+  padding: 10px 26px 10px 12px; border-radius: 6px; font-weight: 400;
+  text-transform: none; letter-spacing: normal;
+}
+.infoClose {
+  position: absolute; top: 4px; right: 6px; background: transparent; border: none;
+  color: #fff; cursor: pointer; font-size: 0.95rem; line-height: 1; opacity: 0.7;
+}
+.infoClose:hover { opacity: 1; }
+
+/* ── Divers Bloc A ── */
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.readout {
+  font-size: 0.82rem; color: var(--text); padding: 7px 8px;
+  background: var(--fond); border: 1px solid var(--border); border-radius: var(--radius);
+}
+.montanaRow {
+  margin-top: 0.9rem; padding-top: 0.9rem; border-top: 1px solid var(--border);
+  display: flex; flex-direction: column; gap: 0.5rem;
+}
+.montanaAuto { font-size: 0.82rem; color: var(--text-muted); }
+.montanaAuto strong { color: var(--primary); }
+.hintInline { font-size: 0.72rem; color: var(--text-light); }
+
+/* ── Climat ── */
+.collapse {
+  width: 100%; display: flex; justify-content: space-between; align-items: center;
+  background: transparent; border: none; cursor: pointer; padding: 0;
+  font-family: Helvetica, sans-serif; font-size: 0.66rem; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--text-muted); font-weight: 500;
+}
+.climat { margin-top: 1rem; }
+.moisGrid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 0.3rem; margin-top: 0.5rem; }
+.moisCell { display: flex; flex-direction: column; align-items: center; gap: 0.2rem; }
+.moisCell span { font-size: 0.6rem; color: var(--text-muted); }
+.moisCell .inputNum { max-width: 100%; padding: 4px 2px; text-align: center; font-size: 0.72rem; }
+
+/* ── KPI (Bloc B) ── */
+.kpi { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 16px 18px; }
+.kpiLabel { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); }
+.kpiValue { font-family: "DM Mono", monospace; font-size: 1.8rem; color: var(--text); margin: 0.3rem 0; }
+.kpiValue span { font-size: 0.9rem; color: var(--text-muted); }
+.kpiSub { font-size: 0.72rem; color: var(--text-light); }
+.ok { color: #4E7B7F; }
+.warnTxt { color: var(--terre); }
+.danger { color: var(--danger); }
+
+/* ── Ouvrages (Bloc C) ── */
+.ouvrages { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1rem; }
+.empty { font-size: 0.82rem; color: var(--text-light); font-style: italic; }
+.ouvrageCard { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; }
+.ouvrageHead { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.8rem; }
+.ouvrageNom { flex: 1; font-family: "DM Sans", sans-serif; font-size: 0.9rem; font-weight: 500; color: var(--text); border: none; border-bottom: 1px solid transparent; padding: 2px 0; background: transparent; outline: none; }
+.ouvrageNom:focus { border-bottom-color: var(--primary); }
+.ouvrageParams { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem 0.8rem; }
+.ouvrageCap { display: flex; flex-wrap: wrap; gap: 0.5rem 1.2rem; margin-top: 0.9rem; padding-top: 0.8rem; border-top: 1px solid var(--border); font-size: 0.76rem; color: var(--text-muted); }
+.ouvrageCap strong { color: var(--primary); }
+
+/* ── Bilan (Bloc D) ── */
+.coverBar { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 16px 18px; margin-bottom: 1rem; }
+.coverInfo { display: flex; gap: 2rem; flex-wrap: wrap; font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.7rem; }
+.coverInfo strong { margin-left: 0.3rem; color: var(--text); }
+.progress { height: 8px; background: var(--fond-warm); border-radius: 4px; overflow: hidden; }
+.progressFill { height: 100%; background: var(--primary); transition: width 0.3s; }
+
+.pies { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+/* ── Camembert ── */
+.pieWrap { display: flex; flex-direction: column; align-items: center; gap: 0.8rem; }
+.pieSvg { width: 180px; height: 180px; }
+.pieEmpty { padding: 2rem 1rem; text-align: center; color: var(--text-light); font-size: 0.8rem; }
+.pieLegend { list-style: none; width: 100%; display: flex; flex-direction: column; gap: 0.35rem; }
+.pieLegendItem { display: flex; align-items: center; gap: 0.5rem; font-size: 0.76rem; color: var(--text); }
+.pieSwatch { width: 12px; height: 12px; border-radius: 3px; flex-shrink: 0; }
+.pieLabel { flex: 1; }
+.pieValue { font-family: "DM Mono", monospace; font-size: 0.72rem; color: var(--text-muted); }
+
+/* ── Bibliographie ── */
+.biblio { list-style: none; margin-top: 1rem; display: flex; flex-direction: column; gap: 0.7rem; }
+.biblio li { display: flex; flex-direction: column; gap: 0.15rem; font-size: 0.76rem; color: var(--text-muted); line-height: 1.4; padding-bottom: 0.6rem; border-bottom: 1px solid var(--fond-warm); }
+.biblioCat { font-weight: 600; color: var(--text); font-size: 0.72rem; }
+.biblio a { color: var(--primary); }
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .page { padding: 1.25rem 1.25rem 3rem; }
+  .grid3, .grid2, .pies { grid-template-columns: 1fr; }
+  .ouvrages { grid-template-columns: 1fr; }
+}
