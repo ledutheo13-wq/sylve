@@ -3,6 +3,15 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { TYPES, SOLS } from "@/lib/tools/soutenements/constants";
 import { compute, getVerdict, getFsColor } from "@/lib/tools/soutenements/calculations";
+import { Info, MethodesReferences, type RefBiblio } from "@/components/ui/SourceInfo";
+
+const BIBLIO_SOUT: RefBiblio[] = [
+  { cat: "Méthode — poussée active", ref: "RANKINE, W. J. M. On the stability of loose earth. Philosophical Transactions of the Royal Society of London, 1857, vol. 147, p. 9-27. (domaine public)" },
+  { cat: "Vérifications géotechniques", ref: "NF EN 1997-1 (Eurocode 7). Calcul géotechnique — Partie 1 : règles générales. Paris : AFNOR." },
+  { cat: "Poids volumiques & surcharges", ref: "NF EN 1991-1-1 (Eurocode 1). Actions sur les structures — Partie 1-1 : poids volumiques, poids propres, charges d'exploitation. Paris : AFNOR." },
+  { cat: "Paramètres de sol (φ, γ)", ref: "Références géotechniques publiques — ordres de grandeur par nature de sol (valeurs par défaut modifiables)." },
+];
+const NOTE_SOUT = "Méthode de Rankine, adaptée aux petits soutènements paysagers (< 2 m). Au-delà, ou pour les éléments fichés, un dimensionnement par un BET structure/géotechnique est requis. Aide à la décision (ESQ/APS/APD), pas une note de calcul de structure.";
 import type { ComputeResult } from "@/lib/tools/soutenements/types";
 import styles from "./page.module.css";
 
@@ -380,7 +389,10 @@ function ResultsCard({ result: r }: { result: ComputeResult }) {
           className={styles.verdictBox}
           style={{ background: verdict.bg, color: verdict.color }}
         >
-          <div className={styles.verdictLabel}>{verdict.label}</div>
+          <div className={styles.verdictLabel}>
+            {verdict.label}
+            <Info texte="Coefficient de sécurité Fs (renversement, glissement). Seuils usuels 1,5–3,0 — pratique géotechnique / Eurocode 7. Poussée active : théorie de Rankine, Ka = tan²(45° − φ/2)." />
+          </div>
           <div className={styles.verdictFs}>Fs = {r.Fs_min.toFixed(2)}</div>
         </div>
       )}
@@ -391,6 +403,8 @@ function ResultsCard({ result: r }: { result: ComputeResult }) {
         <FsRow label="Fs renversement" formula="Ms / Md" fs={r.Fs_r} />
         <FsRow label="Fs glissement" formula="(N×tanδ + c×B) / Pa" fs={r.Fs_g} />
       </div>
+
+      <MethodesReferences biblio={BIBLIO_SOUT} note={NOTE_SOUT} />
     </div>
   );
 }

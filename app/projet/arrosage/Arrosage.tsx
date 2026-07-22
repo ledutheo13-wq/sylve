@@ -15,13 +15,21 @@ import {
 import { calculate, drawChart } from "@/lib/tools/arrosage/calculations";
 import type { Zone, ZoneResult, Mode } from "@/lib/tools/arrosage/types";
 import styles from "./page.module.css";
+import { Info, MethodesReferences, type RefBiblio } from "@/components/ui/SourceInfo";
+
+const BIBLIO_ARR: RefBiblio[] = [
+  { cat: "Méthode — évapotranspiration & Kc", ref: "ALLEN, R. G., PEREIRA, L. S., RAES, D., SMITH, M. Crop evapotranspiration — Guidelines for computing crop water requirements. FAO Irrigation and Drainage Paper 56. Rome : FAO, 1998.", url: "https://www.fao.org/4/x0490e/x0490e00.htm" },
+  { cat: "ETP par département", ref: "MÉTÉO-FRANCE. Évapotranspiration potentielle (méthode de Penman-Monteith) — normales climatiques et réanalyse SAFRAN. Base compilée par SYLVE à partir de données publiques (valeurs modifiables)." },
+  { cat: "Kc toitures végétalisées", ref: "ADIVET, CSFE, SNPP, UNEP. Règles professionnelles pour la conception et la réalisation des terrasses et toitures végétalisées. 3ᵉ éd. Paris, 2018." },
+  { cat: "Efficiences par matériel", ref: "Références d'ingénierie d'irrigation (FAO-56 ; manuels d'irrigation) — valeurs standard par technique." },
+];
+const NOTE_ARR = "Pré-estimation de consommation d'eau (ESQ/APS). Ne se substitue pas au dimensionnement hydraulique du réseau (BE). L'ETP est une moyenne indicative ; l'outil ne déduit pas la pluie efficace.";
 
 export default function ArrosagePage() {
   const [dept, setDept] = useState("");
   const [currentETP, setCurrentETP] = useState<number[]>(new Array(12).fill(0));
   const [showEtp, setShowEtp] = useState(false);
   const [zones, setZones] = useState<Zone[]>([]);
-  const [zoneIdCounter, setZoneIdCounter] = useState(0);
   const [mode, setMode] = useState<Mode>("simple");
   const [results, setResults] = useState<ZoneResult[] | null>(null);
   const [totalVol, setTotalVol] = useState(0);
@@ -31,8 +39,11 @@ export default function ArrosagePage() {
   const newZoneRef = useRef<HTMLInputElement>(null);
   const shouldFocusNewZone = useRef(false);
 
-  // Init with one zone on mount
+  // Init with one zone on mount (garde-fou : une seule fois, même en mode strict)
+  const didInit = useRef(false);
   useEffect(() => {
+    if (didInit.current) return;
+    didInit.current = true;
     addZone();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -57,10 +68,12 @@ export default function ArrosagePage() {
 
   function addZone(focus = false) {
     if (focus) shouldFocusNewZone.current = true;
-    setZoneIdCounter((prev) => {
-      const newId = prev + 1;
-      setZones((prevZones) => [
-        ...prevZones,
+    // id calculé dans un updater unique et PUR (pas de setState imbriqué) :
+    // évite le double-ajout / clés dupliquées en mode strict React.
+    setZones((prev) => {
+      const newId = prev.reduce((m, z) => Math.max(m, z.id), 0) + 1;
+      return [
+        ...prev,
         {
           id: newId,
           name: "Zone " + newId,
@@ -71,8 +84,7 @@ export default function ArrosagePage() {
           detailEquip: "tuyeres",
           detailParams: {},
         },
-      ]);
-      return newId;
+      ];
     });
   }
 
@@ -146,7 +158,10 @@ export default function ArrosagePage() {
 
       {/* ═══ ETAPE 1 — ETP ═══ */}
       <div className={styles.step}>
-        <div className={styles.stepHeader}>Etape 1 — Evapotranspiration (ETP)</div>
+        <div className={styles.stepHeader}>
+          Etape 1 — Evapotranspiration (ETP)
+          <Info texte="ETP potentielle (Penman-Monteith), moyenne par département — Météo-France / réanalyse SAFRAN. Base compilée par SYLVE à partir de données publiques. Ajustable pour un site spécifique." />
+        </div>
         <div className={styles.card}>
           <div className={styles.fieldGroup} style={{ maxWidth: 360, marginBottom: "0.8rem" }}>
             <label className={styles.label} htmlFor="dept-select">Departement</label>
@@ -257,7 +272,7 @@ export default function ArrosagePage() {
                   </select>
                 </div>
                 <div className={styles.fieldGroup}>
-                  <label className={styles.label}>Kc</label>
+                  <label className={styles.label}>Kc <Info texte="Coefficient cultural (kc) — FAO-56, Table 12. Valeur par défaut modifiable. Kc toitures végétalisées : Règles pro TTV (ADIVET)." /></label>
                   <input
                     type="number"
                     className={styles.inputNumber}
@@ -362,6 +377,12 @@ export default function ArrosagePage() {
           </div>
         </div>
       )}
+
+      <MethodesReferences
+        methode={<>Besoin brut = Surface × Kc × ETP ÷ Efficience (approche FAO-56 / Penman-Monteith simplifié).</>}
+        biblio={BIBLIO_ARR}
+        note={NOTE_ARR}
+      />
     </div>
   );
 }

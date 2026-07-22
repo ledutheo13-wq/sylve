@@ -5,6 +5,14 @@ import { CATEGORIES, CATEGORY_KEYS, getMat } from "@/lib/tools/charges/materials
 import { getLayerWeight, getTotalWeight, getTotalThickness, getLayerDisplayH } from "@/lib/tools/charges/calculations";
 import type { Layer, CategoryKey } from "@/lib/tools/charges/types";
 import styles from "./page.module.css";
+import { Info, MethodesReferences, type RefBiblio } from "@/components/ui/SourceInfo";
+
+const BIBLIO_CHARGES: RefBiblio[] = [
+  { cat: "Densités saturées & végétation", ref: "ADIVET, CSFE, SNPP, UNEP. Règles professionnelles pour la conception et la réalisation des terrasses et toitures végétalisées. 3ᵉ éd. Paris, 2018. (état saturé / CME ; valeurs modifiables — se référer aux données fournisseur)" },
+  { cat: "Poids volumiques (charge permanente)", ref: "NF EN 1991-1-1 (Eurocode 1). Actions sur les structures — Partie 1-1 : poids volumiques, poids propres, charges d'exploitation. Paris : AFNOR." },
+  { cat: "Support / étanchéité", ref: "NF DTU 43.1. Travaux d'étanchéité des toitures-terrasses et toitures inclinées avec éléments porteurs en maçonnerie. Paris : AFNOR." },
+];
+const NOTE_CHARGES = "Aide au pré-calcul de charge pour dialoguer avec l'ingénieur structure. Ne se substitue pas à la note de calcul du BET. Densités = ordres de grandeur à l'état saturé, à confirmer par les fiches fournisseur et le BET.";
 
 // ═══════════════════════════════════════════════
 //  SVG CONSTANTS
@@ -589,7 +597,10 @@ export default function CalculateurChargesPage() {
           </div>
 
           <div className={styles.totalBar}>
-            <div className={styles.totalLabel}>Charge totale</div>
+            <div className={styles.totalLabel}>
+              Charge totale
+              <Info texte="Somme des couches, densités à l'état SATURÉ (capacité maximale en eau, CME) — Règles pro TTV (ADIVET/CSFE, 2018). Pire cas pour l'ingénieur structure. Valeurs modifiables ; se référer aux données fournisseur." />
+            </div>
             <div>
               <span className={styles.totalValue}>{totalWeight.toFixed(1)}</span>
               <span className={styles.totalUnit}>kg/m&sup2;</span>
@@ -617,6 +628,10 @@ export default function CalculateurChargesPage() {
             />
           </div>
         </div>
+      </div>
+
+      <div style={{ maxWidth: 1400, margin: "0 auto", padding: "0 2rem" }}>
+        <MethodesReferences biblio={BIBLIO_CHARGES} note={NOTE_CHARGES} />
       </div>
 
       {/* ── MODAL ── */}

@@ -5,6 +5,15 @@ import { USAGES, essencesLames } from "@/lib/tools/platelages/constants";
 import { compute, getEpMid } from "@/lib/tools/platelages/calculations";
 import type { UsageKey, EpaisseursKey, LargeurKey, ComputeResult } from "@/lib/tools/platelages/types";
 import styles from "./page.module.css";
+import { Info, MethodesReferences, type RefBiblio } from "@/components/ui/SourceInfo";
+
+const BIBLIO_PLAT: RefBiblio[] = [
+  { cat: "Entraxes lames & lambourdes", ref: "NF DTU 51.4. Platelages extérieurs en bois. Paris : AFNOR (déc. 2018). — abaques d'entraxes selon usage, section et classe mécanique." },
+  { cat: "Classes de résistance du bois", ref: "NF EN 338. Bois de structure — Classes de résistance (C18, C24, D24, D30…). Paris : AFNOR." },
+  { cat: "Durabilité / classe d'emploi", ref: "NF EN 335 ; NF EN 350. Durabilité du bois et des matériaux à base de bois — classes d'emploi et durabilité naturelle. Paris : AFNOR." },
+  { cat: "Charges d'exploitation", ref: "NF EN 1991-1-1 (Eurocode 1). Actions sur les structures — Partie 1-1 : charges d'exploitation des bâtiments. Paris : AFNOR." },
+];
+const NOTE_PLAT = "Aide au pré-dimensionnement (ESQ→APD) d'après les abaques du NF DTU 51.4. Hors domaine (hauteur > 1 m, fixations invisibles, bois modifié, caillebotis) ou ouvrage sensible : dimensionnement par un BET structure.";
 
 const SECTIONS = [
   "40x60", "60x40", "40x70", "70x40", "45x60", "60x45", "45x75", "75x45", "60x60",
@@ -192,7 +201,10 @@ function ResultsCard({ result: r, classeRequise }: { result: ComputeResult; clas
     <div className={styles.resultsCard}>
       <div className={styles.resultRowGrid}>
         <div className={styles.resultBig}>
-          <div className={styles.resultBigLabel}>Espacement max entre plots</div>
+          <div className={styles.resultBigLabel}>
+            Espacement max entre plots
+            <Info texte="Entraxe admissible d'après les abaques du NF DTU 51.4, selon l'usage, la section et la classe mécanique du bois (NF EN 338)." />
+          </div>
           <div className={styles.resultBigSublabel}>(portee admissible de la lambourde)</div>
           <div className={styles.resultBigValue}>
             {r.entraxeMaxLamb === null
@@ -243,7 +255,7 @@ function ResultsCard({ result: r, classeRequise }: { result: ComputeResult; clas
       <div className={styles.prescriptions}>
         <strong>Prescriptions complementaires DTU 51.4</strong>
         <ul>
-          <li>Classe d&apos;emploi requise : <strong>{classeRequise}</strong></li>
+          <li>Classe d&apos;emploi requise : <strong>{classeRequise}</strong> <Info texte="Classe d'emploi selon l'exposition (NF EN 335) et durabilité naturelle de l'essence (NF EN 350)." /></li>
           <li>Jeu entre lames a la pose : 5 - 7 mm</li>
           <li>Jeu en bout de lame : 4 - 6 mm</li>
           <li>Hauteur de plenum minimale : 100 mm</li>
@@ -251,6 +263,8 @@ function ResultsCard({ result: r, classeRequise }: { result: ComputeResult; clas
           <li>Pre-percage : <strong>{r.prePercage}</strong></li>
         </ul>
       </div>
+
+      <MethodesReferences biblio={BIBLIO_PLAT} note={NOTE_PLAT} />
     </div>
   );
 }
