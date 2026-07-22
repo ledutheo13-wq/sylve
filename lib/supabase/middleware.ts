@@ -31,20 +31,28 @@ export async function updateSession(request: NextRequest) {
 
   // Protected routes: redirect to /connexion if not authenticated
   const path = request.nextUrl.pathname;
-  // Vitrines : outils en accès libre sans compte
-  const VITRINE_ROUTES = [
-    "/projet/compatibilite-vegetale",
-    "/projet/comparateur-ouvrages-gep",
+
+  // /projet est PUBLIC par défaut (hub, pages familles, outils en accès libre).
+  // Seuls ces outils "compte requis" restent protégés (alignés sur les dossiers
+  // physiquement dans le groupe (protected)/projet/).
+  const COMPTE_ROUTES = [
+    "/projet/calendrier-phenologique",
+    "/projet/selecteur-essences",
+    "/projet/soutenements",
+    "/projet/platelages",
+    "/projet/atelier-gep",
   ];
-  const isVitrine = VITRINE_ROUTES.includes(path);
+  const isCompteProjet = COMPTE_ROUTES.some(
+    (r) => path === r || path.startsWith(r + "/")
+  );
 
   const isProtected =
     path.startsWith("/dashboard") ||
-    path.startsWith("/projet") ||
     path.startsWith("/pilote") ||
-    path.startsWith("/source");
+    path.startsWith("/source") ||
+    isCompteProjet;
 
-  if (isProtected && !isVitrine && !user) {
+  if (isProtected && !user) {
     const url = request.nextUrl.clone();
     url.pathname = "/connexion";
     return NextResponse.redirect(url);

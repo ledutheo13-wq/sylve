@@ -1,6 +1,11 @@
 import Link from "next/link";
 import styles from "./page.module.css";
 import { Nav } from "./Nav";
+import {
+  famillesPleines,
+  famillesAVenir,
+  outilsDeFamille,
+} from "@/lib/tools-catalog";
 
 export default function Home() {
   return (
@@ -59,109 +64,58 @@ export default function Home() {
       >
         <div className={styles.sectionInner}>
           <div className={styles.sectionLabel}>Les outils</div>
-          <h2 className={styles.sectionTitle}>9 outils de conception</h2>
+          <h2 className={styles.sectionTitle}>9 outils, par famille</h2>
           <p className={styles.outilsTagline}>
             Par un paysagiste, pour les paysagistes.
           </p>
           <p className={styles.sectionText}>
-            Calculateurs, outils végétaux, générateurs. La compatibilité
-            végétale et le comparateur d&apos;ouvrages GEP sont en accès libre ;
-            créez un compte pour les autres.
+            Calculateurs, outils végétaux, gestion des eaux pluviales. Quatre
+            outils en accès libre ; les autres sur simple compte.
           </p>
 
-          <div className={styles.outilsGrid}>
-            {/* Compatibilité végétale — VITRINE */}
-            <Link
-              href="/projet/compatibilite-vegetale"
-              className={`${styles.outilCard} ${styles.outilCardVitrine}`}
-            >
-              <div className={styles.outilCardTop}>
-                <span className={styles.outilIcon}>🌿</span>
-                <span className={styles.outilBadgeEssayer}>Essayer</span>
+          {famillesPleines().map((fam) => (
+            <div key={fam.id} className={styles.familleBlock}>
+              <h3 className={styles.familleName}>{fam.nom}</h3>
+              <div className={styles.outilsGrid}>
+                {outilsDeFamille(fam.id).map((o) => {
+                  const libre = o.acces === "libre";
+                  return (
+                    <Link
+                      key={o.slug}
+                      href={`/projet/${o.slug}`}
+                      className={`${styles.outilCard} ${libre ? styles.outilCardVitrine : styles.outilCardLocked}`}
+                    >
+                      <div className={styles.outilCardTop}>
+                        <span className={styles.outilIcon}>{o.emoji}</span>
+                        <span
+                          className={libre ? styles.outilBadgeEssayer : styles.outilBadgeLibre}
+                        >
+                          {libre ? "Accès libre" : "Compte requis"}
+                        </span>
+                      </div>
+                      <div className={styles.outilName}>{o.nom}</div>
+                      <div className={styles.outilDesc}>{o.description}</div>
+                      <div className={styles.outilArrow}>Ouvrir l&apos;outil →</div>
+                    </Link>
+                  );
+                })}
               </div>
-              <div className={styles.outilName}>Compatibilité végétale</div>
-              <div className={styles.outilDesc}>
-                Analysez la compatibilité botanique et écologique de vos
-                mélanges végétaux.
-              </div>
-              <div className={styles.outilArrow}>Ouvrir l&apos;outil →</div>
-            </Link>
+            </div>
+          ))}
 
-            {/* Comparateur d'ouvrages GEP — VITRINE */}
-            <Link
-              href="/projet/comparateur-ouvrages-gep"
-              className={`${styles.outilCard} ${styles.outilCardVitrine}`}
-            >
-              <div className={styles.outilCardTop}>
-                <span className={styles.outilIcon}>🌧️</span>
-                <span className={styles.outilBadgeEssayer}>Essayer</span>
-              </div>
-              <div className={styles.outilName}>
-                Comparateur d&apos;ouvrages GEP
-              </div>
-              <div className={styles.outilDesc}>
-                Comparez les 16 techniques de gestion des eaux pluviales sur 15
-                critères, en radars superposables.
-              </div>
-              <div className={styles.outilArrow}>Ouvrir l&apos;outil →</div>
-            </Link>
-
-            {[
-              {
-                emoji: "🌊",
-                name: "Atelier de gestion des eaux pluviales",
-                desc: "Volume à gérer (méthode des pluies) + synergie d’ouvrages.",
-              },
-              {
-                emoji: "⬜",
-                name: "Calculateur de charges sur dalle",
-                desc: "Calcul du poids d\u2019un complexe végétatif en kg/m².",
-              },
-              {
-                emoji: "💧",
-                name: "Calculateur d\u2019arrosage",
-                desc: "Estimez les besoins en eau par zone et par mois.",
-              },
-              {
-                emoji: "🧱",
-                name: "Calculateur de soutènements",
-                desc: "Stabilité des petits soutènements (Rankine).",
-              },
-              {
-                emoji: "🪵",
-                name: "Calculateur de platelages bois",
-                desc: "Dimensionnement DTU 51.4.",
-              },
-              {
-                emoji: "📅",
-                name: "Calendrier phénologique",
-                desc: "Calendrier floraison et feuillage. Export PNG.",
-              },
-              {
-                emoji: "🌳",
-                name: "Sélecteur d\u2019essences",
-                desc: "Trouvez les essences adaptées à votre site.",
-              },
-            ].map((tool) => (
-              <Link
-                key={tool.name}
-                href="/connexion"
-                className={`${styles.outilCard} ${styles.outilCardLocked}`}
-              >
-                <div className={styles.outilCardTop}>
-                  <span className={styles.outilIcon}>{tool.emoji}</span>
-                  <span className={styles.outilBadgeLibre}>Créer un compte</span>
-                </div>
-                <div className={styles.outilName}>{tool.name}</div>
-                <div className={styles.outilDesc}>{tool.desc}</div>
-              </Link>
-            ))}
+          <div className={styles.familleBlock}>
+            <h3 className={styles.familleName}>À venir</h3>
+            <div className={styles.teaserRow}>
+              {famillesAVenir().map((fam) => (
+                <span key={fam.id} className={styles.teaserChip}>
+                  {fam.nom}
+                </span>
+              ))}
+            </div>
           </div>
 
           <p className={styles.outilsCta}>
-            <Link href="/connexion">
-              Créez un compte pour accéder à tous les outils →
-            </Link>
+            <Link href="/projet">Explorer tous les outils par famille →</Link>
           </p>
         </div>
       </section>

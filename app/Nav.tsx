@@ -21,6 +21,9 @@ export function Nav() {
         sylve
       </Link>
       <div className={styles.navRight}>
+        <Link href="/projet" className={styles.navLink}>
+          Outils
+        </Link>
         <Link href="/conseil" className={styles.navLink}>
           conseil
         </Link>

@@ -300,6 +300,32 @@
   margin-bottom: 14px;
 }
 
+.familleBlock {
+  margin-top: 2rem;
+}
+.familleName {
+  font-family: Helvetica, "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: 0.9rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--border);
+}
+.teaserRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+.teaserChip {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  background: var(--surface);
+  border: 1px dashed var(--border);
+  border-radius: 20px;
+  padding: 5px 14px;
+}
+
 .outilsGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

@@ -1,4 +1,5 @@
 import { ProjetHeader } from "@/components/layout/ProjetHeader";
+import { Breadcrumb } from "@/components/layout/Breadcrumb";
 
 export default function ProjetLayout({
   children,
@@ -8,6 +9,7 @@ export default function ProjetLayout({
   return (
     <>
       <ProjetHeader />
+      <Breadcrumb />
       {children}
     </>
   );

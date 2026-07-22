@@ -1,0 +1,223 @@
+/* ═══════════════════════════════════════════════════════════
+   HUB /projet + pages familles — charte SYLVE (sobre, sans ombre)
+   ═══════════════════════════════════════════════════════════ */
+
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 2rem 4rem;
+}
+
+.intro {
+  margin-bottom: 2rem;
+}
+.eyebrow {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--text-light);
+  margin-bottom: 14px;
+}
+.title {
+  font-family: Helvetica, "Helvetica Neue", Arial, sans-serif;
+  font-size: clamp(26px, 4vw, 38px);
+  font-weight: 300;
+  color: var(--text);
+  line-height: 1.2;
+  letter-spacing: -0.2px;
+}
+.sub {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-top: 0.6rem;
+  max-width: 640px;
+}
+
+/* ── Encart famille (hub) ── */
+.familles {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.familleCard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.5rem 1.6rem;
+}
+.familleHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.3rem;
+  flex-wrap: wrap;
+}
+.familleNom {
+  font-family: Helvetica, "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--text);
+}
+.familleLink {
+  font-size: 0.8rem;
+  color: var(--primary);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.familleLink:hover {
+  color: var(--primary-hover);
+  text-decoration: underline;
+}
+.familleDesc {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  margin-bottom: 1.1rem;
+  max-width: 640px;
+}
+
+/* ── Grille d'outils ── */
+.outilsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 0.9rem;
+}
+.outilCard {
+  display: flex;
+  flex-direction: column;
+  background: var(--fond);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px 16px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.15s, background 0.15s;
+}
+.outilCard:hover {
+  border-color: var(--primary);
+  background: var(--surface);
+}
+.outilTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.6rem;
+}
+.outilIcon {
+  font-size: 1.2rem;
+  line-height: 1;
+}
+.outilNom {
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 0.3rem;
+}
+.outilDesc {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+  flex: 1;
+}
+.outilArrow {
+  font-size: 0.78rem;
+  color: var(--primary);
+  margin-top: 0.7rem;
+}
+
+/* ── Badges d'accès ── */
+.badge {
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 20px;
+}
+.badgeLibre {
+  background: var(--sylve-light);
+  color: var(--sylve-dark);
+}
+.badgeCompte {
+  background: var(--fond-warm);
+  color: var(--text-muted);
+}
+
+/* ── Outils « à venir » ── */
+.aVenirRow {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+.aVenirLabel {
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-light);
+}
+.aVenirChip {
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  background: var(--fond);
+  border: 1px dashed var(--border);
+  border-radius: 20px;
+  padding: 3px 10px;
+}
+
+/* ── Encart famille « à venir » (teaser) ── */
+.familleTeaser {
+  background: var(--fond);
+  border: 1px dashed var(--border);
+  border-radius: 10px;
+  padding: 1.3rem 1.6rem;
+}
+.familleTeaser .familleNom {
+  color: var(--text-muted);
+}
+.teaserBadge {
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  color: var(--text-light);
+  background: var(--fond-warm);
+  padding: 3px 8px;
+  border-radius: 20px;
+}
+
+.sectionLabel {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--text-light);
+  margin: 2.5rem 0 1rem;
+}
+
+/* ── CTA ── */
+.cta {
+  margin-top: 2.5rem;
+  text-align: center;
+}
+.ctaLink {
+  font-size: 0.9rem;
+  color: var(--primary);
+  text-decoration: none;
+}
+.ctaLink:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+  .page {
+    padding: 1.5rem 1.25rem 3rem;
+  }
+  .outilsGrid {
+    grid-template-columns: 1fr;
+  }
+}
