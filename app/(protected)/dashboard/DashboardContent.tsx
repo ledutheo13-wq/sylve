@@ -87,7 +87,7 @@ export function DashboardContent({ prenom }: { prenom: string | null }) {
             <div className={styles.welcomeContent}>
               <div className={styles.welcomeLogo}>sylve</div>
               <h2 className={styles.welcomeTitle}>
-                Vous rejoignez la beta de SYLVE
+                Vous rejoignez la beta de sylve
               </h2>
               <p className={styles.welcomeDesc}>
                 Tous les outils sont en accès libre.
@@ -133,7 +133,7 @@ export function DashboardContent({ prenom }: { prenom: string | null }) {
                   </svg>
                 </div>
                 <div className={styles.toolName} style={{ color: "#8A8279" }}>
-                  SYLVE Projet
+                  sylve projet
                 </div>
                 <div className={styles.toolLabel}>
                   Conception et aide technique
@@ -165,7 +165,7 @@ export function DashboardContent({ prenom }: { prenom: string | null }) {
                   </svg>
                 </div>
                 <div className={styles.toolName} style={{ color: "#C4973B" }}>
-                  SYLVE Source
+                  sylve source
                 </div>
                 <div className={styles.toolLabel}>
                   Votre associé réglementaire

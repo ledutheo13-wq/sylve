@@ -292,6 +292,14 @@
   border-bottom: 1px solid var(--border);
 }
 
+.outilsTagline {
+  font-size: 15px;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--primary);
+  margin-bottom: 14px;
+}
+
 .outilsGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

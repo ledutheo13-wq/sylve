@@ -185,7 +185,7 @@ export default function ConnexionPage() {
             {view === "signup" && (
               <form onSubmit={handleSignup}>
                 <h1 className={styles.cardTitle}>Créer un compte</h1>
-                <p className={styles.cardSubtitle}>Aucun engagement. Accédez à tous les outils SYLVE.</p>
+                <p className={styles.cardSubtitle}>Aucun engagement. Accédez à tous les outils sylve.</p>
 
                 {error && <div className={`${styles.message} ${styles.messageError}`}>{error}</div>}
 

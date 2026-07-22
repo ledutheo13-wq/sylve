@@ -7,7 +7,7 @@ import styles from "./page.module.css";
 export const metadata: Metadata = {
   title: "sylve conseil — l'expertise humaine derrière les outils",
   description:
-    "Le tiers de confiance technique des projets de paysage. Audit, appui AMO, support MOE, études et notes techniques — Théo Le Du, ingénieur paysagiste.",
+    "Tiers de confiance des projets de paysage. Audit, appui AMO, support MOE, études et notes techniques — Théo Le Du, ingénieur paysagiste.",
 };
 
 const MISSIONS = [
@@ -320,10 +320,11 @@ export default function ConseilPage() {
           </div>
           <div className={styles.heroDivider} />
           <h1 className={styles.heroAccroche}>
-            Le tiers de confiance technique des projets de paysage.
+            Tiers de confiance des projets de paysage
           </h1>
           <p className={styles.heroIdentite}>
-            Théo Le Du · Ingénieur paysagiste · Référent technique en paysage
+            Théo Le Du · Ingénieur paysagiste · Maîtrise d&apos;œuvre et
+            expertise
           </p>
         </div>
       </section>
@@ -332,11 +333,11 @@ export default function ConseilPage() {
       <section className={`${styles.section} ${styles.intro}`}>
         <div className={styles.sectionInner}>
           <p className={styles.introText}>
-            J&apos;apporte aux maîtres d&apos;ouvrage, agences et bureaux
-            d&apos;études l&apos;expertise technique, réglementaire et
-            scientifique qui sécurise les projets de paysage. Quand un projet se
-            complexifie — techniquement, réglementairement — j&apos;apporte des
-            décisions claires et étayées.
+            Quand un projet de paysage se complexifie, j&apos;apporte aux
+            maîtres d&apos;ouvrage, agences et bureaux d&apos;études le regard
+            d&apos;un concepteur qui maîtrise la technique, la réglementation et
+            l&apos;économie du projet. Des décisions claires et étayées — de
+            quoi sécuriser le projet, et le défendre.
           </p>
           <p className={styles.expertiseLine}>
             gestion des eaux pluviales · végétalisation du bâti · sol &amp;{" "}
@@ -461,7 +462,7 @@ export default function ConseilPage() {
       <footer className={styles.footer}>
         <div className={styles.footerLogo}>sylve</div>
         <p className={styles.footerCopy}>
-          © 2026 sylve.eco — L&apos;intelligence numérique au service du paysage
+          © 2026 sylve.eco — L&apos;expertise et les outils du projet de paysage
         </p>
       </footer>
     </>

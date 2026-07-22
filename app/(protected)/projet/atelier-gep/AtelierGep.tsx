@@ -486,7 +486,7 @@ export default function AtelierGep() {
           </button>
           {biblioOuverte && (
             <ul className={styles.biblio}>
-              <li><span className={styles.biblioCat}>Coefficients de Montana (SYLVE)</span><span>{SOURCE_MONTANA}. {ATTRIBUTION_MONTANA}.</span></li>
+              <li><span className={styles.biblioCat}>Coefficients de Montana (sylve)</span><span>{SOURCE_MONTANA}. {ATTRIBUTION_MONTANA}.</span></li>
               {BIBLIOGRAPHIE.map((r, i) => (
                 <li key={i}><span className={styles.biblioCat}>{r.categorie}</span><span>{r.citation} {r.url && <a href={r.url} target="_blank" rel="noopener noreferrer">[lien]</a>}</span></li>
               ))}

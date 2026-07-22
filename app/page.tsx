@@ -14,9 +14,9 @@ export default function Home() {
           <div className={styles.heroLogo}>sylve</div>
           <div className={styles.heroDivider} />
           <p className={styles.heroTagline}>
-            L&apos;intelligence numérique
+            L&apos;expertise et les outils
             <br />
-            au service du paysage
+            du projet de paysage
           </p>
 
           <div className={styles.heroCtaGroup}>
@@ -60,6 +60,9 @@ export default function Home() {
         <div className={styles.sectionInner}>
           <div className={styles.sectionLabel}>Les outils</div>
           <h2 className={styles.sectionTitle}>9 outils de conception</h2>
+          <p className={styles.outilsTagline}>
+            Par un paysagiste, pour les paysagistes.
+          </p>
           <p className={styles.sectionText}>
             Calculateurs, outils végétaux, générateurs. La compatibilité
             végétale et le comparateur d&apos;ouvrages GEP sont en accès libre ;
@@ -169,13 +172,13 @@ export default function Home() {
           <div className={styles.marquesHeader}>
             <div className={styles.sectionLabel}>Les solutions</div>
             <h2 className={styles.sectionTitle}>
-              Trois suites d&apos;outils,
+              Les outils et l&apos;expertise
               <br />
-              un seul métier : le vôtre
+              pour vos projets de paysage.
             </h2>
             <p className={styles.sectionText}>
-              Vous concevez des espaces, vous prescrivez, vous chiffrez, vous
-              pilotez des missions. SYLVE vous accompagne à chaque étape.
+              Concevoir, prescrire, chiffrer, sécuriser un projet de paysage —
+              sylve accompagne chaque acteur, à chaque étape.
             </p>
           </div>
 
@@ -313,7 +316,7 @@ export default function Home() {
             La conviction
           </div>
           <p className={styles.promesseQuote}>
-            &ldquo;En 10 minutes, pas en 2 jours.&rdquo;
+            &ldquo;La technique du paysage, en 10 minutes.&rdquo;
           </p>
           <p className={styles.promesseAuthor}>
             Conçu par un paysagiste qui a vécu le métier —
@@ -378,7 +381,7 @@ export default function Home() {
           </Link>
         </nav>
         <p className={styles.footerCopy}>
-          © 2026 sylve.eco — L&apos;intelligence numérique au service du
+          © 2026 sylve.eco — L&apos;expertise et les outils du projet de
           paysage
         </p>
       </footer>
