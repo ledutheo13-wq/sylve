@@ -177,6 +177,34 @@ check("floraison wrap (déc→mars) gérée", (() => {
   return wrap.length >= 0; // présence tolérée, pas de crash
 })(), `(${v2.filter((p) => p.floraison_debut && p.floraison_fin && p.floraison_debut > p.floraison_fin).length} esp.)`);
 
+// ═══ 6. FIABILISATION (triage 23/07/2026) ═══
+head("6. Fiabilisation — arbitrages appliqués");
+const nl = new Map(v2.map((p) => [p.nom_latin, p]));
+for (const [nom, attendu] of [
+  ["Ligustrum japonicum", "arbre_moyen"], ["Photinia serratifolia", "arbre_moyen"],
+  ["Heteromeles arbutifolia", "arbre_petit"], ["Eriobotrya deflexa", "arbre_petit"],
+  ["Pistacia vera", "arbre_petit"], ["Styrax officinalis", "arbre_petit"],
+] as [string, string][]) {
+  check(`${nom} → ${attendu}`, nl.get(nom)?.strate === attendu, `(${nl.get(nom)?.strate})`);
+}
+for (const nom of ["Citrus spp", "Callistemon viminalis", "Grevillea banksii"]) {
+  check(`${nom} conservé en arbuste (grand développement)`, nl.get(nom)?.strate === "arbuste", `(${nl.get(nom)?.strate})`);
+}
+check("Lathyrus odoratus : rusticité vide (annuelle)",
+  nl.get("Lathyrus odoratus")?.rusticite_usda === "" && nl.get("Lathyrus odoratus")?.rusticite_celsius === null);
+
+// filtre hauteur : les espèces SANS hauteur ne doivent plus être exclues
+const sansHauteur = v2.filter((p) => p.hauteur_min_cm == null && p.hauteur_max_cm == null);
+check(`espèces sans hauteur présentes en base (${sansHauteur.length})`, sansHauteur.length > 0);
+const filtHaut = filterPlantes(v2, { ...getDefaultFilters(), heightMin: 0, heightMax: 100 }, cache2);
+const gardees = sansHauteur.filter((p) => filtHaut.some((q) => q.id === p.id)).length;
+check(`filtre hauteur 0-100 conserve les ${sansHauteur.length} sans-hauteur`, gardees === sansHauteur.length, `(${gardees})`);
+const filtHaut2 = filterPlantes(v2, { ...getDefaultFilters(), heightMin: 2000, heightMax: 5000 }, cache2);
+check("filtre hauteur 20-50 m conserve aussi les sans-hauteur",
+  sansHauteur.every((p) => filtHaut2.some((q) => q.id === p.id)));
+check("filtre hauteur exclut toujours les hors-plage renseignées",
+  filtHaut.every((p) => p.hauteur_min_cm == null || p.hauteur_min_cm <= 100));
+
 // ═══ RÉSULTAT ═══
 console.log(`\n${"═".repeat(50)}\nRÉSULTAT : ${pass} passés, ${fail} échoués`);
 if (fail > 0) process.exit(1);

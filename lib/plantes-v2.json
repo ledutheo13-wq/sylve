@@ -50869,7 +50869,7 @@
     "nom_latin": "Eriobotrya deflexa",
     "nom_commun": "Néflier de Taïwan",
     "famille": "Rosaceae",
-    "strate": "arbuste",
+    "strate": "arbre_petit",
     "persistance": "persistant",
     "exposition": [
       "soleil",
@@ -51551,7 +51551,7 @@
     "nom_latin": "Heteromeles arbutifolia",
     "nom_commun": "Faux houx de Californie",
     "famille": "Rosaceae",
-    "strate": "arbuste",
+    "strate": "arbre_petit",
     "persistance": "persistant",
     "exposition": [
       "soleil",
@@ -51927,7 +51927,7 @@
     "nom_latin": "Ligustrum japonicum",
     "nom_commun": "Troène",
     "famille": "Oleaceae",
-    "strate": "arbuste",
+    "strate": "arbre_moyen",
     "persistance": "persistant",
     "exposition": [
       "soleil",
@@ -52316,7 +52316,7 @@
     "nom_latin": "Photinia serratifolia",
     "nom_commun": "Photinia japonais, Photinia chinois",
     "famille": "Rosaceae",
-    "strate": "arbuste",
+    "strate": "arbre_moyen",
     "persistance": "persistant",
     "exposition": [
       "soleil",
@@ -52429,7 +52429,7 @@
     "nom_latin": "Pistacia vera",
     "nom_commun": "Vrai pistachier",
     "famille": "Anacardiaceae",
-    "strate": "arbuste",
+    "strate": "arbre_petit",
     "persistance": "caduc",
     "exposition": [
       "soleil"
@@ -53117,7 +53117,7 @@
     "nom_latin": "Styrax officinalis",
     "nom_commun": "Aliboufier",
     "famille": "Styracaceae",
-    "strate": "arbuste",
+    "strate": "arbre_petit",
     "persistance": "caduc",
     "exposition": [
       "soleil"

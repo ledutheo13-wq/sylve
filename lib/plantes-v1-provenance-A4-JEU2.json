@@ -141,7 +141,8 @@
     "ph_sol": "compilé — à vérifier",
     "rusticite_usda": "compilé — à vérifier",
     "rusticite_celsius": "compilé — à vérifier",
-    "hauteur_min_cm": "compilé — à vérifier"
+    "hauteur_min_cm": "compilé — à vérifier",
+    "hauteur": "arbuste grand développement — hauteur validée"
   },
   "capparis-spinosa": {
     "exposition": "Baseflor (Julve, ODbL)",
@@ -213,7 +214,8 @@
     "humidite_sol": "compilé — à vérifier",
     "rusticite_usda": "compilé — à vérifier",
     "rusticite_celsius": "compilé — à vérifier",
-    "hauteur_min_cm": "compilé — à vérifier"
+    "hauteur_min_cm": "compilé — à vérifier",
+    "hauteur": "arbuste grand développement — hauteur validée"
   },
   "clematis-armandi": {
     "exposition": "compilé — à vérifier",
@@ -357,7 +359,8 @@
     "humidite_sol": "compilé — à vérifier",
     "rusticite_usda": "compilé — à vérifier",
     "rusticite_celsius": "compilé — à vérifier",
-    "hauteur_min_cm": "compilé — à vérifier"
+    "hauteur_min_cm": "compilé — à vérifier",
+    "strate": "reclassée par contrôle de hauteur (triage 23/07/2026) — validé"
   },
   "erythrostemon-gilliesii": {
     "besoins_hydriques": "SESAME resistance_secheresse (Licence Ouverte)",
@@ -474,7 +477,8 @@
     "ph_sol": "compilé — à vérifier",
     "rusticite_usda": "compilé — à vérifier",
     "rusticite_celsius": "compilé — à vérifier",
-    "hauteur_min_cm": "compilé — à vérifier"
+    "hauteur_min_cm": "compilé — à vérifier",
+    "hauteur": "arbuste grand développement — hauteur validée"
   },
   "grevillea-robusta": {
     "besoins_hydriques": "SESAME resistance_secheresse (Licence Ouverte)",
@@ -519,7 +523,8 @@
     "ph_sol": "compilé — à vérifier",
     "rusticite_usda": "compilé — à vérifier",
     "rusticite_celsius": "compilé — à vérifier",
-    "hauteur_min_cm": "compilé — à vérifier"
+    "hauteur_min_cm": "compilé — à vérifier",
+    "strate": "reclassée par contrôle de hauteur (triage 23/07/2026) — validé"
   },
   "hippocrepis-emerus": {
     "exposition": "Baseflor (Julve, ODbL)",
@@ -609,7 +614,8 @@
     "humidite_sol": "compilé — à vérifier",
     "rusticite_usda": "compilé — à vérifier",
     "rusticite_celsius": "compilé — à vérifier",
-    "hauteur_min_cm": "compilé — à vérifier"
+    "hauteur_min_cm": "compilé — à vérifier",
+    "strate": "reclassée par contrôle de hauteur (triage 23/07/2026) — validé"
   },
   "lonicera-etrusca": {
     "exposition": "Baseflor (Julve, ODbL)",
@@ -699,7 +705,8 @@
     "humidite_sol": "compilé — à vérifier",
     "rusticite_usda": "compilé — à vérifier",
     "rusticite_celsius": "compilé — à vérifier",
-    "hauteur_min_cm": "compilé — à vérifier"
+    "hauteur_min_cm": "compilé — à vérifier",
+    "strate": "reclassée par contrôle de hauteur (triage 23/07/2026) — validé"
   },
   "pistacia-atlantica": {
     "besoins_hydriques": "SESAME resistance_secheresse (Licence Ouverte)",
@@ -726,7 +733,8 @@
     "humidite_sol": "Baseflor (Julve, ODbL)",
     "rusticite_usda": "compilé — à vérifier",
     "rusticite_celsius": "compilé — à vérifier",
-    "hauteur_min_cm": "compilé — à vérifier"
+    "hauteur_min_cm": "compilé — à vérifier",
+    "strate": "reclassée par contrôle de hauteur (triage 23/07/2026) — validé"
   },
   "platanus-vallis": {
     "besoins_hydriques": "SESAME resistance_secheresse (Licence Ouverte)",
@@ -888,7 +896,8 @@
     "humidite_sol": "Baseflor (Julve, ODbL)",
     "rusticite_usda": "compilé — à vérifier",
     "rusticite_celsius": "compilé — à vérifier",
-    "hauteur_min_cm": "compilé — à vérifier"
+    "hauteur_min_cm": "compilé — à vérifier",
+    "strate": "reclassée par contrôle de hauteur (triage 23/07/2026) — validé"
   },
   "tagetes-lemmonii": {
     "besoins_hydriques": "SESAME resistance_secheresse (Licence Ouverte)",

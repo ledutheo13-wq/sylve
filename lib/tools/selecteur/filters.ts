@@ -459,14 +459,16 @@ export function filterPlantes(
     }
 
     if (filters.heightMin > 0 || filters.heightMax < 5000) {
-      if (p.hauteur_max_cm == null || p.hauteur_min_cm == null) return false;
-      if (
-        !(
-          p.hauteur_max_cm >= filters.heightMin &&
-          p.hauteur_min_cm <= filters.heightMax
-        )
-      )
-        return false;
+      // Les espèces SANS hauteur renseignée (aquatiques flottantes/submergées…) ne sont
+      // PAS exclues : le filtre ne s'applique qu'aux espèces qui ONT une hauteur.
+      // (Même principe honnête que pour l'indigénat : pas de faux négatif sur donnée absente.)
+      const hMin = p.hauteur_min_cm;
+      const hMax = p.hauteur_max_cm;
+      if (hMin != null || hMax != null) {
+        const lo = hMin ?? (hMax as number);
+        const hi = hMax ?? (hMin as number);
+        if (!(hi >= filters.heightMin && lo <= filters.heightMax)) return false;
+      }
     }
 
     if (filters.persistance.length) {
