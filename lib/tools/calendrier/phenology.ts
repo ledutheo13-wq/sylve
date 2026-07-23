@@ -2,6 +2,7 @@
 //  STRATE ORDERING & LABELS
 // ═══════════════════════════════════════════════════════════
 
+// Valeurs canoniques (cf. base-vegetale/NORMALISATION-ENUMS.md)
 export const STRATE_ORDER = [
   "arbre_grand",
   "arbre_moyen",
@@ -9,9 +10,10 @@ export const STRATE_ORDER = [
   "arbuste",
   "grimpante",
   "vivace",
-  "graminee",
-  "fougere",
-  "couvre_sol",
+  "graminée",
+  "bambou",
+  "fougère",
+  "couvre-sol",
   "bulbe",
   "aquatique",
 ] as const;
@@ -21,15 +23,13 @@ export const STRATE_LABELS: Record<string, string> = {
   arbre_moyen: "Arbre (moyen)",
   arbre_petit: "Arbre (petit)",
   arbuste: "Arbuste",
-  sous_arbuste: "Sous-arbuste",
   grimpante: "Grimpante",
   vivace: "Vivace",
-  graminee: "Graminee",
-  fougere: "Fougere",
-  couvre_sol: "Couvre-sol",
+  "graminée": "Graminée",
+  "fougère": "Fougère",
+  "couvre-sol": "Couvre-sol",
   bulbe: "Bulbe",
   bambou: "Bambou",
-  palmier: "Palmier",
   aquatique: "Aquatique",
 };
 
@@ -217,14 +217,22 @@ export function normalize(str: string): string {
 
 export function getPersistanceBadgeClass(persistance: string): string {
   const persLow = (persistance || "").toLowerCase();
+  if (persLow.startsWith("marcescent")) return "marcescent";
   if (persLow.startsWith("caduc") || persLow === "annuelle") return "caduc";
   if (persLow.startsWith("semi-persistant")) return "semiPersistant";
   return "persistant";
 }
 
+/** Feuillage vert conservé l'hiver (persistant / semi-persistant).
+ *  Le marcescent est exclu : son feuillage hivernal est sec (rendu distinct). */
 export function isPersistant(persistance: string): boolean {
   const pers = (persistance || "").toLowerCase();
   return pers.startsWith("persistant") || pers.startsWith("semi-persistant");
+}
+
+/** Feuillage mort maintenu l'hiver (Carpinus, Fagus, jeunes Quercus…). */
+export function isMarcescent(persistance: string): boolean {
+  return (persistance || "").toLowerCase().startsWith("marcescent");
 }
 
 export const MAX_ESSENCES = 25;

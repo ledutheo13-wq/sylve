@@ -93,7 +93,7 @@ const GRADIENT_SOL: Record<string, number> = {
   "bien draine": 0, "pauvre": 0, "siliceux": 0, "meuble": 0,
   "calcaire": 1, "crayeux": 1,
   "limoneux": 2, "fertile": 2, "riche": 2, "terreau": 2,
-  "humifere": 3, "humide": 3, "acide": 0,
+  "humifere": 3, "humide": 3, "acide": 0, "tourbeux": 3,
   "argileux": 4,
 };
 const MAX_SOL = 4;
@@ -342,24 +342,34 @@ export function scoreVerdict(score: number): string {
   return "Mélange problématique";
 }
 
+// Clés canoniques (cf. base-vegetale/NORMALISATION-ENUMS.md)
 export function formatStrate(s: string): string {
   const map: Record<string, string> = {
     arbre_grand: "Arbre (grand)",
     arbre_moyen: "Arbre (moyen)",
     arbre_petit: "Arbre (petit)",
     arbuste: "Arbuste",
-    sous_arbuste: "Sous-arbuste",
     vivace: "Vivace",
-    graminee: "Graminée",
-    couvre_sol: "Couvre-sol",
+    "graminée": "Graminée",
+    "couvre-sol": "Couvre-sol",
     grimpante: "Grimpante",
     bulbe: "Bulbe",
-    fougere: "Fougère",
+    "fougère": "Fougère",
     bambou: "Bambou",
-    palmier: "Palmier",
     aquatique: "Aquatique",
   };
   return map[s] || s;
+}
+
+/** Libellé lisible des 4 valeurs canoniques de persistance. */
+export function formatPersistance(p: string | null | undefined): string {
+  const map: Record<string, string> = {
+    persistant: "Persistant",
+    "semi-persistant": "Semi-persistant",
+    marcescent: "Marcescent",
+    caduc: "Caduc",
+  };
+  return map[(p || "").toLowerCase()] || (p || "—");
 }
 
 export function formatExposition(expo: string | string[] | undefined): string {

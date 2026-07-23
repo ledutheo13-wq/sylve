@@ -1,4 +1,16 @@
-# plantes-v1.json — Sources & provenance (NF ISO 690)
+# Base végétale partagée — Sources & provenance (NF ISO 690)
+
+> ⚠️ **Base servie en production : `plantes-v2.json`** (depuis A5) — même contenu que v1
+> mais **enums normalisés au canon** (`base-vegetale/NORMALISATION-ENUMS.md`).
+> `plantes-v1.json` est **conservé comme rollback** (voir l'en-tête de `lib/plantes.ts`).
+>
+> **A5 (hygiène)** : 1469 valeurs repliées sur le canon — `persistance` (caduque→caduc…),
+> `exposition` (plein soleil→soleil), `besoins_hydriques` (modéré→moyen…), `ph_sol`
+> (alcalin→calcaire + plages numériques converties), `humidite_sol` (normal/bien_draine/modéré→frais,
+> repli **arbitré empiriquement contre Baseflor**), `strate` (39 `herbacée` reclassées :
+> 38 graminées + *Helichrysum stoechas* en arbuste ; `fougere`→`fougère`), ajout de `marcescent`.
+> `type_sol` conserve volontairement son vocabulaire enrichi (le scoring de compatibilité l'exploite).
+> **Indigénat neutralisé côté UI** (« bientôt ») tant que TAXREF/INPN n'est pas rétabli.
 
 > Base végétale partagée (~20 champs) servie aux outils : compatibilité, calendrier, sélecteur, (palette).
 > Compilation de faits multi-sources, vérifiée par le fondateur (voir aussi OneDrive `base-vegetale/SOURCES.md`).

@@ -50,6 +50,8 @@ export const TYPE_SOL_OPTIONS: PillFilterDef = {
     { value: "argileux", label: "Argileux" },
     { value: "calcaire", label: "Calcaire" },
     { value: "humifère", label: "Humifère" },
+    { value: "caillouteux", label: "Caillouteux" },
+    { value: "tourbeux", label: "Tourbeux" },
   ],
 };
 
@@ -81,6 +83,7 @@ export const PERSISTANCE_OPTIONS: PillFilterDef = {
     { value: "persistant", label: "Persistant" },
     { value: "caduc", label: "Caduc" },
     { value: "semi-persistant", label: "Semi-persistant" },
+    { value: "marcescent", label: "Marcescent" },
   ],
 };
 
@@ -149,6 +152,7 @@ export const STRATE_ORDER = [
   "grimpante",
   "vivace",
   "graminée",
+  "bambou",
   "fougère",
   "couvre-sol",
   "bulbe",

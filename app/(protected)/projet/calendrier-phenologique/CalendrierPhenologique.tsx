@@ -12,6 +12,7 @@ import {
   parseCouleurFloraison,
   hexToRgb,
   isPersistant,
+  isMarcescent,
   getPersistanceBadgeClass,
   MAX_ESSENCES,
 } from "@/lib/tools/calendrier/phenology";
@@ -692,6 +693,7 @@ function CalendarContent({ mixes }: { mixes: Mix[] }) {
 
 function EssenceLine({ plante: p }: { plante: Plante }) {
   const persistent = isPersistant(p.persistance);
+  const marcescent = isMarcescent(p.persistance);
 
   // Foliage band style
   let feuillageStyle: React.CSSProperties;
@@ -700,6 +702,16 @@ function EssenceLine({ plante: p }: { plante: Plante }) {
       left: 0,
       right: 0,
       background: "rgba(94,139,143,0.20)",
+      borderRadius: 3,
+    };
+  } else if (marcescent) {
+    // Marcescent : feuillage vert Mars-Octobre puis feuillage SEC maintenu l'hiver
+    // (rgba(...,0) plutot que transparent pour html2canvas)
+    feuillageStyle = {
+      left: 0,
+      right: 0,
+      background:
+        "linear-gradient(to right, rgba(166,124,91,0.22) 0%, rgba(166,124,91,0.22) 16.7%, rgba(140,191,140,0.25) 20.8%, rgba(140,191,140,0.25) 83.3%, rgba(166,124,91,0.22) 87.5%, rgba(166,124,91,0.22) 100%)",
       borderRadius: 3,
     };
   } else {

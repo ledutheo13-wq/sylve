@@ -8,6 +8,7 @@ import {
   scoreColor,
   scoreVerdict,
   formatStrate,
+  formatPersistance,
   formatExposition,
   parseCouleurFloraison,
   moisToNum,
@@ -492,24 +493,10 @@ export default function CompatibiliteVegetale({ plantes, vitrine = false }: Prop
                         <th>Persistance</th>
                         <th>Exposition</th>
                         <th>Mellifère</th>
-                        <th>Indigénat</th>
                       </tr>
                     </thead>
                     <tbody>
                       {selectedPlants.map((p) => {
-                        let indigenatCell: string;
-                        if (bioregion) {
-                          const isIndig = p.indigenat && p.indigenat[bioregion as keyof typeof p.indigenat];
-                          indigenatCell = isIndig ? "✓ Indigène" : "✗ Exotique";
-                        } else {
-                          const parts: string[] = [];
-                          for (const [bio, label] of Object.entries(BIOREGION_LABELS)) {
-                            if (p.indigenat && p.indigenat[bio as keyof typeof p.indigenat]) {
-                              parts.push(label.substring(0, 3) + ".");
-                            }
-                          }
-                          indigenatCell = parts.length > 0 ? parts.join(" ") : "✗";
-                        }
                         return (
                           <tr
                             key={p.id}
@@ -518,10 +505,9 @@ export default function CompatibiliteVegetale({ plantes, vitrine = false }: Prop
                             <td className={styles.latin}>{p.nom_latin}</td>
                             <td>{p.famille}</td>
                             <td>{formatStrate(p.strate)}</td>
-                            <td>{p.persistance === "persistant" ? "Persistant" : "Caduc"}</td>
+                            <td>{formatPersistance(p.persistance)}</td>
                             <td>{formatExposition(p.exposition)}</td>
                             <td>{p.mellifere ? "✓" : "✗"}</td>
-                            <td>{indigenatCell}</td>
                           </tr>
                         );
                       })}
@@ -532,9 +518,9 @@ export default function CompatibiliteVegetale({ plantes, vitrine = false }: Prop
                   <div className={styles.recapStats}>
                     <span>% persistantes : <strong>{recapStats.pctPersist}%</strong></span>
                     <span>% mellifères : <strong>{recapStats.pctMelli}%</strong></span>
-                    {recapStats.pctIndig !== null && bioregion && (
-                      <span>% indigènes : <strong>{recapStats.pctIndig}%</strong> ({BIOREGION_LABELS[bioregion]})</span>
-                    )}
+                    <span title="L'indigénat par territoire est en cours de consolidation (référentiel TAXREF/INPN). Il sera réactivé une fois la donnée complète.">
+                      % indigènes : <strong>bientôt</strong>
+                    </span>
                   </div>
                 )}
               </div>
@@ -937,9 +923,11 @@ function AdvancedResults({
         <div className={styles.quantStat}>
           % mellifères (pondéré) : <strong>{pctMelli}%</strong>
         </div>
-        <div className={styles.quantStat}>
-          % indigènes (pondéré) : <strong>{pctIndig}%</strong>
-          {bioregion ? ` (${BIOREGION_LABELS[bioregion]})` : ""}
+        <div
+          className={styles.quantStat}
+          title="L'indigénat par territoire est en cours de consolidation (référentiel TAXREF/INPN). Il sera réactivé une fois la donnée complète."
+        >
+          % indigènes (pondéré) : <strong>bientôt</strong>
         </div>
       </div>
     </>

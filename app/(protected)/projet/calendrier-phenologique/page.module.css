@@ -184,6 +184,11 @@
   color: var(--gres);
 }
 
+.marcescent {
+  background: rgba(166, 124, 91, 0.16);
+  color: var(--terre);
+}
+
 .btnDeleteEssence {
   font-size: 0.85rem;
   color: var(--text-light);

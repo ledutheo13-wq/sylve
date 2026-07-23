@@ -764,36 +764,40 @@ export default function SelecteurEssences({ plantes }: Props) {
             </div>
           </div>
 
-          {/* Indigénat */}
+          {/* Indigénat — désactivé : donnée territoriale en cours de consolidation.
+              Filtrer maintenant exclurait à tort des espèces réellement indigènes
+              mais pas encore référencées (référentiel TAXREF/INPN). */}
           <div className={styles.filterGroup}>
             <label>Indigénat</label>
-            <div className={styles.filterRow}>
+            <div
+              className={styles.filterRow}
+              style={{ opacity: 0.45, cursor: "not-allowed" }}
+              title="Bientôt — l'indigénat par territoire est en cours de consolidation (référentiel TAXREF/INPN). Le filtre est désactivé pour ne pas exclure à tort des espèces indigènes non encore référencées."
+            >
               <span
-                className={
-                  filters.indigenat ? styles.pillActive : styles.pill
-                }
-                onClick={() =>
-                  updateFilter("indigenat", !filters.indigenat)
-                }
+                className={styles.pill}
+                style={{ pointerEvents: "none" }}
+                aria-disabled="true"
               >
                 Indigène en
               </span>
-              <select
-                className={styles.filterSelect}
-                disabled={!filters.indigenat}
-                value={filters.bioregion}
-                onChange={(e) =>
-                  updateFilter(
-                    "bioregion",
-                    e.target.value as BioregionKey
-                  )
-                }
-              >
+              <select className={styles.filterSelect} disabled value={filters.bioregion} onChange={() => {}}>
                 <option value="atlantique">Atlantique</option>
                 <option value="continental">Continental</option>
                 <option value="mediterraneen">Méditerranéen</option>
                 <option value="alpin">Alpin</option>
               </select>
+              <span
+                style={{
+                  fontSize: "0.65rem",
+                  letterSpacing: "0.08em",
+                  textTransform: "uppercase",
+                  color: "var(--text-light)",
+                  whiteSpace: "nowrap",
+                }}
+              >
+                Bientôt
+              </span>
             </div>
           </div>
 
