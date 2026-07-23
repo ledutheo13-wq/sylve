@@ -1,0 +1,947 @@
+{
+  "abies-pinsapo": {
+    "exposition": "Baseflor (Julve, ODbL)",
+    "besoins_hydriques": "Baseflor (Julve, ODbL)",
+    "ph_sol": "Baseflor (Julve, ODbL)",
+    "humidite_sol": "Baseflor (Julve, ODbL)",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "acacia-retinodes": {
+    "exposition": "Baseflor (Julve, ODbL)",
+    "besoins_hydriques": "Baseflor (Julve, ODbL)",
+    "ph_sol": "Baseflor (Julve, ODbL)",
+    "humidite_sol": "Baseflor (Julve, ODbL)",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "agonis-flexuosa": {
+    "exposition": "compilé — à vérifier",
+    "besoins_hydriques": "compilé — à vérifier",
+    "ph_sol": "compilé — à vérifier",
+    "humidite_sol": "compilé — à vérifier",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "alnus-subcordata": {
+    "besoins_hydriques": "SESAME resistance_secheresse (Licence Ouverte)",
+    "humidite_sol": "SESAME resistance_secheresse (Licence Ouverte)",
+    "exposition": "compilé — à vérifier",
+    "ph_sol": "compilé — à vérifier",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "araucaria-angustifolia": {
+    "besoins_hydriques": "SESAME resistance_secheresse (Licence Ouverte)",
+    "humidite_sol": "SESAME resistance_secheresse (Licence Ouverte)",
+    "exposition": "compilé — à vérifier",
+    "ph_sol": "compilé — à vérifier",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "arbutus-x-andrachnoides": {
+    "besoins_hydriques": "SESAME resistance_secheresse (Licence Ouverte)",
+    "humidite_sol": "SESAME resistance_secheresse (Licence Ouverte)",
+    "exposition": "compilé — à vérifier",
+    "ph_sol": "compilé — à vérifier",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "arbutus-andrachne": {
+    "besoins_hydriques": "SESAME resistance_secheresse (Licence Ouverte)",
+    "humidite_sol": "SESAME resistance_secheresse (Licence Ouverte)",
+    "exposition": "compilé — à vérifier",
+    "ph_sol": "compilé — à vérifier",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "argyrocytisus-battandieri": {
+    "besoins_hydriques": "SESAME resistance_secheresse (Licence Ouverte)",
+    "humidite_sol": "SESAME resistance_secheresse (Licence Ouverte)",
+    "exposition": "compilé — à vérifier",
+    "ph_sol": "compilé — à vérifier",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "bougainvillea-glabra": {
+    "exposition": "compilé — à vérifier",
+    "besoins_hydriques": "compilé — à vérifier",
+    "ph_sol": "compilé — à vérifier",
+    "humidite_sol": "compilé — à vérifier",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "brachychiton-acerifolius": {
+    "exposition": "compilé — à vérifier",
+    "besoins_hydriques": "compilé — à vérifier",
+    "ph_sol": "compilé — à vérifier",
+    "humidite_sol": "compilé — à vérifier",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "brachychiton-discolor": {
+    "exposition": "compilé — à vérifier",
+    "besoins_hydriques": "compilé — à vérifier",
+    "ph_sol": "compilé — à vérifier",
+    "humidite_sol": "compilé — à vérifier",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "brachychiton-populneus": {
+    "besoins_hydriques": "SESAME resistance_secheresse (Licence Ouverte)",
+    "humidite_sol": "SESAME resistance_secheresse (Licence Ouverte)",
+    "exposition": "compilé — à vérifier",
+    "ph_sol": "compilé — à vérifier",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "broussonetia-papyrifera": {
+    "exposition": "Baseflor (Julve, ODbL)",
+    "besoins_hydriques": "Baseflor (Julve, ODbL)",
+    "ph_sol": "Baseflor (Julve, ODbL)",
+    "humidite_sol": "Baseflor (Julve, ODbL)",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "buddleja-globosa": {
+    "exposition": "compilé — à vérifier",
+    "besoins_hydriques": "compilé — à vérifier",
+    "ph_sol": "compilé — à vérifier",
+    "humidite_sol": "compilé — à vérifier",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "buddleja-madagascariensis": {
+    "exposition": "compilé — à vérifier",
+    "besoins_hydriques": "compilé — à vérifier",
+    "ph_sol": "compilé — à vérifier",
+    "humidite_sol": "compilé — à vérifier",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "callistemon-viminalis": {
+    "besoins_hydriques": "SESAME resistance_secheresse (Licence Ouverte)",
+    "humidite_sol": "SESAME resistance_secheresse (Licence Ouverte)",
+    "exposition": "compilé — à vérifier",
+    "ph_sol": "compilé — à vérifier",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "capparis-spinosa": {
+    "exposition": "Baseflor (Julve, ODbL)",
+    "besoins_hydriques": "Baseflor (Julve, ODbL)",
+    "ph_sol": "Baseflor (Julve, ODbL)",
+    "humidite_sol": "Baseflor (Julve, ODbL)",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "carya-illinoinensis": {
+    "exposition": "compilé — à vérifier",
+    "besoins_hydriques": "compilé — à vérifier",
+    "ph_sol": "compilé — à vérifier",
+    "humidite_sol": "compilé — à vérifier",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "casuarina-cunninghamiana": {
+    "besoins_hydriques": "SESAME resistance_secheresse (Licence Ouverte)",
+    "humidite_sol": "SESAME resistance_secheresse (Licence Ouverte)",
+    "exposition": "compilé — à vérifier",
+    "ph_sol": "compilé — à vérifier",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "cinnamomum-camphora": {
+    "exposition": "compilé — à vérifier",
+    "besoins_hydriques": "compilé — à vérifier",
+    "ph_sol": "compilé — à vérifier",
+    "humidite_sol": "compilé — à vérifier",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "cistus-albidus": {
+    "exposition": "Baseflor (Julve, ODbL)",
+    "besoins_hydriques": "Baseflor (Julve, ODbL)",
+    "ph_sol": "compilé — à vérifier (arbitrage fondateur : Baseflor R=3 « acide » écarté, taxon calcicole de garrigue)",
+    "humidite_sol": "Baseflor (Julve, ODbL)",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "cistus-laurifolius": {
+    "exposition": "Baseflor (Julve, ODbL)",
+    "besoins_hydriques": "Baseflor (Julve, ODbL)",
+    "ph_sol": "Baseflor (Julve, ODbL)",
+    "humidite_sol": "Baseflor (Julve, ODbL)",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "cistus-monspeliensis": {
+    "exposition": "Baseflor (Julve, ODbL)",
+    "besoins_hydriques": "Baseflor (Julve, ODbL)",
+    "ph_sol": "Baseflor (Julve, ODbL)",
+    "humidite_sol": "Baseflor (Julve, ODbL)",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "citrus-spp": {
+    "exposition": "compilé — à vérifier",
+    "besoins_hydriques": "compilé — à vérifier",
+    "ph_sol": "compilé — à vérifier",
+    "humidite_sol": "compilé — à vérifier",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "clematis-armandi": {
+    "exposition": "compilé — à vérifier",
+    "besoins_hydriques": "compilé — à vérifier",
+    "ph_sol": "compilé — à vérifier",
+    "humidite_sol": "compilé — à vérifier",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "clematis-flammula": {
+    "exposition": "Baseflor (Julve, ODbL)",
+    "besoins_hydriques": "Baseflor (Julve, ODbL)",
+    "ph_sol": "Baseflor (Julve, ODbL)",
+    "humidite_sol": "Baseflor (Julve, ODbL)",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "clematis-vitalba": {
+    "exposition": "Baseflor (Julve, ODbL)",
+    "besoins_hydriques": "Baseflor (Julve, ODbL)",
+    "ph_sol": "Baseflor (Julve, ODbL)",
+    "humidite_sol": "Baseflor (Julve, ODbL)",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "coriaria-myrtifolia": {
+    "exposition": "Baseflor (Julve, ODbL)",
+    "besoins_hydriques": "Baseflor (Julve, ODbL)",
+    "ph_sol": "Baseflor (Julve, ODbL)",
+    "humidite_sol": "Baseflor (Julve, ODbL)",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "coronilla-glauca": {
+    "exposition": "Baseflor (Julve, ODbL)",
+    "besoins_hydriques": "Baseflor (Julve, ODbL)",
+    "ph_sol": "Baseflor (Julve, ODbL)",
+    "humidite_sol": "Baseflor (Julve, ODbL)",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "coronilla-juncea": {
+    "exposition": "Baseflor (Julve, ODbL)",
+    "besoins_hydriques": "Baseflor (Julve, ODbL)",
+    "ph_sol": "Baseflor (Julve, ODbL)",
+    "humidite_sol": "Baseflor (Julve, ODbL)",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "cupressus-macrocarpa": {
+    "exposition": "Baseflor (Julve, ODbL)",
+    "besoins_hydriques": "Baseflor (Julve, ODbL)",
+    "ph_sol": "Baseflor (Julve, ODbL)",
+    "humidite_sol": "Baseflor (Julve, ODbL)",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "cytisophyllum-sessilifolium": {
+    "exposition": "Baseflor (Julve, ODbL)",
+    "besoins_hydriques": "Baseflor (Julve, ODbL)",
+    "ph_sol": "Baseflor (Julve, ODbL)",
+    "humidite_sol": "Baseflor (Julve, ODbL)",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "cytisus-villosus": {
+    "exposition": "Baseflor (Julve, ODbL)",
+    "besoins_hydriques": "Baseflor (Julve, ODbL)",
+    "ph_sol": "Baseflor (Julve, ODbL)",
+    "humidite_sol": "Baseflor (Julve, ODbL)",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "daphne-gnidium": {
+    "exposition": "Baseflor (Julve, ODbL)",
+    "besoins_hydriques": "Baseflor (Julve, ODbL)",
+    "ph_sol": "Baseflor (Julve, ODbL)",
+    "humidite_sol": "Baseflor (Julve, ODbL)",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "diospyros-lotus": {
+    "exposition": "Baseflor (Julve, ODbL)",
+    "besoins_hydriques": "Baseflor (Julve, ODbL)",
+    "ph_sol": "Baseflor (Julve, ODbL)",
+    "humidite_sol": "Baseflor (Julve, ODbL)",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "diospyros-virginiana": {
+    "exposition": "compilé — à vérifier",
+    "besoins_hydriques": "compilé — à vérifier",
+    "ph_sol": "compilé — à vérifier",
+    "humidite_sol": "compilé — à vérifier",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "dorycnium-pentaphyllum": {
+    "exposition": "Baseflor (Julve, ODbL)",
+    "ph_sol": "Baseflor (Julve, ODbL)",
+    "besoins_hydriques": "SESAME resistance_secheresse (Licence Ouverte)",
+    "humidite_sol": "SESAME resistance_secheresse (Licence Ouverte)",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "erica-arborea": {
+    "exposition": "Baseflor (Julve, ODbL)",
+    "besoins_hydriques": "Baseflor (Julve, ODbL)",
+    "ph_sol": "Baseflor (Julve, ODbL)",
+    "humidite_sol": "Baseflor (Julve, ODbL)",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "erica-multiflora": {
+    "exposition": "Baseflor (Julve, ODbL)",
+    "besoins_hydriques": "Baseflor (Julve, ODbL)",
+    "ph_sol": "Baseflor (Julve, ODbL)",
+    "humidite_sol": "Baseflor (Julve, ODbL)",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "eriobotrya-deflexa": {
+    "exposition": "compilé — à vérifier",
+    "besoins_hydriques": "compilé — à vérifier",
+    "ph_sol": "compilé — à vérifier",
+    "humidite_sol": "compilé — à vérifier",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "erythrostemon-gilliesii": {
+    "besoins_hydriques": "SESAME resistance_secheresse (Licence Ouverte)",
+    "humidite_sol": "SESAME resistance_secheresse (Licence Ouverte)",
+    "exposition": "compilé — à vérifier",
+    "ph_sol": "compilé — à vérifier",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "euphorbia-spinosa": {
+    "exposition": "Baseflor (Julve, ODbL)",
+    "besoins_hydriques": "Baseflor (Julve, ODbL)",
+    "ph_sol": "Baseflor (Julve, ODbL)",
+    "humidite_sol": "Baseflor (Julve, ODbL)",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "euryops-pectinatus": {
+    "exposition": "compilé — à vérifier",
+    "besoins_hydriques": "compilé — à vérifier",
+    "ph_sol": "compilé — à vérifier",
+    "humidite_sol": "compilé — à vérifier",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "feijoa-sellowiana": {
+    "exposition": "compilé — à vérifier",
+    "besoins_hydriques": "compilé — à vérifier",
+    "ph_sol": "compilé — à vérifier",
+    "humidite_sol": "compilé — à vérifier",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "firmiana-simplex": {
+    "exposition": "compilé — à vérifier",
+    "besoins_hydriques": "compilé — à vérifier",
+    "ph_sol": "compilé — à vérifier",
+    "humidite_sol": "compilé — à vérifier",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "fraxinus-oxyphylla": {
+    "exposition": "compilé — à vérifier",
+    "besoins_hydriques": "compilé — à vérifier",
+    "ph_sol": "compilé — à vérifier",
+    "humidite_sol": "compilé — à vérifier",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "fraxinus-velutina": {
+    "exposition": "compilé — à vérifier",
+    "besoins_hydriques": "compilé — à vérifier",
+    "ph_sol": "compilé — à vérifier",
+    "humidite_sol": "compilé — à vérifier",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "fremontodendron-californicum": {
+    "besoins_hydriques": "SESAME resistance_secheresse (Licence Ouverte)",
+    "humidite_sol": "SESAME resistance_secheresse (Licence Ouverte)",
+    "exposition": "compilé — à vérifier",
+    "ph_sol": "compilé — à vérifier",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "genista-cinerea": {
+    "besoins_hydriques": "SESAME resistance_secheresse (Licence Ouverte)",
+    "humidite_sol": "SESAME resistance_secheresse (Licence Ouverte)",
+    "exposition": "compilé — à vérifier",
+    "ph_sol": "compilé — à vérifier",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "genista-hispanica": {
+    "exposition": "Baseflor (Julve, ODbL)",
+    "besoins_hydriques": "Baseflor (Julve, ODbL)",
+    "ph_sol": "Baseflor (Julve, ODbL)",
+    "humidite_sol": "Baseflor (Julve, ODbL)",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "genista-scorpius": {
+    "exposition": "Baseflor (Julve, ODbL)",
+    "besoins_hydriques": "Baseflor (Julve, ODbL)",
+    "ph_sol": "Baseflor (Julve, ODbL)",
+    "humidite_sol": "Baseflor (Julve, ODbL)",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "globularia-alypum": {
+    "exposition": "Baseflor (Julve, ODbL)",
+    "besoins_hydriques": "Baseflor (Julve, ODbL)",
+    "ph_sol": "Baseflor (Julve, ODbL)",
+    "humidite_sol": "Baseflor (Julve, ODbL)",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "grevillea-banksii": {
+    "besoins_hydriques": "SESAME resistance_secheresse (Licence Ouverte)",
+    "humidite_sol": "SESAME resistance_secheresse (Licence Ouverte)",
+    "exposition": "compilé — à vérifier",
+    "ph_sol": "compilé — à vérifier",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "grevillea-robusta": {
+    "besoins_hydriques": "SESAME resistance_secheresse (Licence Ouverte)",
+    "humidite_sol": "SESAME resistance_secheresse (Licence Ouverte)",
+    "exposition": "compilé — à vérifier",
+    "ph_sol": "compilé — à vérifier",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "hardenbergia-comptoniana": {
+    "besoins_hydriques": "SESAME resistance_secheresse (Licence Ouverte)",
+    "humidite_sol": "SESAME resistance_secheresse (Licence Ouverte)",
+    "exposition": "compilé — à vérifier",
+    "ph_sol": "compilé — à vérifier",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "hardenbergia-violacea": {
+    "besoins_hydriques": "SESAME resistance_secheresse (Licence Ouverte)",
+    "humidite_sol": "SESAME resistance_secheresse (Licence Ouverte)",
+    "exposition": "compilé — à vérifier",
+    "ph_sol": "compilé — à vérifier",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "helichrysum-stoechas": {
+    "besoins_hydriques": "SESAME resistance_secheresse (Licence Ouverte)",
+    "humidite_sol": "SESAME resistance_secheresse (Licence Ouverte)",
+    "exposition": "compilé — à vérifier",
+    "ph_sol": "compilé — à vérifier",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "heteromeles-arbutifolia": {
+    "besoins_hydriques": "SESAME resistance_secheresse (Licence Ouverte)",
+    "humidite_sol": "SESAME resistance_secheresse (Licence Ouverte)",
+    "exposition": "compilé — à vérifier",
+    "ph_sol": "compilé — à vérifier",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "hippocrepis-emerus": {
+    "exposition": "Baseflor (Julve, ODbL)",
+    "besoins_hydriques": "Baseflor (Julve, ODbL)",
+    "ph_sol": "Baseflor (Julve, ODbL)",
+    "humidite_sol": "Baseflor (Julve, ODbL)",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "jacaranda-mimosifolia": {
+    "besoins_hydriques": "SESAME resistance_secheresse (Licence Ouverte)",
+    "humidite_sol": "SESAME resistance_secheresse (Licence Ouverte)",
+    "exposition": "compilé — à vérifier",
+    "ph_sol": "compilé — à vérifier",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "jasminum-fruticans": {
+    "exposition": "Baseflor (Julve, ODbL)",
+    "besoins_hydriques": "Baseflor (Julve, ODbL)",
+    "ph_sol": "Baseflor (Julve, ODbL)",
+    "humidite_sol": "Baseflor (Julve, ODbL)",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "jasminum-polyanthum": {
+    "exposition": "compilé — à vérifier",
+    "besoins_hydriques": "compilé — à vérifier",
+    "ph_sol": "compilé — à vérifier",
+    "humidite_sol": "compilé — à vérifier",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "juniperus-drupacea": {
+    "besoins_hydriques": "SESAME resistance_secheresse (Licence Ouverte)",
+    "humidite_sol": "SESAME resistance_secheresse (Licence Ouverte)",
+    "exposition": "compilé — à vérifier",
+    "ph_sol": "compilé — à vérifier",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "juniperus-oxycedrus": {
+    "besoins_hydriques": "SESAME resistance_secheresse (Licence Ouverte)",
+    "humidite_sol": "SESAME resistance_secheresse (Licence Ouverte)",
+    "exposition": "compilé — à vérifier",
+    "ph_sol": "compilé — à vérifier",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "juniperus-phoenicea": {
+    "exposition": "Baseflor (Julve, ODbL)",
+    "besoins_hydriques": "Baseflor (Julve, ODbL)",
+    "ph_sol": "Baseflor (Julve, ODbL)",
+    "humidite_sol": "Baseflor (Julve, ODbL)",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "juniperus-phoenicea-var-turbinata": {
+    "besoins_hydriques": "SESAME resistance_secheresse (Licence Ouverte)",
+    "humidite_sol": "SESAME resistance_secheresse (Licence Ouverte)",
+    "exposition": "compilé — à vérifier",
+    "ph_sol": "compilé — à vérifier",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "koelreuteria-bipinnata": {
+    "exposition": "compilé — à vérifier",
+    "besoins_hydriques": "compilé — à vérifier",
+    "ph_sol": "compilé — à vérifier",
+    "humidite_sol": "compilé — à vérifier",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "ligustrum-japonicum": {
+    "exposition": "compilé — à vérifier",
+    "besoins_hydriques": "compilé — à vérifier",
+    "ph_sol": "compilé — à vérifier",
+    "humidite_sol": "compilé — à vérifier",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "lonicera-etrusca": {
+    "exposition": "Baseflor (Julve, ODbL)",
+    "besoins_hydriques": "Baseflor (Julve, ODbL)",
+    "ph_sol": "Baseflor (Julve, ODbL)",
+    "humidite_sol": "Baseflor (Julve, ODbL)",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "lonicera-fragrantissima": {
+    "exposition": "compilé — à vérifier",
+    "besoins_hydriques": "compilé — à vérifier",
+    "ph_sol": "compilé — à vérifier",
+    "humidite_sol": "compilé — à vérifier",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "lonicera-implexa": {
+    "exposition": "Baseflor (Julve, ODbL)",
+    "besoins_hydriques": "Baseflor (Julve, ODbL)",
+    "ph_sol": "Baseflor (Julve, ODbL)",
+    "humidite_sol": "Baseflor (Julve, ODbL)",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "malus-x-floribunda": {
+    "exposition": "compilé — à vérifier",
+    "besoins_hydriques": "compilé — à vérifier",
+    "ph_sol": "compilé — à vérifier",
+    "humidite_sol": "compilé — à vérifier",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "malva-arborea": {
+    "exposition": "Baseflor (Julve, ODbL)",
+    "besoins_hydriques": "Baseflor (Julve, ODbL)",
+    "ph_sol": "Baseflor (Julve, ODbL)",
+    "humidite_sol": "Baseflor (Julve, ODbL)",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "morus-indica": {
+    "exposition": "compilé — à vérifier",
+    "besoins_hydriques": "compilé — à vérifier",
+    "ph_sol": "compilé — à vérifier",
+    "humidite_sol": "compilé — à vérifier",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "morus-kagayamae": {
+    "exposition": "compilé — à vérifier",
+    "besoins_hydriques": "compilé — à vérifier",
+    "ph_sol": "compilé — à vérifier",
+    "humidite_sol": "compilé — à vérifier",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "myoporum-laetum": {
+    "besoins_hydriques": "SESAME resistance_secheresse (Licence Ouverte)",
+    "humidite_sol": "SESAME resistance_secheresse (Licence Ouverte)",
+    "exposition": "compilé — à vérifier",
+    "ph_sol": "compilé — à vérifier",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "myrtus-communis-subsp-tarentina": {
+    "besoins_hydriques": "SESAME resistance_secheresse (Licence Ouverte)",
+    "humidite_sol": "SESAME resistance_secheresse (Licence Ouverte)",
+    "exposition": "compilé — à vérifier",
+    "ph_sol": "compilé — à vérifier",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "photinia-serratifolia": {
+    "exposition": "compilé — à vérifier",
+    "besoins_hydriques": "compilé — à vérifier",
+    "ph_sol": "compilé — à vérifier",
+    "humidite_sol": "compilé — à vérifier",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "pistacia-atlantica": {
+    "besoins_hydriques": "SESAME resistance_secheresse (Licence Ouverte)",
+    "humidite_sol": "SESAME resistance_secheresse (Licence Ouverte)",
+    "exposition": "compilé — à vérifier",
+    "ph_sol": "compilé — à vérifier",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "pistacia-terebinthus": {
+    "exposition": "Baseflor (Julve, ODbL)",
+    "besoins_hydriques": "Baseflor (Julve, ODbL)",
+    "ph_sol": "Baseflor (Julve, ODbL)",
+    "humidite_sol": "Baseflor (Julve, ODbL)",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "pistacia-vera": {
+    "exposition": "Baseflor (Julve, ODbL)",
+    "besoins_hydriques": "Baseflor (Julve, ODbL)",
+    "ph_sol": "Baseflor (Julve, ODbL)",
+    "humidite_sol": "Baseflor (Julve, ODbL)",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "platanus-vallis": {
+    "besoins_hydriques": "SESAME resistance_secheresse (Licence Ouverte)",
+    "humidite_sol": "SESAME resistance_secheresse (Licence Ouverte)",
+    "exposition": "compilé — à vérifier",
+    "ph_sol": "compilé — à vérifier",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "prunus-ilicifolia": {
+    "exposition": "compilé — à vérifier",
+    "besoins_hydriques": "compilé — à vérifier",
+    "ph_sol": "compilé — à vérifier",
+    "humidite_sol": "compilé — à vérifier",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "pyrus-spinosa": {
+    "exposition": "Baseflor (Julve, ODbL)",
+    "besoins_hydriques": "Baseflor (Julve, ODbL)",
+    "ph_sol": "Baseflor (Julve, ODbL)",
+    "humidite_sol": "Baseflor (Julve, ODbL)",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "quercus-canariensis": {
+    "exposition": "Baseflor (Julve, ODbL)",
+    "besoins_hydriques": "Baseflor (Julve, ODbL)",
+    "ph_sol": "Baseflor (Julve, ODbL)",
+    "humidite_sol": "Baseflor (Julve, ODbL)",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "quercus-glauca": {
+    "exposition": "compilé — à vérifier",
+    "besoins_hydriques": "compilé — à vérifier",
+    "ph_sol": "compilé — à vérifier",
+    "humidite_sol": "compilé — à vérifier",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "quercus-ithaburensis": {
+    "besoins_hydriques": "SESAME resistance_secheresse (Licence Ouverte)",
+    "humidite_sol": "SESAME resistance_secheresse (Licence Ouverte)",
+    "exposition": "compilé — à vérifier",
+    "ph_sol": "compilé — à vérifier",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "quercus-rotundifolia": {
+    "besoins_hydriques": "SESAME resistance_secheresse (Licence Ouverte)",
+    "humidite_sol": "SESAME resistance_secheresse (Licence Ouverte)",
+    "exposition": "compilé — à vérifier",
+    "ph_sol": "compilé — à vérifier",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "quillaja-saponaria": {
+    "besoins_hydriques": "SESAME resistance_secheresse (Licence Ouverte)",
+    "humidite_sol": "SESAME resistance_secheresse (Licence Ouverte)",
+    "exposition": "compilé — à vérifier",
+    "ph_sol": "compilé — à vérifier",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "retama-monosperma": {
+    "besoins_hydriques": "SESAME resistance_secheresse (Licence Ouverte)",
+    "humidite_sol": "SESAME resistance_secheresse (Licence Ouverte)",
+    "exposition": "compilé — à vérifier",
+    "ph_sol": "compilé — à vérifier",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "rhamnus-alaternus": {
+    "exposition": "Baseflor (Julve, ODbL)",
+    "besoins_hydriques": "Baseflor (Julve, ODbL)",
+    "ph_sol": "Baseflor (Julve, ODbL)",
+    "humidite_sol": "Baseflor (Julve, ODbL)",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "rhus-coriaria": {
+    "exposition": "Baseflor (Julve, ODbL)",
+    "besoins_hydriques": "Baseflor (Julve, ODbL)",
+    "ph_sol": "Baseflor (Julve, ODbL)",
+    "humidite_sol": "Baseflor (Julve, ODbL)",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "rosa-laevigata": {
+    "exposition": "compilé — à vérifier",
+    "besoins_hydriques": "compilé — à vérifier",
+    "ph_sol": "compilé — à vérifier",
+    "humidite_sol": "compilé — à vérifier",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "salvia-yangii": {
+    "besoins_hydriques": "SESAME resistance_secheresse (Licence Ouverte)",
+    "humidite_sol": "SESAME resistance_secheresse (Licence Ouverte)",
+    "exposition": "compilé — à vérifier",
+    "ph_sol": "compilé — à vérifier",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "schinus-molle": {
+    "besoins_hydriques": "SESAME resistance_secheresse (Licence Ouverte)",
+    "humidite_sol": "SESAME resistance_secheresse (Licence Ouverte)",
+    "exposition": "compilé — à vérifier",
+    "ph_sol": "compilé — à vérifier",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "senna-corymbosa": {
+    "besoins_hydriques": "SESAME resistance_secheresse (Licence Ouverte)",
+    "humidite_sol": "SESAME resistance_secheresse (Licence Ouverte)",
+    "exposition": "compilé — à vérifier",
+    "ph_sol": "compilé — à vérifier",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "solanum-laxum": {
+    "exposition": "compilé — à vérifier",
+    "besoins_hydriques": "compilé — à vérifier",
+    "ph_sol": "compilé — à vérifier",
+    "humidite_sol": "compilé — à vérifier",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "spartium-junceum": {
+    "exposition": "Baseflor (Julve, ODbL)",
+    "besoins_hydriques": "Baseflor (Julve, ODbL)",
+    "ph_sol": "Baseflor (Julve, ODbL)",
+    "humidite_sol": "Baseflor (Julve, ODbL)",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "styrax-officinalis": {
+    "exposition": "Baseflor (Julve, ODbL)",
+    "besoins_hydriques": "Baseflor (Julve, ODbL)",
+    "ph_sol": "Baseflor (Julve, ODbL)",
+    "humidite_sol": "Baseflor (Julve, ODbL)",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "tagetes-lemmonii": {
+    "besoins_hydriques": "SESAME resistance_secheresse (Licence Ouverte)",
+    "humidite_sol": "SESAME resistance_secheresse (Licence Ouverte)",
+    "exposition": "compilé — à vérifier",
+    "ph_sol": "compilé — à vérifier",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "tilia-x-europaea": {
+    "exposition": "compilé — à vérifier",
+    "besoins_hydriques": "compilé — à vérifier",
+    "ph_sol": "compilé — à vérifier",
+    "humidite_sol": "compilé — à vérifier",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "tipuana-tipu": {
+    "exposition": "compilé — à vérifier",
+    "besoins_hydriques": "compilé — à vérifier",
+    "ph_sol": "compilé — à vérifier",
+    "humidite_sol": "compilé — à vérifier",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "toona-sinensis": {
+    "exposition": "Baseflor (Julve, ODbL)",
+    "besoins_hydriques": "Baseflor (Julve, ODbL)",
+    "ph_sol": "Baseflor (Julve, ODbL)",
+    "humidite_sol": "Baseflor (Julve, ODbL)",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "ulex-parviflorus": {
+    "exposition": "Baseflor (Julve, ODbL)",
+    "besoins_hydriques": "Baseflor (Julve, ODbL)",
+    "ph_sol": "Baseflor (Julve, ODbL)",
+    "humidite_sol": "Baseflor (Julve, ODbL)",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  },
+  "umbellularia-californica": {
+    "exposition": "compilé — à vérifier",
+    "besoins_hydriques": "compilé — à vérifier",
+    "ph_sol": "compilé — à vérifier",
+    "humidite_sol": "compilé — à vérifier",
+    "rusticite_usda": "compilé — à vérifier",
+    "rusticite_celsius": "compilé — à vérifier",
+    "hauteur_min_cm": "compilé — à vérifier"
+  }
+}

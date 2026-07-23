@@ -16,8 +16,16 @@
 - **Filtre d'inclusion** : disponibilité commerciale (espèces achetables en pépinière FR) ; invasives interdites UE (EEE) écartées.
 - **Indigénat DIFFÉRÉ** : source visée TAXREF/INPN indisponible (cyberattaque MNHN) → `indigenat` all-false provisoire pour les 536.
 
+## Complétion A4 « JEU 2 » — écologie des 105 espèces SESAME backportées en A3
+Les 105 espèces versées en A3 avaient 7 champs laissés vides (SESAME ne les fournit pas). Complétés (735 champs) :
+- **Baseflor** (Julve, ODbL) : exposition + pH (40 esp.), hydrique + humidité (39 esp.).
+- **SESAME `resistance_secheresse`** (Licence Ouverte) : hydrique + humidité (34 esp.) — uniquement les termes non ambigus de l'échelle Julve (Xérophyte / Mésoxérophyte / Mésophyte). Le terme **« Résistant »** (37 esp.), hors échelle et contredit par les commentaires SESAME, a été **écarté** au profit de la compilation.
+- **Compilé « à vérifier »** : rusticité (USDA + °C) et `hauteur_min_cm` pour les 105 (aucune source ne les fournit), + exposition/pH des 65 hors Baseflor.
+- **Arbitrages tracés** : *Dorycnium pentaphyllum* — appariement Baseflor sur un infra-taxon distinct (subsp. *gracile*, méso-hygrophile) contredisant SESAME → hydrique SESAME retenu. *Cistus albidus* — Baseflor R=3 « acide » écarté sur arbitrage fondateur (taxon calcicole de garrigue) → `neutre/calcaire` compilé.
+
 ## Provenance par espèce
-Fichier `plantes-v1-provenance-A4.json` (par `id` : `{ecologie, horticole}`) — trace les 536 espèces A4 (Baseflor vs compilé).
+- `plantes-v1-provenance-A4.json` — les 536 espèces ajoutées en A4 (`{ecologie, horticole}`).
+- `plantes-v1-provenance-A4-JEU2.json` — les 105 espèces complétées, **provenance champ par champ**.
 
 ## Bibliographie NF ISO 690
 - INRAE. *Floriscope* [en ligne]. https://floriscope.io/

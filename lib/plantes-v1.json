@@ -49423,14 +49423,20 @@
     "famille": "Pinaceae",
     "strate": "arbre_grand",
     "persistance": "persistant",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "faible",
     "type_sol": [],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "calcaire"
+    ],
+    "humidite_sol": [
+      "sec"
+    ],
+    "rusticite_usda": "Z6",
+    "rusticite_celsius": -23,
+    "hauteur_min_cm": 1500,
     "hauteur_max_cm": 2500,
     "floraison_debut": 3,
     "floraison_fin": 6,
@@ -49450,18 +49456,24 @@
     "famille": "Fabaceae",
     "strate": "arbre_petit",
     "persistance": "persistant",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "faible",
     "type_sol": [
       "sableux",
       "limoneux",
       "argileux"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "neutre"
+    ],
+    "humidite_sol": [
+      "sec"
+    ],
+    "rusticite_usda": "Z8",
+    "rusticite_celsius": -12,
+    "hauteur_min_cm": 500,
     "hauteur_max_cm": 800,
     "floraison_debut": 1,
     "floraison_fin": 12,
@@ -49481,18 +49493,25 @@
     "famille": "Myrtaceae",
     "strate": "arbre_moyen",
     "persistance": "persistant",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "faible",
     "type_sol": [
       "sableux",
       "limoneux",
       "argileux"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "acide",
+      "neutre"
+    ],
+    "humidite_sol": [
+      "sec"
+    ],
+    "rusticite_usda": "Z9",
+    "rusticite_celsius": -7,
+    "hauteur_min_cm": 600,
     "hauteur_max_cm": 1000,
     "floraison_debut": 4,
     "floraison_fin": 6,
@@ -49512,18 +49531,27 @@
     "famille": "Betulaceae",
     "strate": "arbre_moyen",
     "persistance": "caduc",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil",
+      "mi-ombre"
+    ],
+    "besoins_hydriques": "moyen",
     "type_sol": [
       "sableux",
       "limoneux",
       "argileux"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "acide",
+      "neutre",
+      "calcaire"
+    ],
+    "humidite_sol": [
+      "frais"
+    ],
+    "rusticite_usda": "Z6",
+    "rusticite_celsius": -23,
+    "hauteur_min_cm": 1000,
     "hauteur_max_cm": 1800,
     "floraison_debut": 1,
     "floraison_fin": 12,
@@ -49543,17 +49571,24 @@
     "famille": "Araucariaceae",
     "strate": "arbre_grand",
     "persistance": "persistant",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "moyen",
     "type_sol": [
       "limoneux",
       "argileux"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "acide",
+      "neutre"
+    ],
+    "humidite_sol": [
+      "frais"
+    ],
+    "rusticite_usda": "Z8",
+    "rusticite_celsius": -12,
+    "hauteur_min_cm": 2000,
     "hauteur_max_cm": 3500,
     "floraison_debut": 1,
     "floraison_fin": 12,
@@ -49573,17 +49608,26 @@
     "famille": "Ericaceae",
     "strate": "arbre_moyen",
     "persistance": "persistant",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil",
+      "mi-ombre"
+    ],
+    "besoins_hydriques": "faible",
     "type_sol": [
       "sableux",
       "limoneux"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "acide",
+      "neutre",
+      "calcaire"
+    ],
+    "humidite_sol": [
+      "sec"
+    ],
+    "rusticite_usda": "Z7",
+    "rusticite_celsius": -18,
+    "hauteur_min_cm": 600,
     "hauteur_max_cm": 1500,
     "floraison_debut": 1,
     "floraison_fin": 12,
@@ -49603,17 +49647,25 @@
     "famille": "Ericaceae",
     "strate": "arbre_moyen",
     "persistance": "persistant",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil",
+      "mi-ombre"
+    ],
+    "besoins_hydriques": "faible",
     "type_sol": [
       "sableux",
       "limoneux"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "neutre",
+      "calcaire"
+    ],
+    "humidite_sol": [
+      "sec"
+    ],
+    "rusticite_usda": "Z8",
+    "rusticite_celsius": -12,
+    "hauteur_min_cm": 600,
     "hauteur_max_cm": 1500,
     "floraison_debut": 1,
     "floraison_fin": 12,
@@ -49633,17 +49685,24 @@
     "famille": "Fabaceae",
     "strate": "arbuste",
     "persistance": "caduc",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "faible",
     "type_sol": [
       "sableux",
       "limoneux"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "acide",
+      "neutre"
+    ],
+    "humidite_sol": [
+      "sec"
+    ],
+    "rusticite_usda": "Z7",
+    "rusticite_celsius": -18,
+    "hauteur_min_cm": 300,
     "hauteur_max_cm": 500,
     "floraison_debut": 5,
     "floraison_fin": 6,
@@ -49663,16 +49722,24 @@
     "famille": "Nyctaginaceae",
     "strate": "grimpante",
     "persistance": "semi-persistant",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "faible",
     "type_sol": [
       "sableux"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "acide",
+      "neutre",
+      "calcaire"
+    ],
+    "humidite_sol": [
+      "sec"
+    ],
+    "rusticite_usda": "Z10",
+    "rusticite_celsius": -1,
+    "hauteur_min_cm": 300,
     "hauteur_max_cm": 700,
     "floraison_debut": 8,
     "floraison_fin": 11,
@@ -49692,19 +49759,27 @@
     "famille": "Malvaceae",
     "strate": "arbre_moyen",
     "persistance": "semi-persistant",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "faible",
     "type_sol": [
       "sableux",
       "limoneux",
       "argileux",
       "humifère"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "acide",
+      "neutre",
+      "calcaire"
+    ],
+    "humidite_sol": [
+      "sec"
+    ],
+    "rusticite_usda": "Z9",
+    "rusticite_celsius": -7,
+    "hauteur_min_cm": 800,
     "hauteur_max_cm": 1500,
     "floraison_debut": 6,
     "floraison_fin": 7,
@@ -49724,18 +49799,26 @@
     "famille": "Malvaceae",
     "strate": "arbre_grand",
     "persistance": "semi-persistant",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "faible",
     "type_sol": [
       "sableux",
       "limoneux",
       "argileux"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "acide",
+      "neutre",
+      "calcaire"
+    ],
+    "humidite_sol": [
+      "sec"
+    ],
+    "rusticite_usda": "Z9",
+    "rusticite_celsius": -7,
+    "hauteur_min_cm": 1500,
     "hauteur_max_cm": 3000,
     "floraison_debut": 6,
     "floraison_fin": 7,
@@ -49755,16 +49838,24 @@
     "famille": "Malvaceae",
     "strate": "arbre_moyen",
     "persistance": "semi-persistant",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "faible",
     "type_sol": [
       "sableux"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "acide",
+      "neutre",
+      "calcaire"
+    ],
+    "humidite_sol": [
+      "sec"
+    ],
+    "rusticite_usda": "Z9",
+    "rusticite_celsius": -7,
+    "hauteur_min_cm": 1000,
     "hauteur_max_cm": 2000,
     "floraison_debut": 6,
     "floraison_fin": 6,
@@ -49784,17 +49875,23 @@
     "famille": "Moraceae",
     "strate": "arbre_moyen",
     "persistance": "caduc",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "faible",
     "type_sol": [
       "sableux",
       "limoneux"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "calcaire"
+    ],
+    "humidite_sol": [
+      "sec"
+    ],
+    "rusticite_usda": "Z6",
+    "rusticite_celsius": -23,
+    "hauteur_min_cm": 700,
     "hauteur_max_cm": 1200,
     "floraison_debut": 5,
     "floraison_fin": 5,
@@ -49814,17 +49911,25 @@
     "famille": "Scrophulariaceae",
     "strate": "arbuste",
     "persistance": "semi-persistant",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "moyen",
     "type_sol": [
       "sableux",
       "limoneux"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "acide",
+      "neutre",
+      "calcaire"
+    ],
+    "humidite_sol": [
+      "frais"
+    ],
+    "rusticite_usda": "Z7",
+    "rusticite_celsius": -18,
+    "hauteur_min_cm": 250,
     "hauteur_max_cm": 500,
     "floraison_debut": 5,
     "floraison_fin": 6,
@@ -49844,17 +49949,25 @@
     "famille": "Scrophulariaceae",
     "strate": "arbuste",
     "persistance": "persistant",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "moyen",
     "type_sol": [
       "sableux",
       "limoneux"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "acide",
+      "neutre",
+      "calcaire"
+    ],
+    "humidite_sol": [
+      "frais"
+    ],
+    "rusticite_usda": "Z9",
+    "rusticite_celsius": -7,
+    "hauteur_min_cm": 200,
     "hauteur_max_cm": 400,
     "floraison_debut": 1,
     "floraison_fin": 3,
@@ -49874,17 +49987,24 @@
     "famille": "Myrtaceae",
     "strate": "arbuste",
     "persistance": "persistant",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "faible",
     "type_sol": [
       "sableux",
       "limoneux"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "acide",
+      "neutre"
+    ],
+    "humidite_sol": [
+      "sec"
+    ],
+    "rusticite_usda": "Z9",
+    "rusticite_celsius": -7,
+    "hauteur_min_cm": 400,
     "hauteur_max_cm": 1000,
     "floraison_debut": 5,
     "floraison_fin": 6,
@@ -49904,16 +50024,22 @@
     "famille": "Capparaceae",
     "strate": "arbuste",
     "persistance": "persistant",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "mi-ombre"
+    ],
+    "besoins_hydriques": "faible",
     "type_sol": [
       "sableux"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "calcaire"
+    ],
+    "humidite_sol": [
+      "sec"
+    ],
+    "rusticite_usda": "Z8",
+    "rusticite_celsius": -12,
+    "hauteur_min_cm": 50,
     "hauteur_max_cm": 200,
     "floraison_debut": 6,
     "floraison_fin": 11,
@@ -49933,17 +50059,25 @@
     "famille": "Juglandaceae",
     "strate": "arbre_grand",
     "persistance": "caduc",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "moyen",
     "type_sol": [
       "sableux",
       "limoneux"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "acide",
+      "neutre",
+      "calcaire"
+    ],
+    "humidite_sol": [
+      "frais"
+    ],
+    "rusticite_usda": "Z5",
+    "rusticite_celsius": -29,
+    "hauteur_min_cm": 1500,
     "hauteur_max_cm": 2500,
     "floraison_debut": 4,
     "floraison_fin": 5,
@@ -49963,16 +50097,24 @@
     "famille": "Casuarinaceae",
     "strate": "arbre_grand",
     "persistance": "persistant",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "faible",
     "type_sol": [
       "sableux"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "acide",
+      "neutre",
+      "calcaire"
+    ],
+    "humidite_sol": [
+      "sec"
+    ],
+    "rusticite_usda": "Z9",
+    "rusticite_celsius": -7,
+    "hauteur_min_cm": 1500,
     "hauteur_max_cm": 2500,
     "floraison_debut": 7,
     "floraison_fin": 8,
@@ -49992,17 +50134,25 @@
     "famille": "Lauraceae",
     "strate": "arbre_grand",
     "persistance": "persistant",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil",
+      "mi-ombre"
+    ],
+    "besoins_hydriques": "moyen",
     "type_sol": [
       "sableux",
       "limoneux"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "acide",
+      "neutre"
+    ],
+    "humidite_sol": [
+      "frais"
+    ],
+    "rusticite_usda": "Z9",
+    "rusticite_celsius": -7,
+    "hauteur_min_cm": 1500,
     "hauteur_max_cm": 4000,
     "floraison_debut": 4,
     "floraison_fin": 5,
@@ -50022,19 +50172,26 @@
     "famille": "Cistaceae",
     "strate": "arbuste",
     "persistance": "persistant",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "faible",
     "type_sol": [
       "sableux",
       "limoneux",
       "argileux",
       "humifère"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "neutre",
+      "calcaire"
+    ],
+    "humidite_sol": [
+      "sec"
+    ],
+    "rusticite_usda": "Z8",
+    "rusticite_celsius": -12,
+    "hauteur_min_cm": 40,
     "hauteur_max_cm": 100,
     "floraison_debut": 5,
     "floraison_fin": 6,
@@ -50054,19 +50211,25 @@
     "famille": "Cistaceae",
     "strate": "arbuste",
     "persistance": "persistant",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "faible",
     "type_sol": [
       "sableux",
       "limoneux",
       "argileux",
       "humifère"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "acide"
+    ],
+    "humidite_sol": [
+      "sec"
+    ],
+    "rusticite_usda": "Z6",
+    "rusticite_celsius": -23,
+    "hauteur_min_cm": 100,
     "hauteur_max_cm": 200,
     "floraison_debut": 6,
     "floraison_fin": 8,
@@ -50086,19 +50249,25 @@
     "famille": "Cistaceae",
     "strate": "arbuste",
     "persistance": "persistant",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "faible",
     "type_sol": [
       "sableux",
       "limoneux",
       "argileux",
       "humifère"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "acide"
+    ],
+    "humidite_sol": [
+      "sec"
+    ],
+    "rusticite_usda": "Z8",
+    "rusticite_celsius": -12,
+    "hauteur_min_cm": 80,
     "hauteur_max_cm": 200,
     "floraison_debut": 5,
     "floraison_fin": 6,
@@ -50118,17 +50287,24 @@
     "famille": "Rutaceae",
     "strate": "arbuste",
     "persistance": "persistant",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "moyen",
     "type_sol": [
       "sableux",
       "limoneux"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "acide",
+      "neutre"
+    ],
+    "humidite_sol": [
+      "frais"
+    ],
+    "rusticite_usda": "Z9",
+    "rusticite_celsius": -7,
+    "hauteur_min_cm": 200,
     "hauteur_max_cm": 1000,
     "floraison_debut": 3,
     "floraison_fin": 6,
@@ -50148,18 +50324,27 @@
     "famille": "Ranuculaceae",
     "strate": "grimpante",
     "persistance": "persistant",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil",
+      "mi-ombre"
+    ],
+    "besoins_hydriques": "moyen",
     "type_sol": [
       "sableux",
       "limoneux",
       "humifère"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "acide",
+      "neutre",
+      "calcaire"
+    ],
+    "humidite_sol": [
+      "frais"
+    ],
+    "rusticite_usda": "Z7",
+    "rusticite_celsius": -18,
+    "hauteur_min_cm": 400,
     "hauteur_max_cm": 900,
     "floraison_debut": 2,
     "floraison_fin": 4,
@@ -50179,18 +50364,24 @@
     "famille": "Ranunculaceae",
     "strate": "grimpante",
     "persistance": "persistant",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "faible",
     "type_sol": [
       "sableux",
       "limoneux",
       "humifère"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "neutre"
+    ],
+    "humidite_sol": [
+      "sec"
+    ],
+    "rusticite_usda": "Z6",
+    "rusticite_celsius": -23,
+    "hauteur_min_cm": 300,
     "hauteur_max_cm": 500,
     "floraison_debut": 6,
     "floraison_fin": 9,
@@ -50210,17 +50401,23 @@
     "famille": "Ranunculaceae",
     "strate": "grimpante",
     "persistance": "caduc",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "mi-ombre"
+    ],
+    "besoins_hydriques": "moyen",
     "type_sol": [
       "sableux",
       "limoneux"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "calcaire"
+    ],
+    "humidite_sol": [
+      "frais"
+    ],
+    "rusticite_usda": "Z4",
+    "rusticite_celsius": -34,
+    "hauteur_min_cm": 500,
     "hauteur_max_cm": 1500,
     "floraison_debut": 6,
     "floraison_fin": 9,
@@ -50240,17 +50437,23 @@
     "famille": "Coriariaceae",
     "strate": "arbuste",
     "persistance": "caduc",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "moyen",
     "type_sol": [
       "sableux",
       "limoneux"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "calcaire"
+    ],
+    "humidite_sol": [
+      "frais"
+    ],
+    "rusticite_usda": "Z7",
+    "rusticite_celsius": -18,
+    "hauteur_min_cm": 100,
     "hauteur_max_cm": 300,
     "floraison_debut": 5,
     "floraison_fin": 7,
@@ -50270,19 +50473,25 @@
     "famille": "Fabaceae",
     "strate": "arbuste",
     "persistance": "semi-persistant",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "faible",
     "type_sol": [
       "sableux",
       "limoneux",
       "argileux",
       "humifère"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "calcaire"
+    ],
+    "humidite_sol": [
+      "sec"
+    ],
+    "rusticite_usda": "Z8",
+    "rusticite_celsius": -12,
+    "hauteur_min_cm": 80,
     "hauteur_max_cm": 200,
     "floraison_debut": 3,
     "floraison_fin": 6,
@@ -50302,19 +50511,25 @@
     "famille": "Fabaceae",
     "strate": "arbuste",
     "persistance": "caduc",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "faible",
     "type_sol": [
       "sableux",
       "limoneux",
       "argileux",
       "humifère"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "calcaire"
+    ],
+    "humidite_sol": [
+      "sec"
+    ],
+    "rusticite_usda": "Z8",
+    "rusticite_celsius": -12,
+    "hauteur_min_cm": 60,
     "hauteur_max_cm": 200,
     "floraison_debut": 4,
     "floraison_fin": 6,
@@ -50334,18 +50549,24 @@
     "famille": "Cupressaceae",
     "strate": "arbre_grand",
     "persistance": "persistant",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "faible",
     "type_sol": [
       "sableux",
       "limoneux",
       "argileux"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "calcaire"
+    ],
+    "humidite_sol": [
+      "sec"
+    ],
+    "rusticite_usda": "Z7",
+    "rusticite_celsius": -18,
+    "hauteur_min_cm": 1500,
     "hauteur_max_cm": 2500,
     "floraison_debut": 4,
     "floraison_fin": 6,
@@ -50365,18 +50586,24 @@
     "famille": "Fabaceae",
     "strate": "arbuste",
     "persistance": "caduc",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "moyen",
     "type_sol": [
       "sableux",
       "limoneux",
       "humifère"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "neutre"
+    ],
+    "humidite_sol": [
+      "frais"
+    ],
+    "rusticite_usda": "Z6",
+    "rusticite_celsius": -23,
+    "hauteur_min_cm": 60,
     "hauteur_max_cm": 200,
     "floraison_debut": 5,
     "floraison_fin": 6,
@@ -50396,17 +50623,23 @@
     "famille": "Fabaceae",
     "strate": "arbuste",
     "persistance": "caduc",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "faible",
     "type_sol": [
       "limoneux",
       "humifère"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "acide"
+    ],
+    "humidite_sol": [
+      "sec"
+    ],
+    "rusticite_usda": "Z8",
+    "rusticite_celsius": -12,
+    "hauteur_min_cm": 150,
     "hauteur_max_cm": 400,
     "floraison_debut": 2,
     "floraison_fin": 6,
@@ -50426,17 +50659,23 @@
     "famille": "Thymelaeaceae",
     "strate": "arbuste",
     "persistance": "persistant",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "mi-ombre"
+    ],
+    "besoins_hydriques": "faible",
     "type_sol": [
       "limoneux",
       "humifère"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "neutre"
+    ],
+    "humidite_sol": [
+      "sec"
+    ],
+    "rusticite_usda": "Z8",
+    "rusticite_celsius": -12,
+    "hauteur_min_cm": 60,
     "hauteur_max_cm": 200,
     "floraison_debut": 3,
     "floraison_fin": 9,
@@ -50456,19 +50695,25 @@
     "famille": "Ebenaceae",
     "strate": "arbre_moyen",
     "persistance": "caduc",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "faible",
     "type_sol": [
       "sableux",
       "limoneux",
       "argileux",
       "humifère"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "neutre"
+    ],
+    "humidite_sol": [
+      "sec"
+    ],
+    "rusticite_usda": "Z6",
+    "rusticite_celsius": -23,
+    "hauteur_min_cm": 700,
     "hauteur_max_cm": 1200,
     "floraison_debut": 6,
     "floraison_fin": 6,
@@ -50488,19 +50733,28 @@
     "famille": "Ebenaceae",
     "strate": "arbre_moyen",
     "persistance": "caduc",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil",
+      "mi-ombre"
+    ],
+    "besoins_hydriques": "moyen",
     "type_sol": [
       "sableux",
       "limoneux",
       "argileux",
       "humifère"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "acide",
+      "neutre",
+      "calcaire"
+    ],
+    "humidite_sol": [
+      "frais"
+    ],
+    "rusticite_usda": "Z4",
+    "rusticite_celsius": -34,
+    "hauteur_min_cm": 900,
     "hauteur_max_cm": 2000,
     "floraison_debut": 5,
     "floraison_fin": 6,
@@ -50520,18 +50774,24 @@
     "famille": "Fabaceae",
     "strate": "arbuste",
     "persistance": "persistant",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "faible",
     "type_sol": [
       "sableux",
       "limoneux",
       "humifère"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "calcaire"
+    ],
+    "humidite_sol": [
+      "sec"
+    ],
+    "rusticite_usda": "Z7",
+    "rusticite_celsius": -18,
+    "hauteur_min_cm": 30,
     "hauteur_max_cm": 100,
     "floraison_debut": 4,
     "floraison_fin": 5,
@@ -50551,19 +50811,25 @@
     "famille": "Ericaceae",
     "strate": "arbuste",
     "persistance": "persistant",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "faible",
     "type_sol": [
       "sableux",
       "limoneux",
       "argileux",
       "humifère"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "acide"
+    ],
+    "humidite_sol": [
+      "sec"
+    ],
+    "rusticite_usda": "Z8",
+    "rusticite_celsius": -12,
+    "hauteur_min_cm": 150,
     "hauteur_max_cm": 400,
     "floraison_debut": 3,
     "floraison_fin": 5,
@@ -50583,19 +50849,25 @@
     "famille": "Ericaceae",
     "strate": "arbuste",
     "persistance": "persistant",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "faible",
     "type_sol": [
       "sableux",
       "limoneux",
       "argileux",
       "humifère"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "neutre"
+    ],
+    "humidite_sol": [
+      "sec"
+    ],
+    "rusticite_usda": "Z8",
+    "rusticite_celsius": -12,
+    "hauteur_min_cm": 40,
     "hauteur_max_cm": 100,
     "floraison_debut": 8,
     "floraison_fin": 12,
@@ -50615,18 +50887,27 @@
     "famille": "Rosaceae",
     "strate": "arbuste",
     "persistance": "persistant",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil",
+      "mi-ombre"
+    ],
+    "besoins_hydriques": "moyen",
     "type_sol": [
       "sableux",
       "limoneux",
       "argileux"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "acide",
+      "neutre",
+      "calcaire"
+    ],
+    "humidite_sol": [
+      "frais"
+    ],
+    "rusticite_usda": "Z9",
+    "rusticite_celsius": -7,
+    "hauteur_min_cm": 400,
     "hauteur_max_cm": 800,
     "floraison_debut": 3,
     "floraison_fin": 5,
@@ -50646,17 +50927,25 @@
     "famille": "Fabaceae",
     "strate": "arbuste",
     "persistance": "semi-persistant",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "faible",
     "type_sol": [
       "sableux",
       "limoneux"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "acide",
+      "neutre",
+      "calcaire"
+    ],
+    "humidite_sol": [
+      "sec"
+    ],
+    "rusticite_usda": "Z8",
+    "rusticite_celsius": -12,
+    "hauteur_min_cm": 150,
     "hauteur_max_cm": 300,
     "floraison_debut": 7,
     "floraison_fin": 8,
@@ -50676,17 +50965,23 @@
     "famille": "Euphorbiaceae",
     "strate": "arbuste",
     "persistance": "caduc",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "faible",
     "type_sol": [
       "sableux",
       "limoneux"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "calcaire"
+    ],
+    "humidite_sol": [
+      "sec"
+    ],
+    "rusticite_usda": "Z7",
+    "rusticite_celsius": -18,
+    "hauteur_min_cm": 20,
     "hauteur_max_cm": 100,
     "floraison_debut": 4,
     "floraison_fin": 6,
@@ -50706,17 +51001,25 @@
     "famille": "Asteraceae",
     "strate": "arbuste",
     "persistance": "persistant",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "faible",
     "type_sol": [
       "sableux",
       "limoneux"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "acide",
+      "neutre",
+      "calcaire"
+    ],
+    "humidite_sol": [
+      "sec"
+    ],
+    "rusticite_usda": "Z9",
+    "rusticite_celsius": -7,
+    "hauteur_min_cm": 80,
     "hauteur_max_cm": 200,
     "floraison_debut": 3,
     "floraison_fin": 12,
@@ -50736,18 +51039,26 @@
     "famille": "Myrtaceae",
     "strate": "arbuste",
     "persistance": "persistant",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil",
+      "mi-ombre"
+    ],
+    "besoins_hydriques": "moyen",
     "type_sol": [
       "sableux",
       "limoneux",
       "humifère"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "acide",
+      "neutre"
+    ],
+    "humidite_sol": [
+      "frais"
+    ],
+    "rusticite_usda": "Z8",
+    "rusticite_celsius": -12,
+    "hauteur_min_cm": 200,
     "hauteur_max_cm": 400,
     "floraison_debut": 6,
     "floraison_fin": 7,
@@ -50767,17 +51078,26 @@
     "famille": "Malvaceae",
     "strate": "arbre_moyen",
     "persistance": "caduc",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil",
+      "mi-ombre"
+    ],
+    "besoins_hydriques": "moyen",
     "type_sol": [
       "sableux",
       "limoneux"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "acide",
+      "neutre",
+      "calcaire"
+    ],
+    "humidite_sol": [
+      "frais"
+    ],
+    "rusticite_usda": "Z7",
+    "rusticite_celsius": -18,
+    "hauteur_min_cm": 800,
     "hauteur_max_cm": 1500,
     "floraison_debut": 5,
     "floraison_fin": 6,
@@ -50797,18 +51117,26 @@
     "famille": "Oleaceae",
     "strate": "arbre_moyen",
     "persistance": "caduc",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "moyen",
     "type_sol": [
       "limoneux",
       "argileux",
       "humifère"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "acide",
+      "neutre",
+      "calcaire"
+    ],
+    "humidite_sol": [
+      "frais"
+    ],
+    "rusticite_usda": "Z6",
+    "rusticite_celsius": -23,
+    "hauteur_min_cm": 1000,
     "hauteur_max_cm": 1500,
     "floraison_debut": 3,
     "floraison_fin": 5,
@@ -50828,17 +51156,25 @@
     "famille": "Oleaceae",
     "strate": "arbre_moyen",
     "persistance": "caduc",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "faible",
     "type_sol": [
       "sableux",
       "limoneux"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "acide",
+      "neutre",
+      "calcaire"
+    ],
+    "humidite_sol": [
+      "sec"
+    ],
+    "rusticite_usda": "Z7",
+    "rusticite_celsius": -18,
+    "hauteur_min_cm": 700,
     "hauteur_max_cm": 1200,
     "floraison_debut": 3,
     "floraison_fin": 4,
@@ -50858,18 +51194,25 @@
     "famille": "Malvaceae",
     "strate": "arbuste",
     "persistance": "semi-persistant",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "faible",
     "type_sol": [
       "sableux",
       "limoneux",
       "humifère"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "neutre",
+      "calcaire"
+    ],
+    "humidite_sol": [
+      "sec"
+    ],
+    "rusticite_usda": "Z8",
+    "rusticite_celsius": -12,
+    "hauteur_min_cm": 250,
     "hauteur_max_cm": 550,
     "floraison_debut": 4,
     "floraison_fin": 7,
@@ -50889,18 +51232,25 @@
     "famille": "Fabaceae",
     "strate": "arbuste",
     "persistance": "caduc",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "faible",
     "type_sol": [
       "sableux",
       "limoneux",
       "humifère"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "neutre",
+      "calcaire"
+    ],
+    "humidite_sol": [
+      "sec"
+    ],
+    "rusticite_usda": "Z7",
+    "rusticite_celsius": -18,
+    "hauteur_min_cm": 80,
     "hauteur_max_cm": 200,
     "floraison_debut": 5,
     "floraison_fin": 9,
@@ -50920,18 +51270,24 @@
     "famille": "Fabaceae",
     "strate": "arbuste",
     "persistance": "caduc",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "faible",
     "type_sol": [
       "sableux",
       "limoneux",
       "humifère"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "calcaire"
+    ],
+    "humidite_sol": [
+      "sec"
+    ],
+    "rusticite_usda": "Z6",
+    "rusticite_celsius": -23,
+    "hauteur_min_cm": 30,
     "hauteur_max_cm": 100,
     "floraison_debut": 4,
     "floraison_fin": 6,
@@ -50951,18 +51307,24 @@
     "famille": "Fabaceae",
     "strate": "arbuste",
     "persistance": "caduc",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "faible",
     "type_sol": [
       "sableux",
       "limoneux",
       "humifère"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "calcaire"
+    ],
+    "humidite_sol": [
+      "sec"
+    ],
+    "rusticite_usda": "Z7",
+    "rusticite_celsius": -18,
+    "hauteur_min_cm": 50,
     "hauteur_max_cm": 200,
     "floraison_debut": 5,
     "floraison_fin": 6,
@@ -50982,19 +51344,25 @@
     "famille": "Plantaginaceae",
     "strate": "arbuste",
     "persistance": "persistant",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "faible",
     "type_sol": [
       "sableux",
       "limoneux",
       "argileux",
       "humifère"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "calcaire"
+    ],
+    "humidite_sol": [
+      "sec"
+    ],
+    "rusticite_usda": "Z8",
+    "rusticite_celsius": -12,
+    "hauteur_min_cm": 20,
     "hauteur_max_cm": 100,
     "floraison_debut": 4,
     "floraison_fin": 6,
@@ -51014,17 +51382,24 @@
     "famille": "Proteaceae",
     "strate": "arbuste",
     "persistance": "persistant",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "faible",
     "type_sol": [
       "sableux",
       "limoneux"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "acide",
+      "neutre"
+    ],
+    "humidite_sol": [
+      "sec"
+    ],
+    "rusticite_usda": "Z10",
+    "rusticite_celsius": -1,
+    "hauteur_min_cm": 200,
     "hauteur_max_cm": 1000,
     "floraison_debut": 6,
     "floraison_fin": 7,
@@ -51044,16 +51419,23 @@
     "famille": "Proteaceae",
     "strate": "arbre_moyen",
     "persistance": "semi-persistant",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "faible",
     "type_sol": [
       "limoneux"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "acide",
+      "neutre"
+    ],
+    "humidite_sol": [
+      "sec"
+    ],
+    "rusticite_usda": "Z9",
+    "rusticite_celsius": -7,
+    "hauteur_min_cm": 800,
     "hauteur_max_cm": 1500,
     "floraison_debut": 6,
     "floraison_fin": 7,
@@ -51073,18 +51455,26 @@
     "famille": "Fabaceae",
     "strate": "grimpante",
     "persistance": "persistant",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil",
+      "mi-ombre"
+    ],
+    "besoins_hydriques": "faible",
     "type_sol": [
       "sableux",
       "limoneux",
       "argileux"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "acide",
+      "neutre"
+    ],
+    "humidite_sol": [
+      "sec"
+    ],
+    "rusticite_usda": "Z10",
+    "rusticite_celsius": -1,
+    "hauteur_min_cm": 100,
     "hauteur_max_cm": 200,
     "floraison_debut": 3,
     "floraison_fin": 5,
@@ -51104,18 +51494,26 @@
     "famille": "Fabaceae",
     "strate": "grimpante",
     "persistance": "persistant",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil",
+      "mi-ombre"
+    ],
+    "besoins_hydriques": "faible",
     "type_sol": [
       "sableux",
       "limoneux",
       "argileux"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "acide",
+      "neutre"
+    ],
+    "humidite_sol": [
+      "sec"
+    ],
+    "rusticite_usda": "Z9",
+    "rusticite_celsius": -7,
+    "hauteur_min_cm": 150,
     "hauteur_max_cm": 300,
     "floraison_debut": 3,
     "floraison_fin": 5,
@@ -51135,16 +51533,23 @@
     "famille": "Asteraceae",
     "strate": "herbacée",
     "persistance": "persistant",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "faible",
     "type_sol": [
       "sableux"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "neutre",
+      "calcaire"
+    ],
+    "humidite_sol": [
+      "sec"
+    ],
+    "rusticite_usda": "Z8",
+    "rusticite_celsius": -12,
+    "hauteur_min_cm": 30,
     "hauteur_max_cm": 100,
     "floraison_debut": 4,
     "floraison_fin": 7,
@@ -51164,19 +51569,28 @@
     "famille": "Rosaceae",
     "strate": "arbuste",
     "persistance": "persistant",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil",
+      "mi-ombre"
+    ],
+    "besoins_hydriques": "faible",
     "type_sol": [
       "sableux",
       "limoneux",
       "humifère",
       "argileux"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "acide",
+      "neutre",
+      "calcaire"
+    ],
+    "humidite_sol": [
+      "sec"
+    ],
+    "rusticite_usda": "Z8",
+    "rusticite_celsius": -12,
+    "hauteur_min_cm": 300,
     "hauteur_max_cm": 900,
     "floraison_debut": 6,
     "floraison_fin": 7,
@@ -51196,17 +51610,23 @@
     "famille": "Fabaceae",
     "strate": "arbuste",
     "persistance": "caduc",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "faible",
     "type_sol": [
       "sableux",
       "humifère"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "calcaire"
+    ],
+    "humidite_sol": [
+      "sec"
+    ],
+    "rusticite_usda": "Z5",
+    "rusticite_celsius": -29,
+    "hauteur_min_cm": 80,
     "hauteur_max_cm": 200,
     "floraison_debut": 4,
     "floraison_fin": 9,
@@ -51226,17 +51646,25 @@
     "famille": "Bignoniaceae",
     "strate": "arbre_moyen",
     "persistance": "semi-persistant",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "faible",
     "type_sol": [
       "sableux",
       "limoneux"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "acide",
+      "neutre",
+      "calcaire"
+    ],
+    "humidite_sol": [
+      "sec"
+    ],
+    "rusticite_usda": "Z9",
+    "rusticite_celsius": -7,
+    "hauteur_min_cm": 700,
     "hauteur_max_cm": 1200,
     "floraison_debut": 6,
     "floraison_fin": 7,
@@ -51256,17 +51684,23 @@
     "famille": "Oleaceae",
     "strate": "arbuste",
     "persistance": "persistant",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "faible",
     "type_sol": [
       "limoneux",
       "humifère"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "neutre"
+    ],
+    "humidite_sol": [
+      "sec"
+    ],
+    "rusticite_usda": "Z7",
+    "rusticite_celsius": -18,
+    "hauteur_min_cm": 50,
     "hauteur_max_cm": 100,
     "floraison_debut": 5,
     "floraison_fin": 6,
@@ -51286,18 +51720,27 @@
     "famille": "Oleaceae",
     "strate": "grimpante",
     "persistance": "semi-persistant",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil",
+      "mi-ombre"
+    ],
+    "besoins_hydriques": "moyen",
     "type_sol": [
       "sableux",
       "limoneux",
       "argileux"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "acide",
+      "neutre",
+      "calcaire"
+    ],
+    "humidite_sol": [
+      "frais"
+    ],
+    "rusticite_usda": "Z9",
+    "rusticite_celsius": -7,
+    "hauteur_min_cm": 150,
     "hauteur_max_cm": 300,
     "floraison_debut": 4,
     "floraison_fin": 8,
@@ -51317,17 +51760,24 @@
     "famille": "Cupressaceae",
     "strate": "arbre_grand",
     "persistance": "persistant",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "faible",
     "type_sol": [
       "sableux",
       "limoneux"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "neutre",
+      "calcaire"
+    ],
+    "humidite_sol": [
+      "sec"
+    ],
+    "rusticite_usda": "Z7",
+    "rusticite_celsius": -18,
+    "hauteur_min_cm": 1000,
     "hauteur_max_cm": 3000,
     "floraison_debut": 6,
     "floraison_fin": 8,
@@ -51347,18 +51797,25 @@
     "famille": "Cupressaceae",
     "strate": "arbuste",
     "persistance": "persistant",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "faible",
     "type_sol": [
       "sableux",
       "limoneux",
       "argileux"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "neutre",
+      "calcaire"
+    ],
+    "humidite_sol": [
+      "sec"
+    ],
+    "rusticite_usda": "Z7",
+    "rusticite_celsius": -18,
+    "hauteur_min_cm": 200,
     "hauteur_max_cm": 500,
     "floraison_debut": 2,
     "floraison_fin": 4,
@@ -51378,16 +51835,22 @@
     "famille": "Cupressaceae",
     "strate": "arbuste",
     "persistance": "persistant",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "faible",
     "type_sol": [
       "sableux"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "neutre"
+    ],
+    "humidite_sol": [
+      "sec"
+    ],
+    "rusticite_usda": "Z8",
+    "rusticite_celsius": -12,
+    "hauteur_min_cm": 200,
     "hauteur_max_cm": 500,
     "floraison_debut": 2,
     "floraison_fin": 5,
@@ -51407,16 +51870,23 @@
     "famille": "Cupressaceae",
     "strate": "arbuste",
     "persistance": "persistant",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "faible",
     "type_sol": [
       "sableux"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "neutre",
+      "calcaire"
+    ],
+    "humidite_sol": [
+      "sec"
+    ],
+    "rusticite_usda": "Z8",
+    "rusticite_celsius": -12,
+    "hauteur_min_cm": 200,
     "hauteur_max_cm": 500,
     "floraison_debut": 5,
     "floraison_fin": 5,
@@ -51436,18 +51906,26 @@
     "famille": "Sapindaceae",
     "strate": "arbre_moyen",
     "persistance": "caduc",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "faible",
     "type_sol": [
       "sableux",
       "limoneux",
       "argileux"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "acide",
+      "neutre",
+      "calcaire"
+    ],
+    "humidite_sol": [
+      "sec"
+    ],
+    "rusticite_usda": "Z8",
+    "rusticite_celsius": -12,
+    "hauteur_min_cm": 800,
     "hauteur_max_cm": 1500,
     "floraison_debut": 7,
     "floraison_fin": 9,
@@ -51467,18 +51945,27 @@
     "famille": "Oleaceae",
     "strate": "arbuste",
     "persistance": "persistant",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil",
+      "mi-ombre"
+    ],
+    "besoins_hydriques": "moyen",
     "type_sol": [
       "sableux",
       "limoneux",
       "argileux"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "acide",
+      "neutre",
+      "calcaire"
+    ],
+    "humidite_sol": [
+      "frais"
+    ],
+    "rusticite_usda": "Z7",
+    "rusticite_celsius": -18,
+    "hauteur_min_cm": 300,
     "hauteur_max_cm": 1200,
     "floraison_debut": 7,
     "floraison_fin": 8,
@@ -51498,18 +51985,24 @@
     "famille": "Caprifoliaceae",
     "strate": "arbuste",
     "persistance": "caduc",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "moyen",
     "type_sol": [
       "sableux",
       "limoneux",
       "humifère"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "neutre"
+    ],
+    "humidite_sol": [
+      "frais"
+    ],
+    "rusticite_usda": "Z7",
+    "rusticite_celsius": -18,
+    "hauteur_min_cm": 100,
     "hauteur_max_cm": 200,
     "floraison_debut": 5,
     "floraison_fin": 7,
@@ -51529,18 +52022,27 @@
     "famille": "Caprifoliaceae",
     "strate": "arbuste",
     "persistance": "semi-persistant",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil",
+      "mi-ombre"
+    ],
+    "besoins_hydriques": "moyen",
     "type_sol": [
       "sableux",
       "limoneux",
       "humifère"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "acide",
+      "neutre",
+      "calcaire"
+    ],
+    "humidite_sol": [
+      "frais"
+    ],
+    "rusticite_usda": "Z5",
+    "rusticite_celsius": -29,
+    "hauteur_min_cm": 150,
     "hauteur_max_cm": 200,
     "floraison_debut": 1,
     "floraison_fin": 12,
@@ -51560,18 +52062,24 @@
     "famille": "Caprifoliaceae",
     "strate": "grimpante",
     "persistance": "persistant",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "moyen",
     "type_sol": [
       "sableux",
       "limoneux",
       "humifère"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "neutre"
+    ],
+    "humidite_sol": [
+      "frais"
+    ],
+    "rusticite_usda": "Z8",
+    "rusticite_celsius": -12,
+    "hauteur_min_cm": 100,
     "hauteur_max_cm": 200,
     "floraison_debut": 5,
     "floraison_fin": 6,
@@ -51591,18 +52099,27 @@
     "famille": "Rosaceae",
     "strate": "arbuste",
     "persistance": "caduc",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil",
+      "mi-ombre"
+    ],
+    "besoins_hydriques": "moyen",
     "type_sol": [
       "limoneux",
       "argileux",
       "humifère"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "acide",
+      "neutre",
+      "calcaire"
+    ],
+    "humidite_sol": [
+      "frais"
+    ],
+    "rusticite_usda": "Z4",
+    "rusticite_celsius": -34,
+    "hauteur_min_cm": 300,
     "hauteur_max_cm": 600,
     "floraison_debut": 4,
     "floraison_fin": 5,
@@ -51622,18 +52139,24 @@
     "famille": "Malvaceae",
     "strate": "arbuste",
     "persistance": "caduc",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "faible",
     "type_sol": [
       "sableux",
       "limoneux",
       "humifère"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "calcaire"
+    ],
+    "humidite_sol": [
+      "sec"
+    ],
+    "rusticite_usda": "Z8",
+    "rusticite_celsius": -12,
+    "hauteur_min_cm": 100,
     "hauteur_max_cm": 300,
     "floraison_debut": 4,
     "floraison_fin": 6,
@@ -51653,19 +52176,28 @@
     "famille": "Moraceae",
     "strate": "arbre_moyen",
     "persistance": "caduc",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil",
+      "mi-ombre"
+    ],
+    "besoins_hydriques": "moyen",
     "type_sol": [
       "sableux",
       "limoneux",
       "argileux",
       "humifère"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "acide",
+      "neutre",
+      "calcaire"
+    ],
+    "humidite_sol": [
+      "frais"
+    ],
+    "rusticite_usda": "Z7",
+    "rusticite_celsius": -18,
+    "hauteur_min_cm": 500,
     "hauteur_max_cm": 1000,
     "floraison_debut": 4,
     "floraison_fin": 5,
@@ -51685,17 +52217,26 @@
     "famille": "Moraceae",
     "strate": "arbre_petit",
     "persistance": "caduc",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil",
+      "mi-ombre"
+    ],
+    "besoins_hydriques": "moyen",
     "type_sol": [
       "sableux",
       "limoneux"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "acide",
+      "neutre",
+      "calcaire"
+    ],
+    "humidite_sol": [
+      "frais"
+    ],
+    "rusticite_usda": "Z7",
+    "rusticite_celsius": -18,
+    "hauteur_min_cm": 400,
     "hauteur_max_cm": 700,
     "floraison_debut": 4,
     "floraison_fin": 5,
@@ -51715,17 +52256,25 @@
     "famille": "Scrophulariaceae",
     "strate": "arbuste",
     "persistance": "persistant",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "faible",
     "type_sol": [
       "sableux",
       "limoneux"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "acide",
+      "neutre",
+      "calcaire"
+    ],
+    "humidite_sol": [
+      "sec"
+    ],
+    "rusticite_usda": "Z9",
+    "rusticite_celsius": -7,
+    "hauteur_min_cm": 300,
     "hauteur_max_cm": 600,
     "floraison_debut": 3,
     "floraison_fin": 5,
@@ -51745,18 +52294,27 @@
     "famille": "Myrtaceae",
     "strate": "arbuste",
     "persistance": "persistant",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil",
+      "mi-ombre"
+    ],
+    "besoins_hydriques": "faible",
     "type_sol": [
       "sableux",
       "limoneux",
       "humifère"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "acide",
+      "neutre",
+      "calcaire"
+    ],
+    "humidite_sol": [
+      "sec"
+    ],
+    "rusticite_usda": "Z8",
+    "rusticite_celsius": -12,
+    "hauteur_min_cm": 80,
     "hauteur_max_cm": 200,
     "floraison_debut": 6,
     "floraison_fin": 9,
@@ -51776,18 +52334,27 @@
     "famille": "Rosaceae",
     "strate": "arbuste",
     "persistance": "persistant",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil",
+      "mi-ombre"
+    ],
+    "besoins_hydriques": "moyen",
     "type_sol": [
       "sableux",
       "limoneux",
       "humifère"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "acide",
+      "neutre",
+      "calcaire"
+    ],
+    "humidite_sol": [
+      "frais"
+    ],
+    "rusticite_usda": "Z7",
+    "rusticite_celsius": -18,
+    "hauteur_min_cm": 400,
     "hauteur_max_cm": 1000,
     "floraison_debut": 3,
     "floraison_fin": 5,
@@ -51807,17 +52374,24 @@
     "famille": "Anacardiaceae",
     "strate": "arbre_moyen",
     "persistance": "caduc",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "faible",
     "type_sol": [
       "sableux",
       "limoneux"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "neutre",
+      "calcaire"
+    ],
+    "humidite_sol": [
+      "sec"
+    ],
+    "rusticite_usda": "Z8",
+    "rusticite_celsius": -12,
+    "hauteur_min_cm": 800,
     "hauteur_max_cm": 1500,
     "floraison_debut": 5,
     "floraison_fin": 6,
@@ -51837,17 +52411,23 @@
     "famille": "Anacardiaceae",
     "strate": "arbuste",
     "persistance": "caduc",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "faible",
     "type_sol": [
       "sableux",
       "limoneux"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "neutre"
+    ],
+    "humidite_sol": [
+      "sec"
+    ],
+    "rusticite_usda": "Z8",
+    "rusticite_celsius": -12,
+    "hauteur_min_cm": 200,
     "hauteur_max_cm": 500,
     "floraison_debut": 4,
     "floraison_fin": 5,
@@ -51867,17 +52447,23 @@
     "famille": "Anacardiaceae",
     "strate": "arbuste",
     "persistance": "caduc",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "faible",
     "type_sol": [
       "sableux",
       "limoneux"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "neutre"
+    ],
+    "humidite_sol": [
+      "sec"
+    ],
+    "rusticite_usda": "Z7",
+    "rusticite_celsius": -18,
+    "hauteur_min_cm": 300,
     "hauteur_max_cm": 800,
     "floraison_debut": 4,
     "floraison_fin": 6,
@@ -51897,18 +52483,26 @@
     "famille": "Platanaceae",
     "strate": "arbre_grand",
     "persistance": "caduc",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "moyen",
     "type_sol": [
       "sableux",
       "limoneux",
       "argileux"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "acide",
+      "neutre",
+      "calcaire"
+    ],
+    "humidite_sol": [
+      "frais"
+    ],
+    "rusticite_usda": "Z6",
+    "rusticite_celsius": -23,
+    "hauteur_min_cm": 2000,
     "hauteur_max_cm": 4000,
     "floraison_debut": 4,
     "floraison_fin": 5,
@@ -51928,18 +52522,27 @@
     "famille": "Rosaceae",
     "strate": "arbuste",
     "persistance": "persistant",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil",
+      "mi-ombre"
+    ],
+    "besoins_hydriques": "faible",
     "type_sol": [
       "sableux",
       "limoneux",
       "argileux"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "acide",
+      "neutre",
+      "calcaire"
+    ],
+    "humidite_sol": [
+      "sec"
+    ],
+    "rusticite_usda": "Z8",
+    "rusticite_celsius": -12,
+    "hauteur_min_cm": 250,
     "hauteur_max_cm": 600,
     "floraison_debut": 4,
     "floraison_fin": 5,
@@ -51959,18 +52562,24 @@
     "famille": "Rosaceae",
     "strate": "arbuste",
     "persistance": "caduc",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "moyen",
     "type_sol": [
       "sableux",
       "argileux",
       "humifère"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "neutre"
+    ],
+    "humidite_sol": [
+      "frais"
+    ],
+    "rusticite_usda": "Z7",
+    "rusticite_celsius": -18,
+    "hauteur_min_cm": 300,
     "hauteur_max_cm": 600,
     "floraison_debut": 4,
     "floraison_fin": 5,
@@ -51990,18 +52599,24 @@
     "famille": "Fagaceae",
     "strate": "arbre_moyen",
     "persistance": "",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "moyen",
     "type_sol": [
       "sableux",
       "limoneux",
       "argileux"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "neutre"
+    ],
+    "humidite_sol": [
+      "frais"
+    ],
+    "rusticite_usda": "Z7",
+    "rusticite_celsius": -18,
+    "hauteur_min_cm": 1200,
     "hauteur_max_cm": 2000,
     "floraison_debut": 3,
     "floraison_fin": 4,
@@ -52021,19 +52636,27 @@
     "famille": "Fagaceae",
     "strate": "arbre_moyen",
     "persistance": "persistant",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil",
+      "mi-ombre"
+    ],
+    "besoins_hydriques": "moyen",
     "type_sol": [
       "sableux",
       "limoneux",
       "argileux",
       "humifère"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "acide",
+      "neutre"
+    ],
+    "humidite_sol": [
+      "frais"
+    ],
+    "rusticite_usda": "Z7",
+    "rusticite_celsius": -18,
+    "hauteur_min_cm": 500,
     "hauteur_max_cm": 1000,
     "floraison_debut": 4,
     "floraison_fin": 4,
@@ -52053,18 +52676,25 @@
     "famille": "Fagaceae",
     "strate": "arbre_moyen",
     "persistance": "caduc",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "faible",
     "type_sol": [
       "sableux",
       "limoneux",
       "argileux"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "neutre",
+      "calcaire"
+    ],
+    "humidite_sol": [
+      "sec"
+    ],
+    "rusticite_usda": "Z8",
+    "rusticite_celsius": -12,
+    "hauteur_min_cm": 800,
     "hauteur_max_cm": 1500,
     "floraison_debut": 5,
     "floraison_fin": 5,
@@ -52084,18 +52714,25 @@
     "famille": "Fagaceae",
     "strate": "arbre_petit",
     "persistance": "persistant",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "faible",
     "type_sol": [
       "sableux",
       "limoneux",
       "argileux"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "neutre",
+      "calcaire"
+    ],
+    "humidite_sol": [
+      "sec"
+    ],
+    "rusticite_usda": "Z7",
+    "rusticite_celsius": -18,
+    "hauteur_min_cm": 400,
     "hauteur_max_cm": 800,
     "floraison_debut": 5,
     "floraison_fin": 5,
@@ -52115,18 +52752,26 @@
     "famille": "Quillajaceae",
     "strate": "arbre_moyen",
     "persistance": "persistant",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "faible",
     "type_sol": [
       "sableux",
       "limoneux",
       "humifère"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "acide",
+      "neutre",
+      "calcaire"
+    ],
+    "humidite_sol": [
+      "sec"
+    ],
+    "rusticite_usda": "Z9",
+    "rusticite_celsius": -7,
+    "hauteur_min_cm": 500,
     "hauteur_max_cm": 1000,
     "floraison_debut": 4,
     "floraison_fin": 6,
@@ -52146,16 +52791,24 @@
     "famille": "Fabaceae",
     "strate": "arbuste",
     "persistance": "caduc",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "faible",
     "type_sol": [
       "sableux"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "acide",
+      "neutre",
+      "calcaire"
+    ],
+    "humidite_sol": [
+      "sec"
+    ],
+    "rusticite_usda": "Z9",
+    "rusticite_celsius": -7,
+    "hauteur_min_cm": 200,
     "hauteur_max_cm": 400,
     "floraison_debut": 3,
     "floraison_fin": 4,
@@ -52175,18 +52828,24 @@
     "famille": "Rhamnaceae",
     "strate": "arbuste",
     "persistance": "persistant",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "faible",
     "type_sol": [
       "sableux",
       "limoneux",
       "argileux"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "neutre"
+    ],
+    "humidite_sol": [
+      "sec"
+    ],
+    "rusticite_usda": "Z7",
+    "rusticite_celsius": -18,
+    "hauteur_min_cm": 150,
     "hauteur_max_cm": 400,
     "floraison_debut": 3,
     "floraison_fin": 4,
@@ -52206,19 +52865,25 @@
     "famille": "Anacardiaceae",
     "strate": "arbuste",
     "persistance": "caduc",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "faible",
     "type_sol": [
       "sableux",
       "limoneux",
       "argileux",
       "humifère"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "neutre"
+    ],
+    "humidite_sol": [
+      "sec"
+    ],
+    "rusticite_usda": "Z7",
+    "rusticite_celsius": -18,
+    "hauteur_min_cm": 150,
     "hauteur_max_cm": 300,
     "floraison_debut": 6,
     "floraison_fin": 8,
@@ -52238,18 +52903,27 @@
     "famille": "Rosaceae",
     "strate": "grimpante",
     "persistance": "persistant",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil",
+      "mi-ombre"
+    ],
+    "besoins_hydriques": "moyen",
     "type_sol": [
       "sableux",
       "limoneux",
       "argileux"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "acide",
+      "neutre",
+      "calcaire"
+    ],
+    "humidite_sol": [
+      "frais"
+    ],
+    "rusticite_usda": "Z7",
+    "rusticite_celsius": -18,
+    "hauteur_min_cm": 300,
     "hauteur_max_cm": 1000,
     "floraison_debut": 3,
     "floraison_fin": 4,
@@ -52269,17 +52943,24 @@
     "famille": "Lamiaceae",
     "strate": "arbuste",
     "persistance": "caduc",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "faible",
     "type_sol": [
       "sableux",
       "limoneux"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "neutre",
+      "calcaire"
+    ],
+    "humidite_sol": [
+      "sec"
+    ],
+    "rusticite_usda": "Z5",
+    "rusticite_celsius": -29,
+    "hauteur_min_cm": 80,
     "hauteur_max_cm": 150,
     "floraison_debut": 7,
     "floraison_fin": 8,
@@ -52299,18 +52980,26 @@
     "famille": "Anacardiaceae",
     "strate": "arbre_moyen",
     "persistance": "persistant",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "faible",
     "type_sol": [
       "sableux",
       "limoneux",
       "argileux"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "acide",
+      "neutre",
+      "calcaire"
+    ],
+    "humidite_sol": [
+      "sec"
+    ],
+    "rusticite_usda": "Z9",
+    "rusticite_celsius": -7,
+    "hauteur_min_cm": 500,
     "hauteur_max_cm": 1000,
     "floraison_debut": 5,
     "floraison_fin": 11,
@@ -52330,18 +53019,26 @@
     "famille": "Fabaceae",
     "strate": "arbuste",
     "persistance": "caduc",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "faible",
     "type_sol": [
       "sableux",
       "limoneux",
       "humifère"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "acide",
+      "neutre",
+      "calcaire"
+    ],
+    "humidite_sol": [
+      "sec"
+    ],
+    "rusticite_usda": "Z9",
+    "rusticite_celsius": -7,
+    "hauteur_min_cm": 150,
     "hauteur_max_cm": 300,
     "floraison_debut": 7,
     "floraison_fin": 9,
@@ -52361,17 +53058,26 @@
     "famille": "Solanaceae",
     "strate": "grimpante",
     "persistance": "semi-persistant",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil",
+      "mi-ombre"
+    ],
+    "besoins_hydriques": "moyen",
     "type_sol": [
       "sableux",
       "limoneux"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "acide",
+      "neutre",
+      "calcaire"
+    ],
+    "humidite_sol": [
+      "frais"
+    ],
+    "rusticite_usda": "Z9",
+    "rusticite_celsius": -7,
+    "hauteur_min_cm": 300,
     "hauteur_max_cm": 800,
     "floraison_debut": 4,
     "floraison_fin": 10,
@@ -52391,19 +53097,25 @@
     "famille": "Fabaceae",
     "strate": "arbuste",
     "persistance": "caduc",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "moyen",
     "type_sol": [
       "sableux",
       "limoneux",
       "argileux",
       "humifère"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "acide"
+    ],
+    "humidite_sol": [
+      "frais"
+    ],
+    "rusticite_usda": "Z7",
+    "rusticite_celsius": -18,
+    "hauteur_min_cm": 200,
     "hauteur_max_cm": 500,
     "floraison_debut": 5,
     "floraison_fin": 6,
@@ -52423,19 +53135,25 @@
     "famille": "Styracaceae",
     "strate": "arbuste",
     "persistance": "caduc",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "faible",
     "type_sol": [
       "sableux",
       "limoneux",
       "argileux",
       "humifère"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "neutre"
+    ],
+    "humidite_sol": [
+      "sec"
+    ],
+    "rusticite_usda": "Z7",
+    "rusticite_celsius": -18,
+    "hauteur_min_cm": 200,
     "hauteur_max_cm": 700,
     "floraison_debut": 5,
     "floraison_fin": 6,
@@ -52455,18 +53173,26 @@
     "famille": "Asteraceae",
     "strate": "arbuste",
     "persistance": "persistant",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "faible",
     "type_sol": [
       "sableux",
       "limoneux",
       "argileux"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "acide",
+      "neutre",
+      "calcaire"
+    ],
+    "humidite_sol": [
+      "sec"
+    ],
+    "rusticite_usda": "Z9",
+    "rusticite_celsius": -7,
+    "hauteur_min_cm": 60,
     "hauteur_max_cm": 100,
     "floraison_debut": 6,
     "floraison_fin": 12,
@@ -52486,19 +53212,28 @@
     "famille": "Malvaceae",
     "strate": "arbre_grand",
     "persistance": "caduc",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil",
+      "mi-ombre"
+    ],
+    "besoins_hydriques": "moyen",
     "type_sol": [
       "sableux",
       "limoneux",
       "argileux",
       "humifère"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "acide",
+      "neutre",
+      "calcaire"
+    ],
+    "humidite_sol": [
+      "frais"
+    ],
+    "rusticite_usda": "Z4",
+    "rusticite_celsius": -34,
+    "hauteur_min_cm": 2000,
     "hauteur_max_cm": 3300,
     "floraison_debut": 6,
     "floraison_fin": 7,
@@ -52518,18 +53253,26 @@
     "famille": "Meliaceae",
     "strate": "arbre_moyen",
     "persistance": "semi-persistant",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "faible",
     "type_sol": [
       "sableux",
       "limoneux",
       "argileux"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "acide",
+      "neutre",
+      "calcaire"
+    ],
+    "humidite_sol": [
+      "sec"
+    ],
+    "rusticite_usda": "Z9",
+    "rusticite_celsius": -7,
+    "hauteur_min_cm": 600,
     "hauteur_max_cm": 1000,
     "floraison_debut": 6,
     "floraison_fin": 9,
@@ -52549,18 +53292,24 @@
     "famille": "Lauraceae",
     "strate": "arbre_moyen",
     "persistance": "caduc",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "moyen",
     "type_sol": [
       "sableux",
       "limoneux",
       "argileux"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "neutre"
+    ],
+    "humidite_sol": [
+      "frais"
+    ],
+    "rusticite_usda": "Z5",
+    "rusticite_celsius": -29,
+    "hauteur_min_cm": 1000,
     "hauteur_max_cm": 2000,
     "floraison_debut": 6,
     "floraison_fin": 8,
@@ -52580,16 +53329,22 @@
     "famille": "Fabaceae",
     "strate": "arbuste",
     "persistance": "persistant",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil"
+    ],
+    "besoins_hydriques": "faible",
     "type_sol": [
       "sableux"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "acide"
+    ],
+    "humidite_sol": [
+      "sec"
+    ],
+    "rusticite_usda": "Z8",
+    "rusticite_celsius": -12,
+    "hauteur_min_cm": 60,
     "hauteur_max_cm": 200,
     "floraison_debut": 4,
     "floraison_fin": 5,
@@ -52609,18 +53364,27 @@
     "famille": "Lauraceae",
     "strate": "arbre_moyen",
     "persistance": "persistant",
-    "exposition": [],
-    "besoins_hydriques": "",
+    "exposition": [
+      "soleil",
+      "mi-ombre"
+    ],
+    "besoins_hydriques": "moyen",
     "type_sol": [
       "sableux",
       "limoneux",
       "argileux"
     ],
-    "ph_sol": [],
-    "humidite_sol": [],
-    "rusticite_usda": "",
-    "rusticite_celsius": null,
-    "hauteur_min_cm": null,
+    "ph_sol": [
+      "acide",
+      "neutre",
+      "calcaire"
+    ],
+    "humidite_sol": [
+      "frais"
+    ],
+    "rusticite_usda": "Z7",
+    "rusticite_celsius": -18,
+    "hauteur_min_cm": 800,
     "hauteur_max_cm": 2000,
     "floraison_debut": 4,
     "floraison_fin": 5,
