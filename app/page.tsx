@@ -291,8 +291,10 @@ export default function Home() {
       <footer className={styles.footer}>
         <div className={styles.footerLogo}>sylve</div>
         <nav className={styles.footerNav}>
+          {/* th%C3%A9o = « théo » encodé : l'accent dans l'URL est encodé en
+              dur pour ne dépendre d'aucun comportement de navigateur. */}
           <a
-            href="https://www.linkedin.com/in/theoledu"
+            href="https://www.linkedin.com/in/th%C3%A9o-le-du-495405166"
             className={styles.footerLink}
             target="_blank"
             rel="noopener noreferrer"
