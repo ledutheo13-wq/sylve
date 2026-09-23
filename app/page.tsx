@@ -19,7 +19,7 @@ export default function Home() {
           <div className={styles.heroLogo}>sylve</div>
           <div className={styles.heroDivider} />
           <p className={styles.heroTagline}>
-            L&apos;expertise et les outils
+            Les outils
             <br />
             du projet de paysage
           </p>
@@ -124,15 +124,15 @@ export default function Home() {
       <section className={`${styles.section} ${styles.marques}`}>
         <div className={styles.sectionInner}>
           <div className={styles.marquesHeader}>
-            <div className={styles.sectionLabel}>Les solutions</div>
+            <div className={styles.sectionLabel}>Les briques</div>
             <h2 className={styles.sectionTitle}>
-              Les outils et l&apos;expertise
+              Ce que sylve
               <br />
-              pour vos projets de paysage.
+              regroupe aujourd&apos;hui.
             </h2>
             <p className={styles.sectionText}>
-              Concevoir, prescrire, chiffrer, sécuriser un projet de paysage —
-              sylve accompagne chaque acteur, à chaque étape.
+              Concevoir, prescrire, chiffrer, vérifier — les briques techniques
+              du projet de paysage, réunies au même endroit.
             </p>
           </div>
 
@@ -212,12 +212,10 @@ export default function Home() {
                   source
                 </span>
               </div>
-              <div className={styles.marqueTarget}>
-                Tous les professionnels
-              </div>
+              <div className={styles.marqueTarget}>Recherche réglementaire</div>
               <p className={styles.marqueDesc}>
-                Votre associé réglementaire. La bonne référence, au bon moment —
-                NF, DTU, fascicules, règles professionnelles.
+                Retrouver la bonne référence, au bon moment — NF, DTU,
+                fascicules, règles professionnelles.
               </p>
               <ul className={styles.marqueTools}>
                 <li className={styles.marqueToolItem}>
@@ -235,27 +233,6 @@ export default function Home() {
               </span>
             </div>
 
-            {/* CONSEIL — service humain (pas un logiciel) */}
-            <Link
-              href="/conseil"
-              className={`${styles.marqueCard} ${styles.marqueCardConseil}`}
-            >
-              <div className={`${styles.marqueAccent} ${styles.accentGres}`} />
-              <div className={styles.marqueLogo}>
-                <span className={styles.marqueLogoName}>sylve</span>
-                <span className={styles.marqueLogoDot}>·</span>
-                <span className={`${styles.marqueLogoSub} ${styles.subGres}`}>
-                  conseil
-                </span>
-              </div>
-              <div className={styles.marqueTarget}>Concepteurs · MOA · MOE</div>
-              <p className={styles.marqueConseilLine}>
-                L&apos;expertise humaine derrière les outils — le référent
-                technique qu&apos;on sollicite pour sécuriser un projet de
-                paysage.
-              </p>
-              <span className={styles.marqueConseilCta}>Découvrir →</span>
-            </Link>
           </div>
         </div>
       </section>
@@ -277,22 +254,6 @@ export default function Home() {
             <br />
             du terrain à la conception, du chantier à la MOE.
           </p>
-        </div>
-      </section>
-
-      {/* TEASER CONSEIL */}
-      <section className={styles.conseilTeaser}>
-        <div className={styles.conseilTeaserInner}>
-          <span className={styles.conseilTeaserText}>
-            <span className={styles.conseilTeaserMark}>
-              <span className={styles.conseilTeaserSylve}>sylve</span>
-              <span className={styles.conseilTeaserDot}>·</span> conseil
-            </span>
-            {" — "}l&apos;expertise humaine derrière les outils
-          </span>
-          <Link href="/conseil" className={styles.conseilTeaserLink}>
-            En savoir plus →
-          </Link>
         </div>
       </section>
 
@@ -330,13 +291,20 @@ export default function Home() {
       <footer className={styles.footer}>
         <div className={styles.footerLogo}>sylve</div>
         <nav className={styles.footerNav}>
-          <Link href="/conseil" className={styles.footerLink}>
-            conseil
-          </Link>
+          {/* th%C3%A9o = « théo » encodé : l'accent dans l'URL est encodé en
+              dur pour ne dépendre d'aucun comportement de navigateur. */}
+          <a
+            href="https://www.linkedin.com/in/th%C3%A9o-le-du-495405166"
+            className={styles.footerLink}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn
+          </a>
         </nav>
         <p className={styles.footerCopy}>
-          © 2026 sylve.eco — L&apos;expertise et les outils du projet de
-          paysage
+          © 2026 sylve.eco — projet personnel de Théo Le Du, ingénieur
+          paysagiste
         </p>
       </footer>
     </>
