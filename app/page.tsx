@@ -19,7 +19,7 @@ export default function Home() {
           <div className={styles.heroLogo}>sylve</div>
           <div className={styles.heroDivider} />
           <p className={styles.heroTagline}>
-            L&apos;expertise et les outils
+            Les outils
             <br />
             du projet de paysage
           </p>

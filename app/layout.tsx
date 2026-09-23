@@ -10,7 +10,7 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "sylve — L'expertise et les outils du projet de paysage",
+  title: "sylve — Les outils du projet de paysage",
   description:
     "Outils numériques pensés par un paysagiste, pour les paysagistes.",
 };
