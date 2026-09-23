@@ -216,8 +216,8 @@ Au-delà de la bibliothèque technique, `Projet-pro\02_SYLVE` contient les fichi
 |---------|---------|
 | `01_VISION/VISION.md` | v5.0 — Problème, mission, 3 sous-marques, avantage concurrentiel, BAG 2032 |
 | `01_VISION/MANIFESTE.md` | v2.0 — Narratif systémique, positionnement, storytelling ("le nom d'une forêt") |
-| `02_STRATEGIE/STRATEGIE.md` | v6.0 — Business plan, modèle revenus, Phase A/B, budget, risques |
-| `02_STRATEGIE/MARCHE-CIBLES.md` | v2.0 — Segmentation post-pivot, segment E (300-500 structures), TAM |
+| `02_STRATEGIE/STRATEGIE.md` | v6.0 — Cadrage du projet, Phase A/B, risques |
+| `02_STRATEGIE/MARCHE-CIBLES.md` | v2.0 — Profils d'usage visés, post-pivot |
 
 ### Roadmap & Exécution
 
@@ -225,7 +225,7 @@ Au-delà de la bibliothèque technique, `Projet-pro\02_SYLVE` contient les fichi
 |---------|---------|
 | `03_ROADMAP/ROADMAP.md` | v9.0 — Plan 18 mois, objectifs mensuels, MVP definitions |
 | `03_ROADMAP/ROADMAP-EXECUTION.md` | Sprint 1-3 détaillé (semaines 1-9), rails produit/marché |
-| `00_PHASE-0/ARBITRAGES-PHASE-0.md` | 5 arbitrages fondateurs (accès, auth, 1er produit payant, marketing, identité) |
+| `00_PHASE-0/ARBITRAGES-PHASE-0.md` | 5 arbitrages fondateurs (accès, auth, priorités produit, identité) |
 
 ### Fiches produit (04_SYLVE-PROJET)
 

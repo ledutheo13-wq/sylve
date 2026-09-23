@@ -92,8 +92,7 @@ export function DashboardContent({ prenom }: { prenom: string | null }) {
               <p className={styles.welcomeDesc}>
                 Tous les outils sont en accès libre.
                 <br />
-                Vos retours nous aident à construire les outils dont vous avez
-                besoin.
+                Vos retours orientent les prochains outils.
               </p>
               <button className={styles.welcomeBtn} onClick={dismissWelcome}>
                 Accéder au dashboard

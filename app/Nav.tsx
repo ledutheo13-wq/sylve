@@ -24,9 +24,6 @@ export function Nav() {
         <Link href="/projet" className={styles.navLink}>
           Outils
         </Link>
-        <Link href="/conseil" className={styles.navLink}>
-          conseil
-        </Link>
         <Link href="/connexion" className={styles.navCta}>
           Accéder aux outils
         </Link>

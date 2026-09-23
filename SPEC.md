@@ -2,7 +2,7 @@
 
 ## Contexte
 
-SYLVE est un SaaS pour paysagistes concepteurs/MOE en France. Le site actuel (`sylve-landing`) est en HTML/CSS/JS vanilla avec auth Supabase, 7 outils beta fonctionnels, et un design soigné. Les limites du vanilla (pas de middleware, pas de build system, duplication) bloquent l'évolution vers l'auth robuste, le paiement, et la scalabilité. On migre vers Next.js dans ce nouveau repo `sylve`.
+SYLVE est une suite d'outils techniques pour paysagistes concepteurs/MOE en France. Le site actuel (`sylve-landing`) est en HTML/CSS/JS vanilla avec auth Supabase, 7 outils beta fonctionnels, et un design soigné. Les limites du vanilla (pas de middleware, pas de build system, duplication) bloquent l'évolution vers l'auth robuste et la scalabilité. On migre vers Next.js dans ce nouveau repo `sylve`.
 
 ---
 
@@ -18,7 +18,6 @@ SYLVE est un SaaS pour paysagistes concepteurs/MOE en France. Le site actuel (`s
 | Export PNG | html2canvas (dynamic import) | 3 outils l'utilisent déjà |
 | Deploy | Vercel | Existant, domaine sylve.eco |
 | Email | Resend (si besoin custom SMTP) | Transactional emails auth |
-| Paiement | Stripe (Phase B, M8+) | Standard SaaS |
 
 **Pas besoin de :** Tailwind, state management lib, ORM, monorepo, FastAPI (pour l'instant).
 
@@ -46,11 +45,6 @@ sylve/
 │   │
 │   ├── connexion/
 │   │   ├── page.tsx                    # Auth — Client component (4 vues: signup/login/forgot/recovery)
-│   │   └── page.module.css
-│   │
-│   ├── conseil/                        # Route PUBLIQUE (hors auth) — vitrine "sylve conseil"
-│   │   ├── page.tsx                    # One-pager conseil — Server component
-│   │   ├── CasCarousel.tsx             # Carousel études de cas — Client component
 │   │   └── page.module.css
 │   │
 │   ├── (protected)/                    # Route group: layout avec auth server-side
@@ -100,7 +94,7 @@ sylve/
 │   │   └── source/
 │   │       └── page.tsx                # Placeholder "Bientôt"
 │   │
-│   └── api/                            # Future: Stripe webhooks, Source RAG
+│   └── api/                            # Future: Source RAG
 │       └── .gitkeep
 │
 ├── components/
@@ -241,7 +235,7 @@ sylve/
 ```
 middleware.ts
   → Protège: /dashboard, /projet/*, /pilote/*, /source/* (sauf vitrine /projet/compatibilite-vegetale)
-  → Routes publiques: /, /connexion, /conseil, /api/*, /_next/*, fichiers statiques
+  → Routes publiques: /, /connexion, /api/*, /_next/*, fichiers statiques
   → supabase.auth.getUser() (server-side, sécurisé)
   → Pas de user → redirect('/connexion')
   → User OK → NextResponse.next()
@@ -315,31 +309,6 @@ Chaque outil HTML vanilla suit le même process de migration :
 | 5 | Compatibilité végétale | /projet/compatibilite-vegetale | Élevé | Scoring centroïde, 5 critères pondérés, matrice |
 | 6 | Calculateur charges | /projet/calculateur-charges | Élevé | SVG interactif, drag-drop couches, schéma procédural |
 | 7 | Sélecteur essences | /projet/selecteur-essences | Élevé | 14 filtres, autocomplete, 1301 espèces, export PNG |
-
----
-
-## Gating futur (Phase B — M8+)
-
-```
-1. Ajouter colonne à profiles:
-   subscription_tier: 'free' | 'pro' | 'agency' (default 'free')
-
-2. AuthProvider expose profile.tier
-
-3. Outils payants vérifient le tier:
-   if (tool.requiredTier === 'pro' && profile.tier === 'free')
-     → <UpgradePrompt tool={tool} />
-
-4. API routes Stripe:
-   /api/stripe/checkout/route.ts    → Crée checkout session
-   /api/stripe/webhook/route.ts     → Gère events (subscription.created, etc.)
-
-5. Outils payants prévus:
-   - CCTP Paysage (29-149€/mois)
-   - Calculateur PC/PLU (19-79€/mois)
-   - SYLVE Source Pro (9-49€/mois)
-   - SYLVE Pilote (19-79€/mois)
-```
 
 ---
 
