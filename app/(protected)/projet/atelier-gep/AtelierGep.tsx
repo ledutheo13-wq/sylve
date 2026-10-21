@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { calculerSurfaces } from "@/lib/tools/atelier-gep/surfaces";
 import { calculerVolumeAGerer } from "@/lib/tools/atelier-gep/pluies";
 import { debitInfiltrationM3H as calcQinf, debitInfiltrationLS } from "@/lib/tools/atelier-gep/infiltration";
@@ -37,6 +37,46 @@ const num = (v: string) => {
   const n = parseFloat(v.replace(",", "."));
   return Number.isFinite(n) ? n : 0;
 };
+
+/** Saisie « propre » : entier ou décimal, virgule ou point (ex. 0,5 / 0.5). */
+const SAISIE_COMPLETE = /^-?\d+([.,]\d+)?$/;
+
+/**
+ * Champ numérique qui conserve le texte en cours de frappe.
+ * Sans ce brouillon, « 0, » ou « 0. » était aussitôt reconverti en 0 et le
+ * séparateur décimal disparaissait : impossible de saisir 0,5 m.
+ * Accepte la virgule comme le point ; la valeur numérique remonte à chaque frappe.
+ */
+function InputNum({
+  value,
+  onChange,
+  ...rest
+}: { value: number; onChange: (v: number) => void } & Omit<
+  React.InputHTMLAttributes<HTMLInputElement>,
+  "value" | "onChange"
+>) {
+  const [brouillon, setBrouillon] = useState(() => String(value));
+  // Valeur modifiée de l'extérieur (préréglage, réinitialisation…) : on resynchronise.
+  useEffect(() => {
+    setBrouillon((b) => (num(b) === value ? b : String(value)));
+  }, [value]);
+  return (
+    <input
+      {...rest}
+      inputMode="decimal"
+      value={brouillon}
+      onChange={(e) => {
+        setBrouillon(e.target.value);
+        onChange(num(e.target.value));
+      }}
+      onBlur={(e) => {
+        // Saisie incomplète (« 0, », vide…) : on affiche la valeur retenue.
+        if (!SAISIE_COMPLETE.test(brouillon.trim())) setBrouillon(String(value));
+        rest.onBlur?.(e);
+      }}
+    />
+  );
+}
 
 /** Infobulle-source CLIQUABLE (fonctionne au tactile, contrairement à `title`). */
 function Info({ texte }: { texte: string }) {
@@ -275,8 +315,8 @@ export default function AtelierGep() {
             </label>
             {montanaManuel ? (
               <div className={styles.field2}>
-                <label className={styles.field}><span>a</span><input className={styles.inputNum} value={aMan} onChange={(e) => setAMan(num(e.target.value))} inputMode="decimal" /></label>
-                <label className={styles.field}><span>b</span><input className={styles.inputNum} value={bMan} onChange={(e) => setBMan(num(e.target.value))} inputMode="decimal" /></label>
+                <label className={styles.field}><span>a</span><InputNum className={styles.inputNum} value={aMan} onChange={(n) => setAMan(n)} /></label>
+                <label className={styles.field}><span>b</span><InputNum className={styles.inputNum} value={bMan} onChange={(n) => setBMan(n)} /></label>
               </div>
             ) : (
               <div className={styles.montanaAuto}>
@@ -304,8 +344,8 @@ export default function AtelierGep() {
               {surfaces.map((l, i) => (
                 <tr key={i}>
                   <td>{l.nature}</td>
-                  <td><input className={styles.inputNum} value={l.surface} onChange={(e) => majSurface(i, { surface: num(e.target.value) })} inputMode="decimal" /></td>
-                  <td><input className={styles.inputNum} value={l.cr} onChange={(e) => majSurface(i, { cr: num(e.target.value) })} inputMode="decimal" /></td>
+                  <td><InputNum className={styles.inputNum} value={l.surface} onChange={(n) => majSurface(i, { surface: n })} /></td>
+                  <td><InputNum className={styles.inputNum} value={l.cr} onChange={(n) => majSurface(i, { cr: n })} /></td>
                   <td className={styles.mono}>{(l.surface * l.cr).toFixed(0)}</td>
                   <td><button className={styles.btnSuppr} onClick={() => supprSurface(i)} aria-label="Supprimer">×</button></td>
                 </tr>
@@ -332,7 +372,7 @@ export default function AtelierGep() {
             <div className={styles.field2}>
               <label className={styles.field}>
                 <span>Débit de fuite <Info texte="Issu du PLU / zonage pluvial / arrêté. Un débit réglementaire ne peut pas être dépassé en invoquant l'infiltration." /></span>
-                <input className={styles.inputNum} value={debitFuiteVal} onChange={(e) => setDebitFuiteVal(num(e.target.value))} inputMode="decimal" />
+                <InputNum className={styles.inputNum} value={debitFuiteVal} onChange={(n) => setDebitFuiteVal(n)} />
               </label>
               <label className={styles.field}>
                 <span>Unité</span>
@@ -362,11 +402,11 @@ export default function AtelierGep() {
               <span>Saisir mon K (étude d&apos;infiltration)</span>
             </label>
             {kManuelActif && (
-              <label className={styles.field}><span>K (m/s)</span><input className={styles.inputNum} value={kManuel} onChange={(e) => setKManuel(num(e.target.value))} inputMode="decimal" /></label>
+              <label className={styles.field}><span>K (m/s)</span><InputNum className={styles.inputNum} value={kManuel} onChange={(n) => setKManuel(n)} /></label>
             )}
             <div className={styles.field2}>
-              <label className={styles.field}><span>Surface d&apos;infiltration parcelle (m²) <Info texte="Surface de fond mobilisée pour l'infiltration à l'échelle du projet. 0 = pas d'infiltration créditée." /></span><input className={styles.inputNum} value={surfaceInfiltrationParcelle} onChange={(e) => setSurfaceInfiltrationParcelle(num(e.target.value))} inputMode="decimal" /></label>
-              <label className={styles.field}><span>Coef. sécurité K <Info texte="0,5 (K/2) par défaut ; 1 = position GRAIE (0,5 revient à doubler les surfaces d'infiltration)." /></span><input className={styles.inputNum} value={coefK} onChange={(e) => setCoefK(num(e.target.value))} inputMode="decimal" /></label>
+              <label className={styles.field}><span>Surface d&apos;infiltration parcelle (m²) <Info texte="Surface de fond mobilisée pour l'infiltration à l'échelle du projet. 0 = pas d'infiltration créditée." /></span><InputNum className={styles.inputNum} value={surfaceInfiltrationParcelle} onChange={(n) => setSurfaceInfiltrationParcelle(n)} /></label>
+              <label className={styles.field}><span>Coef. sécurité K <Info texte="0,5 (K/2) par défaut ; 1 = position GRAIE (0,5 revient à doubler les surfaces d'infiltration)." /></span><InputNum className={styles.inputNum} value={coefK} onChange={(n) => setCoefK(n)} /></label>
             </div>
             <p className={styles.hint}>
               Infiltration créditée : <strong className={styles.mono}>{qInfParcelleLS.toFixed(2)} l/s</strong>
@@ -385,10 +425,10 @@ export default function AtelierGep() {
           </button>
           {climatOuvert && (
             <div className={styles.climat}>
-              <label className={styles.field}><span>Latitude (°N) <Info texte="Correction de durée du jour (FAO-56) pour l'ETP Thornthwaite." /></span><input className={styles.inputNum} value={latitude} onChange={(e) => setLatitude(num(e.target.value))} inputMode="decimal" style={{ maxWidth: 90 }} /></label>
+              <label className={styles.field}><span>Latitude (°N) <Info texte="Correction de durée du jour (FAO-56) pour l'ETP Thornthwaite." /></span><InputNum className={styles.inputNum} value={latitude} onChange={(n) => setLatitude(n)} style={{ maxWidth: 90 }} /></label>
               <div className={styles.moisGrid}>
                 {temperatures.map((t, m) => (
-                  <label key={m} className={styles.moisCell}><span>{MOIS[m]}</span><input className={styles.inputNum} value={t} onChange={(e) => setTemperatures((arr) => arr.map((v, j) => (j === m ? num(e.target.value) : v)))} inputMode="decimal" /></label>
+                  <label key={m} className={styles.moisCell}><span>{MOIS[m]}</span><InputNum className={styles.inputNum} value={t} onChange={(n) => setTemperatures((arr) => arr.map((v, j) => (j === m ? n : v)))} /></label>
                 ))}
               </div>
               <p className={styles.hint}>Températures moyennes mensuelles (°C).</p>
@@ -571,7 +611,7 @@ function OuvrageCard({ ouvrage, site, onChange, onDelete }: { ouvrage: Ouvrage; 
 }
 
 function ChampNum({ label, value, onChange }: { label: string; value: number; onChange: (v: number) => void }) {
-  return <label className={styles.field}><span>{label}</span><input className={styles.inputNum} value={value} onChange={(e) => onChange(num(e.target.value))} inputMode="decimal" /></label>;
+  return <label className={styles.field}><span>{label}</span><InputNum className={styles.inputNum} value={value} onChange={(n) => onChange(n)} /></label>;
 }
 function ChampCheck({ label, checked, onChange }: { label: string; checked: boolean; onChange: (v: boolean) => void }) {
   return <label className={styles.fieldCheck}><input type="checkbox" checked={checked} onChange={(e) => onChange(e.target.checked)} /><span>{label}</span></label>;
