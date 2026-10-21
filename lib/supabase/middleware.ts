@@ -25,9 +25,23 @@ export async function updateSession(request: NextRequest) {
     }
   );
 
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  // Supabase peut être injoignable (projet en pause, panne, réseau). Avec un
+  // ancien cookie de session, getUser() tente alors de rafraîchir le jeton en
+  // boucle pendant ~30 s, Vercel coupe le middleware à 25 s et TOUTES les pages
+  // tombent en 504 (MIDDLEWARE_INVOCATION_TIMEOUT) — y compris l'accueil
+  // public. On borne donc l'attente : passé le délai, ou en cas d'erreur,
+  // l'utilisateur est traité comme non connecté et le site reste accessible.
+  const AUTH_TIMEOUT_MS = 3000;
+  let user = null;
+  try {
+    const result = await Promise.race([
+      supabase.auth.getUser(),
+      new Promise<null>((resolve) => setTimeout(() => resolve(null), AUTH_TIMEOUT_MS)),
+    ]);
+    user = result?.data.user ?? null;
+  } catch {
+    user = null;
+  }
 
   // Protected routes: redirect to /connexion if not authenticated
   const path = request.nextUrl.pathname;
