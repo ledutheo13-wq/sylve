@@ -1,5 +1,5 @@
 import type { ParamInfiltration } from "./types";
-import { SEUIL_APTITUDE_INFILTRATION_MS } from "./defaults";
+import { SEUIL_APTITUDE_INFILTRATION_MS, NATURES_SOL } from "./defaults";
 
 // ═══════════════════════════════════════════════════════════
 //  BLOC A/C — Infiltration
@@ -31,4 +31,16 @@ export function debitInfiltrationLS(p: ParamInfiltration): number {
 /** true si le sol est apte à l'infiltration (K ≥ 10⁻⁶ m/s). */
 export function estApteInfiltration(kMetresParSeconde: number): boolean {
   return kMetresParSeconde >= SEUIL_APTITUDE_INFILTRATION_MS;
+}
+
+/** K tabulé de l'argile (defaults.ts) : à ce niveau ou en dessous, l'infiltration n'est pas retenue. */
+export const K_SOL_ARGILEUX_MS = NATURES_SOL.find((s) => s.id === "argile")!.kMetresParSeconde;
+
+/**
+ * true si l'infiltration est retenue dans les calculs.
+ * Sol argileux (K ≤ K_argile) ou K nul → non retenue : Q_inf = 0 partout.
+ * Entre K_argile et 10⁻⁶ m/s, elle est comptée mais signalée (estApteInfiltration).
+ */
+export function estInfiltrationRetenue(kMetresParSeconde: number): boolean {
+  return kMetresParSeconde > K_SOL_ARGILEUX_MS;
 }

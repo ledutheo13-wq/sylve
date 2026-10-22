@@ -16,9 +16,12 @@ import {
 //
 //  Camembert 2 « par exutoire » (ÉVÉNEMENT) : devenir du volume à gérer par
 //    DESTINATION, en distinguant le stockage (transit) des exutoires réels :
-//      • rejet régulé    = Q_fuite · t_critique
-//      • infiltration    = Σ Q_inf,ouvrage · t_critique
-//      • réutilisation   = Σ volume utile des cuves
+//      • évacué          = min(V, Q_total · t_critique),  Q_total = Q_fuite + Q_inf
+//        réparti au prorata des débits (OASIS : Q = Q_REG + Q_INF) :
+//          rejet régulé  = évacué · Q_fuite / Q_total
+//          infiltration  = évacué · Q_inf   / Q_total
+//        Q_inf = infiltration du PROJET (infiltrationProjet, source unique).
+//      • réutilisation   = min(V − évacué, Σ volume utile des cuves)
 //      • stocké (transit)= le reste, « en cours de vidange » (pas une destination)
 //    L'atmosphère (ETP) est négligeable sur l'événement → lecture annuelle à part.
 //    Bilan volontairement NON forcé à 100 % au-delà du volume à gérer (cf. OASIS).
@@ -54,8 +57,8 @@ export interface EntreeBilan {
   volumeAGerer: number;
   /** débit de fuite réglementaire, en m³/h */
   debitFuiteM3H: number;
-  /** débit d'infiltration à la parcelle, en m³/h (crédité dans le Bloc B) */
-  debitInfiltrationParcelleM3H: number;
+  /** Q_inf du projet, en m³/h — le MÊME que celui du Bloc B (infiltrationProjet) */
+  debitInfiltrationM3H: number;
   dureeCritiqueMin: number;
   ouvrages: Ouvrage[];
   site: ContexteSite;
@@ -66,9 +69,6 @@ export function calculerBilan(e: EntreeBilan): BilanEvenement {
 
   const parOuvrage: PartOuvrage[] = [];
   let stockageTotal = 0;
-  // Infiltration créditée à la parcelle (source unique — évite le double comptage
-  // avec l'infiltration par ouvrage, qui reste affichée à titre informatif).
-  const infiltrationEvt = Math.max(0, e.debitInfiltrationParcelleM3H) * tHeures;
   let reutilisation = 0;
   let abattementToituresM3 = 0;
   let etpAnnuelleM3 = 0;
@@ -92,10 +92,14 @@ export function calculerBilan(e: EntreeBilan): BilanEvenement {
 
   // ── Camembert 2 : devenir du volume à gérer (bornage à volumeAGerer) ──
   const V = e.volumeAGerer;
-  const rejet = Math.min(V, e.debitFuiteM3H * tHeures);
-  const infiltration = Math.min(Math.max(0, V - rejet), infiltrationEvt);
-  const reuse = Math.min(Math.max(0, V - rejet - infiltration), reutilisation);
-  const stockage = Math.max(0, V - rejet - infiltration - reuse);
+  const qFuite = Math.max(0, e.debitFuiteM3H);
+  const qInf = Math.max(0, e.debitInfiltrationM3H);
+  const qTotal = qFuite + qInf;
+  const evacue = Math.min(V, qTotal * tHeures);
+  const rejet = qTotal > 0 ? (evacue * qFuite) / qTotal : 0;
+  const infiltration = qTotal > 0 ? (evacue * qInf) / qTotal : 0;
+  const reuse = Math.min(Math.max(0, V - evacue), reutilisation);
+  const stockage = Math.max(0, V - evacue - reuse);
 
   return {
     volumeAGerer: V,

@@ -3,11 +3,10 @@
 import { useEffect, useMemo, useState } from "react";
 import { calculerSurfaces } from "@/lib/tools/atelier-gep/surfaces";
 import { calculerVolumeAGerer } from "@/lib/tools/atelier-gep/pluies";
-import { debitInfiltrationM3H as calcQinf, debitInfiltrationLS } from "@/lib/tools/atelier-gep/infiltration";
 import { calculerBilan, EXUTOIRE_META } from "@/lib/tools/atelier-gep/bilan";
 import type { SurfaceLigne, JeuMontana } from "@/lib/tools/atelier-gep/types";
-import type { Ouvrage, TypeOuvrage, ContexteSite } from "@/lib/tools/atelier-gep/ouvrages";
-import { capaciteOuvrage, estToiture, capaciteToitureMm } from "@/lib/tools/atelier-gep/ouvrages";
+import type { Ouvrage, TypeOuvrage, ContexteSite, PartInfiltration, ResultatInfiltrationProjet } from "@/lib/tools/atelier-gep/ouvrages";
+import { capaciteOuvrage, estToiture, capaciteToitureMm, infiltrationProjet } from "@/lib/tools/atelier-gep/ouvrages";
 import {
   villesMontana,
   jeuMontana,
@@ -24,7 +23,6 @@ import {
   VIDANGE_LIMITE_H,
   LATITUDE_DEFAUT_DEG,
   STRICKLER_NOUE,
-  SEUIL_APTITUDE_INFILTRATION_MS,
 } from "@/lib/tools/atelier-gep/defaults";
 import { BIBLIOGRAPHIE, AVERTISSEMENT_LEGAL, AVERTISSEMENT_METHODE } from "@/lib/tools/atelier-gep/biblio";
 import PieChart, { type PiePart } from "./PieChart";
@@ -166,6 +164,8 @@ export default function AtelierGep() {
   const [kManuelActif, setKManuelActif] = useState(false);
   const [kManuel, setKManuel] = useState(1e-5);
   const [coefK, setCoefK] = useState(COEF_SECURITE_K.valeur);
+  // Surface d'infiltration : calculée depuis les ouvrages « infiltrant » (défaut) ou saisie
+  const [surfaceInfManuelleActive, setSurfaceInfManuelleActive] = useState(false);
   const [surfaceInfiltrationParcelle, setSurfaceInfiltrationParcelle] = useState(0);
 
   // ── Bloc A : climat ──
@@ -181,7 +181,6 @@ export default function AtelierGep() {
   const ville = villesMontana.find((v) => v.nom === villeNom) ?? villesMontana[0];
   const sol = NATURES_SOL.find((s) => s.id === solId)!;
   const kEff = kManuelActif ? kManuel : sol.kMetresParSeconde;
-  const apteInfiltration = kEff >= SEUIL_APTITUDE_INFILTRATION_MS;
 
   // ── calculs ──
   const resSurfaces = useMemo(() => calculerSurfaces(surfaces), [surfaces]);
@@ -198,15 +197,19 @@ export default function AtelierGep() {
     return { a: aMan, b: bMan, tMinMinutes: 6, tMaxMinutes: 1440, periodeRetour };
   }, [montanaManuel, ville, periodeRetour, aMan, bMan]);
 
-  // Infiltration à la parcelle → alimente le Bloc B (le sol pilote le volume)
-  const qInfParcelleM3H = useMemo(
+  // Infiltration du projet — source unique : alimente Bloc B, cartes et camembert
+  const infProjet = useMemo(
     () =>
-      surfaceInfiltrationParcelle > 0
-        ? calcQinf({ kMetresParSeconde: kEff, coefSecurite: coefK, surfaceInfiltration: surfaceInfiltrationParcelle })
-        : 0,
-    [kEff, coefK, surfaceInfiltrationParcelle]
+      infiltrationProjet({
+        ouvrages,
+        kMs: kEff,
+        coefSecuriteK: coefK,
+        surfaceManuelle: surfaceInfManuelleActive ? surfaceInfiltrationParcelle : null,
+      }),
+    [ouvrages, kEff, coefK, surfaceInfManuelleActive, surfaceInfiltrationParcelle]
   );
-  const qInfParcelleLS = surfaceInfiltrationParcelle > 0 ? debitInfiltrationLS({ kMetresParSeconde: kEff, coefSecurite: coefK, surfaceInfiltration: surfaceInfiltrationParcelle }) : 0;
+  const qInfParcelleM3H = infProjet.debitM3H;
+  const qInfParcelleLS = (qInfParcelleM3H / 3600) * 1000;
 
   const resVolume = useMemo(
     () =>
@@ -229,7 +232,7 @@ export default function AtelierGep() {
       calculerBilan({
         volumeAGerer: resVolume.volumeAGerer,
         debitFuiteM3H,
-        debitInfiltrationParcelleM3H: qInfParcelleM3H,
+        debitInfiltrationM3H: qInfParcelleM3H,
         dureeCritiqueMin: resVolume.dureeCritiqueMinutes,
         ouvrages,
         site,
@@ -404,16 +407,38 @@ export default function AtelierGep() {
             {kManuelActif && (
               <label className={styles.field}><span>K (m/s)</span><InputNum className={styles.inputNum} value={kManuel} onChange={(n) => setKManuel(n)} /></label>
             )}
-            <div className={styles.field2}>
-              <label className={styles.field}><span>Surface d&apos;infiltration parcelle (m²) <Info texte="Surface de fond mobilisée pour l'infiltration à l'échelle du projet. 0 = pas d'infiltration créditée." /></span><InputNum className={styles.inputNum} value={surfaceInfiltrationParcelle} onChange={(n) => setSurfaceInfiltrationParcelle(n)} /></label>
-              <label className={styles.field}><span>Coef. sécurité K <Info texte="0,5 (K/2) par défaut ; 1 = position GRAIE (0,5 revient à doubler les surfaces d'infiltration)." /></span><InputNum className={styles.inputNum} value={coefK} onChange={(n) => setCoefK(n)} /></label>
+            <label className={styles.field}><span>Coef. sécurité K <Info texte="0,5 (K/2) par défaut ; 1 = position GRAIE (0,5 revient à doubler les surfaces d'infiltration)." /></span><InputNum className={styles.inputNum} value={coefK} onChange={(n) => setCoefK(n)} /></label>
+            <div className={styles.field}>
+              <span>Surface d&apos;infiltration (m²) <Info texte="Calculée : somme des surfaces des ouvrages cochés « infiltrant » au bloc C (noue, bassin, structure réservoir : le fond ; tranchée : les parois). Saisie manuelle : pour une esquisse sans ouvrage détaillé — elle remplace la somme des ouvrages, sans s'y ajouter. Q_inf = K × coef. sécurité × surface." /></span>
+              {surfaceInfManuelleActive ? (
+                <InputNum className={styles.inputNum} value={surfaceInfiltrationParcelle} onChange={(n) => setSurfaceInfiltrationParcelle(n)} />
+              ) : (
+                <div className={styles.readout}>
+                  <strong className={styles.mono}>{infProjet.surfaceInfiltration.toFixed(0)} m²</strong>
+                  {infProjet.surfaceOuvrages > 0
+                    ? `, dont ${infProjet.decomposition.filter((p) => p.surface > 0).map((p) => `${p.nom} ${p.surface.toFixed(0)} m²`).join(", ")}`
+                    : " (aucun ouvrage infiltrant au bloc C)"}
+                </div>
+              )}
             </div>
+            <label className={styles.fieldCheck}>
+              <input type="checkbox" checked={surfaceInfManuelleActive} onChange={(e) => setSurfaceInfManuelleActive(e.target.checked)} />
+              <span>Saisir la surface manuellement (esquisse sans ouvrage détaillé)</span>
+            </label>
             <p className={styles.hint}>
-              Infiltration créditée : <strong className={styles.mono}>{qInfParcelleLS.toFixed(2)} l/s</strong>
-              {surfaceInfiltrationParcelle === 0 && " — renseignez une surface pour que le sol influe sur le volume."}
+              Infiltration comptée : <strong className={styles.mono}>{qInfParcelleLS.toFixed(2)} l/s</strong>
+              {infProjet.retenue && infProjet.surfaceInfiltration === 0 && !surfaceInfManuelleActive && " — cochez « infiltrant » sur un ouvrage du bloc C pour la prendre en compte."}
             </p>
-            {!apteInfiltration && surfaceInfiltrationParcelle > 0 && (
-              <p className={styles.warn}>Sol peu perméable (K &lt; 10⁻⁶ m/s) : infiltration déconseillée sans étude.</p>
+            {infProjet.conflitManuelOuvrages && (
+              <p className={styles.warn}>
+                {`Surface saisie (${infProjet.surfaceInfiltration.toFixed(0)} m²) ≠ surface des ouvrages infiltrants (${infProjet.surfaceOuvrages.toFixed(0)} m²) : seule la saisie est comptée, les ouvrages ne s'y ajoutent pas. Décochez la saisie manuelle pour utiliser les ouvrages.`}
+              </p>
+            )}
+            {!infProjet.retenue && (
+              <p className={styles.warn}>Sol argileux : infiltration non retenue dans les calculs (Q_inf = 0).</p>
+            )}
+            {infProjet.retenue && infProjet.sousSeuilAptitude && infProjet.surfaceInfiltration > 0 && (
+              <p className={styles.warn}>Sol peu perméable (K &lt; 10⁻⁶ m/s) : l&apos;infiltration seule est déconseillée (guides GEP) ; la conserver en complément d&apos;un rejet régulé et la confirmer par une étude.</p>
             )}
           </div>
         </div>
@@ -456,7 +481,7 @@ export default function AtelierGep() {
           <div className={styles.kpi}>
             <div className={styles.kpiLabel}>Évacuation totale</div>
             <div className={styles.kpiValue}>{resVolume.debitTotalM3H.toFixed(1)} <span>m³/h</span></div>
-            <div className={styles.kpiSub}>fuite {debitFuiteLS.toFixed(1)} l/s + infiltration {qInfParcelleLS.toFixed(1)} l/s</div>
+            <div className={styles.kpiSub}>fuite {debitFuiteLS.toFixed(1)} l/s + infiltration {qInfParcelleLS.toFixed(2)} l/s</div>
           </div>
         </div>
         {resVolume.horsPlageMontana && (
@@ -477,7 +502,7 @@ export default function AtelierGep() {
         <div className={styles.ouvrages}>
           {ouvrages.length === 0 && <p className={styles.empty}>Aucun ouvrage. Ajoutez-en pour couvrir le volume à gérer.</p>}
           {ouvrages.map((o) => (
-            <OuvrageCard key={o.id} ouvrage={o} site={site} onChange={(p) => majOuvrage(o.id, p)} onDelete={() => supprOuvrage(o.id)} />
+            <OuvrageCard key={o.id} ouvrage={o} site={site} infProjet={infProjet} onChange={(p) => majOuvrage(o.id, p)} onDelete={() => supprOuvrage(o.id)} />
           ))}
         </div>
       </section>
@@ -501,7 +526,7 @@ export default function AtelierGep() {
             <PieChart parts={pieOuvrages} unite="m³" totalReference={Math.max(resVolume.volumeAGerer, bilan.stockageTotal)} ariaLabel="Répartition du volume par ouvrage" />
           </div>
           <div className={styles.card}>
-            <div className={styles.cardTitle}>Par exutoire (devenir de l&apos;eau) <Info texte="Le stockage est un transit, pas une destination. Bilan non forcé à 100 % (cf. Cerema OASIS)." /></div>
+            <div className={styles.cardTitle}>Par exutoire (devenir de l&apos;eau) <Info texte="Évacué pendant la durée critique t* : min(V, (Q_fuite + Q_inf) × t*), réparti au prorata des débits — rejet régulé = évacué × Q_fuite / (Q_fuite + Q_inf) ; infiltration = évacué × Q_inf / (Q_fuite + Q_inf) (Cerema OASIS : Q = Q_rég + Q_inf). Puis la réutilisation (volume des cuves), le reste étant stocké. Le stockage est un transit, pas une destination. Bilan non forcé à 100 % (cf. Cerema OASIS)." /></div>
             <PieChart parts={pieExutoires} unite="m³" ariaLabel="Répartition du volume par exutoire" />
           </div>
         </div>
@@ -542,9 +567,10 @@ export default function AtelierGep() {
 //  Carte d'un ouvrage
 // ═══════════════════════════════════════════════════════════
 
-function OuvrageCard({ ouvrage, site, onChange, onDelete }: { ouvrage: Ouvrage; site: ContexteSite; onChange: (p: Partial<Ouvrage>) => void; onDelete: () => void }) {
+function OuvrageCard({ ouvrage, site, infProjet, onChange, onDelete }: { ouvrage: Ouvrage; site: ContexteSite; infProjet: ResultatInfiltrationProjet; onChange: (p: Partial<Ouvrage>) => void; onDelete: () => void }) {
   const cap = capaciteOuvrage(ouvrage, site);
   const o = ouvrage;
+  const partInf: PartInfiltration | undefined = infProjet.decomposition.find((p) => p.id === o.id);
   return (
     <div className={styles.ouvrageCard}>
       <div className={styles.ouvrageHead}>
@@ -601,7 +627,13 @@ function OuvrageCard({ ouvrage, site, onChange, onDelete }: { ouvrage: Ouvrage; 
           <span>ETP annuelle <strong className={styles.mono}>{cap.volumeEtp.toFixed(0)} m³/an</strong></span>
         </>) : (<>
           <span>Stockage <strong className={styles.mono}>{cap.volumeStockage.toFixed(1)} m³</strong></span>
-          {cap.debitInfiltrationM3H > 0 && <span>Infiltration <strong className={styles.mono}>{cap.debitInfiltrationM3H.toFixed(1)} m³/h</strong></span>}
+          {partInf && partInf.surface > 0 && (infProjet.mode === "manuelle" ? (
+            <span className={styles.warnTxt}>Infiltration non comptée : surface saisie manuellement au bloc A</span>
+          ) : !infProjet.retenue ? (
+            <span className={styles.warnTxt}>Infiltration non retenue (sol argileux)</span>
+          ) : (
+            <span>Infiltration <strong className={styles.mono}>{partInf.debitM3H.toFixed(2)} m³/h</strong> <Info texte={`Part de cet ouvrage dans l'infiltration du projet : K × coef. sécurité × ${partInf.surface.toFixed(0)} m². Comptée dans le volume à gérer, la vidange et les exutoires.`} /></span>
+          ))}
           {cap.volumeReutilisation > 0 && <span>Réutilisation <strong className={styles.mono}>{cap.volumeReutilisation.toFixed(1)} m³</strong></span>}
           {cap.debitCapableM3S !== undefined && cap.debitCapableM3S > 0 && <span>Débit capable <strong className={styles.mono}>{(cap.debitCapableM3S * 1000).toFixed(0)} l/s</strong> <Info texte="Manning-Strickler (indicatif) — vérification de conduite en V2." /></span>}
         </>)}
