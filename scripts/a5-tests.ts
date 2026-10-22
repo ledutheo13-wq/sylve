@@ -13,7 +13,7 @@ import {
   TYPE_SOL_OPTIONS, EXPOSITION_OPTIONS, HUMIDITE_SOL_OPTIONS, PH_SOL_OPTIONS,
   BESOINS_HYDRIQUES_OPTIONS,
 } from "@/lib/tools/selecteur/filters";
-import { computeScoring, formatStrate, formatPersistance, getRusticite } from "@/lib/tools/compatibilite/scoring";
+import { computeScoring, formatStrate, formatPersistance, getRusticite, formatLimitingPlants } from "@/lib/tools/compatibilite/scoring";
 import {
   STRATE_ORDER as CAL_STRATE_ORDER, STRATE_LABELS,
   getPersistanceBadgeClass, isPersistant, isMarcescent,
@@ -157,7 +157,7 @@ check("mix avec marcescent OK", (() => {
 
 check("getRusticite tolère les null", (() => {
   const r = getRusticite(v2.slice(0, 300));
-  return r === null || Number.isFinite(r.min);
+  return r.limit === null || Number.isFinite(r.limit);
 })());
 
 // non-régression : score identique v1/v2 pour un mix dont les valeurs n'ont pas changé
@@ -204,6 +204,46 @@ check("filtre hauteur 20-50 m conserve aussi les sans-hauteur",
   sansHauteur.every((p) => filtHaut2.some((q) => q.id === p.id)));
 check("filtre hauteur exclut toujours les hors-plage renseignées",
   filtHaut.every((p) => p.hauteur_min_cm == null || p.hauteur_min_cm <= 100));
+
+// ═══ 7. RUSTICITÉ DU MÉLANGE (correction 22/10/2026) ═══
+// Limite = rusticité de l'essence la MOINS rustique = température la plus HAUTE.
+head("7. Rusticité du mélange — la moins rustique");
+{
+  const r1 = getRusticite(mix(["asplenium-scolopendrium", "carex-sylvatica", "euphorbia-amygdaloides"]));
+  check(`ombre A persistantes → -23 °C (${r1.limit})`, r1.limit === -23);
+  check("ombre A persistantes → Euphorbia amygdaloides", r1.limitingPlants.join() === "Euphorbia amygdaloides", r1.limitingPlants.join());
+
+  const r2 = getRusticite(mix(["acanthus-mollis", "pulmonaria-rubra", "rodgersia-pinnata", "liriope-spicata"]));
+  check(`ombre frais → -17 °C (${r2.limit})`, r2.limit === -17);
+  check("ombre frais → Acanthus mollis", r2.limitingPlants.join() === "Acanthus mollis", r2.limitingPlants.join());
+
+  // égalité : Asplenium (-25) et Rodgersia (-25) fixent la limite, Carex (-34) non
+  const r3 = getRusticite(mix(["asplenium-scolopendrium", "carex-sylvatica", "rodgersia-pinnata"]));
+  check("égalité → -25 °C, deux essences nommées", r3.limit === -25 && r3.limitingPlants.length === 2, JSON.stringify(r3));
+  check("égalité → libellé « A et B »", formatLimitingPlants(r3.limitingPlants) === "Asplenium scolopendrium et Rodgersia pinnata", formatLimitingPlants(r3.limitingPlants));
+  check("libellé au-delà de 3 → « A et n autres »", formatLimitingPlants(["A", "B", "C", "D"]) === "A et 3 autres");
+
+  // essence sans rusticité : exclue du calcul et signalée
+  const r4 = getRusticite(mix(["lathyrus-odoratus", "acanthus-mollis", "carex-sylvatica"]));
+  check("rusticité inconnue exclue → -17 °C", r4.limit === -17 && r4.limitingPlants.join() === "Acanthus mollis", JSON.stringify(r4));
+  check("rusticité inconnue signalée", r4.unknownPlants.join() === "Lathyrus odoratus", r4.unknownPlants.join());
+  const r5 = getRusticite(mix(["lathyrus-odoratus"]));
+  check("aucune rusticité renseignée → limite null", r5.limit === null && r5.limitingPlants.length === 0);
+
+  // la rusticité reste HORS scoring : scores identiques à la référence du 22/10/2026
+  const sc = (ids: string[]) => { const r = computeScoring(mix(ids))!; return `${r.globalScore}|${JSON.stringify(r.criteriaScores)}|${r.alerts.length}`; };
+  check("score mix référence = 89 (inchangé)", sc(["abies-alba", "acer-campestre"]).startsWith("89|"), sc(["abies-alba", "acer-campestre"]));
+  check("ombre A persistantes : score et critères inchangés",
+    sc(["asplenium-scolopendrium", "carex-sylvatica", "euphorbia-amygdaloides"]) === '84|{"exposition":83,"besoins_hydriques":100,"type_sol":56,"ph_sol":46,"humidite_sol":100}|2');
+  check("ombre frais : score et critères inchangés",
+    sc(["acanthus-mollis", "pulmonaria-rubra", "rodgersia-pinnata", "liriope-spicata"]) === '87|{"exposition":71,"besoins_hydriques":100,"type_sol":81,"ph_sol":88,"humidite_sol":92}|1');
+
+  // sélecteur : sens du filtre et du tri (audit — inchangés)
+  const f15 = filterPlantes(v2, { ...getDefaultFilters(), rusticite: -15 }, cache2);
+  check(`filtre ≤ -15 °C garde les plus rustiques (${f15.length})`, f15.length === 1662 && f15.every((p) => p.rusticite_celsius != null && p.rusticite_celsius <= -15));
+  const tri = sortPlantes(v2, "rusticite").map((p) => p.rusticite_celsius).filter((c): c is number => c != null);
+  check("tri rusticité : du plus rustique au moins rustique", tri.every((c, i) => i === 0 || tri[i - 1] <= c));
+}
 
 // ═══ RÉSULTAT ═══
 console.log(`\n${"═".repeat(50)}\nRÉSULTAT : ${pass} passés, ${fail} échoués`);

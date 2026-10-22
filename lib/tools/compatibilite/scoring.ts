@@ -479,16 +479,41 @@ export function isMonthAfter(month: number, fin: number): boolean {
   return month === next;
 }
 
-/** Get the rusticite threshold and the least hardy plant */
-export function getRusticite(plants: Plante[]): { min: number; plantName: string } | null {
-  let minRust = Infinity;
-  let minRustPlant = "";
+export interface MixHardiness {
+  /**
+   * Limite de rusticité du mélange (°C) = celle de l'essence la MOINS rustique,
+   * c.-à-d. la température minimale la plus HAUTE (la moins négative).
+   * null si aucune essence n'a de rusticité renseignée.
+   */
+  limit: number | null;
+  /** essence(s) qui fixent la limite — toutes en cas d'égalité */
+  limitingPlants: string[];
+  /** essences sans rusticité renseignée, exclues du calcul */
+  unknownPlants: string[];
+}
+
+/** Limite de rusticité d'un mélange (hors scoring). */
+export function getRusticite(plants: Plante[]): MixHardiness {
+  let limit: number | null = null;
+  let limitingPlants: string[] = [];
+  const unknownPlants: string[] = [];
   for (const p of plants) {
-    if (p.rusticite_celsius !== null && p.rusticite_celsius < minRust) {
-      minRust = p.rusticite_celsius;
-      minRustPlant = p.nom_latin;
+    const r = p.rusticite_celsius;
+    if (r == null || !Number.isFinite(r)) {
+      unknownPlants.push(p.nom_latin);
+    } else if (limit === null || r > limit) {
+      limit = r;
+      limitingPlants = [p.nom_latin];
+    } else if (r === limit) {
+      limitingPlants.push(p.nom_latin);
     }
   }
-  if (minRust === Infinity) return null;
-  return { min: minRust, plantName: minRustPlant };
+  return { limit, limitingPlants, unknownPlants };
+}
+
+/** « A », « A et B », « A, B et C », puis « A et n autres » au-delà de 3. */
+export function formatLimitingPlants(names: string[]): string {
+  if (names.length <= 1) return names[0] ?? "";
+  if (names.length > 3) return `${names[0]} et ${names.length - 1} autres`;
+  return `${names.slice(0, -1).join(", ")} et ${names[names.length - 1]}`;
 }

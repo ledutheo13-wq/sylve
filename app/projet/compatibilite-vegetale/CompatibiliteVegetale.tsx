@@ -16,6 +16,7 @@ import {
   isMonthBefore,
   isMonthAfter,
   getRusticite,
+  formatLimitingPlants,
   getBioregionFromDept,
   BIOREGION_LABELS,
   BIOREGION_RUSTICITE,
@@ -161,9 +162,10 @@ export default function CompatibiliteVegetale({ plantes, vitrine = false }: Prop
   const rusticiteData = useMemo(() => getRusticite(selectedPlants), [selectedPlants]);
 
   const rusticiteAlert = useMemo(() => {
-    if (!bioregion || !rusticiteData) return null;
+    if (!bioregion || rusticiteData.limit === null) return null;
     const threshold = BIOREGION_RUSTICITE[bioregion];
-    if (rusticiteData.min > threshold) {
+    // limite du mélange plus haute (moins négative) que le seuil → pas assez rustique
+    if (rusticiteData.limit > threshold) {
       return `Rusticité insuffisante pour la biorégion ${BIOREGION_LABELS[bioregion]} (seuil recommandé : ${threshold}°C)`;
     }
     return null;
@@ -468,11 +470,20 @@ export default function CompatibiliteVegetale({ plantes, vitrine = false }: Prop
               <div className={styles.resultCard}>
                 <div className={styles.resultCardTitle}>Limite de rusticité du mélange</div>
                 <div className={styles.rusticiteValue}>
-                  {rusticiteData ? `${rusticiteData.min}°C` : "—"}
+                  {rusticiteData.limit !== null ? `${rusticiteData.limit}°C` : "—"}
                 </div>
-                {rusticiteData && (
+                <div className={styles.rusticiteDetail}>
+                  {rusticiteData.limit === null
+                    ? "Rusticité non disponible"
+                    : `(${formatLimitingPlants(rusticiteData.limitingPlants)} — ${
+                        rusticiteData.limitingPlants.length > 1
+                          ? "les essences les moins rustiques"
+                          : "l'essence la moins rustique"
+                      })`}
+                </div>
+                {rusticiteData.limit !== null && rusticiteData.unknownPlants.length > 0 && (
                   <div className={styles.rusticiteDetail}>
-                    ({rusticiteData.plantName} — l&apos;essence la moins rustique)
+                    {`Rusticité inconnue : ${rusticiteData.unknownPlants.join(", ")}`}
                   </div>
                 )}
                 {rusticiteAlert && (
